@@ -15,7 +15,7 @@ export default {
   target: 'static',
   router: {
     base: '/talkiebuddy-ssr-app'
-  }
+  },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
