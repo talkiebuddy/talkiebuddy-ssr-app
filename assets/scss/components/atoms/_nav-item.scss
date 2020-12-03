@@ -1,0 +1,16 @@
+.a-nav-item {
+	list-style: none;
+	display: block;
+
+	a {
+		color: $color-gray7;
+		background: $color-gray4;
+		transition: background 0.3s;
+		display: block;
+		padding: 1rem;
+
+		&:hover {
+			background: $color-gray2;
+		}
+	}
+}

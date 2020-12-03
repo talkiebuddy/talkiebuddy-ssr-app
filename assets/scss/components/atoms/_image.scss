@@ -1,0 +1,39 @@
+.a-image {
+	max-width: 100%;
+	height: auto;
+
+	&--logo {
+		border-radius: 8px;
+		width: 150px;
+		height: auto;
+		object-fit: cover;
+	}
+
+	&--normal {
+		border-radius: 8px;
+		width: 200px;
+		height: auto;
+		object-fit: cover;
+	}
+
+	&--card {
+		border-radius: 8px;
+		width: 400px;
+		height: auto;
+		object-fit: cover;
+	}
+
+	&--gallery-image {
+		border-radius: 8px;
+		width: 600px;
+		height: auto;
+		object-fit: cover;
+	}
+
+	&--gallery-thumb {
+		border-radius: 8px;
+		max-width: 200px;
+		max-height: 130px;
+		object-fit: cover;
+	}
+}

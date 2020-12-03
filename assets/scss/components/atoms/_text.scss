@@ -1,0 +1,13 @@
+.a-text {
+	color: $body-textColor;
+	font-weight: normal;
+
+	strong,
+	a {
+		font-weight: bold;
+	}
+
+	a {
+		color: $color-semanticInfo;
+	}
+}

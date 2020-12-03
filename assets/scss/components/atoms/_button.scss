@@ -1,0 +1,88 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.a-button {
+	border-radius: 0.3rem;
+	color: white;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: inherit;
+	font-size: 1.6rem;
+	border: 0;
+	border-radius: 3em;
+	line-height: 1;
+	padding: 1rem;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	user-select: none;
+
+	&__label {
+		position: relative;
+	}
+
+	&:focus {
+		box-shadow: 0 0 0.5rem rgba(black, 0.4);
+	}
+
+	&::before {
+		content: '';
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		transition: background 0.3s;
+	}
+
+	&:hover {
+		&::before {
+			background: rgba(black, 0.2);
+		}
+	}
+
+	&--small {
+		font-size: 12px;
+		padding: 10px 16px;
+	}
+	&--medium {
+		font-size: 14px;
+		padding: 11px 20px;
+	}
+	&--large {
+		font-size: 16px;
+		padding: 12px 24px;
+	}
+
+	&--primary {
+		background: $color-brandPrimary;
+	}
+
+	&--secondary {
+		background: $color-brandSecondary;
+	}
+
+	&--success {
+		background: $color-semanticSuccess;
+	}
+
+	&--error {
+		background: $color-semanticDanger;
+	}
+
+	&--warning {
+		background: $color-semanticWarning;
+	}
+
+	&--disabled {
+		background: $color-gray6;
+		cursor: not-allowed;
+
+		&:hover {
+			&::before {
+				background: none;
+			}
+		}
+	}
+}

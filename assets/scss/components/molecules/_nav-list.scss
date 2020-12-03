@@ -1,0 +1,12 @@
+.m-nav-list {
+	display: block;
+	width: 100%;
+
+	.a-nav-item {
+		border-bottom: 0.1rem solid $color-gray5;
+
+		&:first-child {
+			border-top: 0.1rem solid $color-gray5;
+		}
+	}
+}

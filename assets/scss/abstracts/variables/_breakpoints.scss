@@ -1,0 +1,10 @@
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+	'small': 320px,
+	'medium': 768px,
+	'large': 1024px,
+	'x-large': 1280px,
+	'xx-large': 1600px,
+) !default;
