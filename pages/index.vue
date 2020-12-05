@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <!-- <div>
+    <div>
       <Logo />
       <h1 class="title">
         talkiebuddy-ssr-app
@@ -24,32 +24,18 @@
         </a>
       </div>
     </div>
-    <m-button>Atomic Button</m-button>
+    <m-button label="Atomic Button" />
 
-    <m-button primary>
-      Click here2
-    </m-button>
-    <m-button secondary>
-      Click here2
-    </m-button>
-    <m-button success>
-      Click here2
-    </m-button>
-    <m-button error>
-      Click here
-    </m-button>
-    <m-button warning>
-      Click here
-    </m-button>
+    <m-button primary label="Click here" />
+    <m-button secondary label="Click here" />
+    <m-button success label="Click here" />
+    <m-button error label="Click here" />
+    <m-button warning label="Click here" />
 
-    <m-button disabled>
-      Click here
-    </m-button>
-    <m-button href="https://google.com">
-      Click here
-    </m-button>
+    <m-button disabled label="Click here" />
+    <m-button href="https://google.com" label="Click here" />
     <a-image />
-    <a-icon name="twitter" size="large" /> -->
+    <a-icon name="twitter" size="large" />
   </div>
 </template>
 
