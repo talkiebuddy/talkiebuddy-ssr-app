@@ -10,6 +10,7 @@ const e_rocket = emoji.get('rocket');
   try {
     await execa('git', ['checkout', '--orphan', 'gh-pages'])
     console.log(`${e_arrows} ${chalk.yellow('Building...')}`)
+    await execa('npm', ['run', 'build'])
     await execa('npm', ['run', 'generate'])
     // Understand if it's dist or build folder
     const folderName = fs.existsSync('dist') ? 'dist' : 'build'
