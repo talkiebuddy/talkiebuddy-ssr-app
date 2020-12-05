@@ -1,4 +1,4 @@
-name: Deploy to github pages
+name: ci
 
 on:
   push:
@@ -6,8 +6,7 @@ on:
       - master
 
 jobs:
-  gh-pages-deploy:
-    name: Deploying to gh-pages
+  ci:
     runs-on: ${{ matrix.os }}
 
     strategy:
