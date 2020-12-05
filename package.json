@@ -11,6 +11,7 @@
     "lint": "npm run lint:js",
     "test": "jest",
     "storybook:serve": "npx nuxt storybook",
+    "storybook:build": "npx nuxt storybook build",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
   },
