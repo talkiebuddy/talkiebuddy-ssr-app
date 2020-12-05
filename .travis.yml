@@ -19,9 +19,9 @@ script:
 
 deploy:
   provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_ACCESS_TOKEN
-  target-branch: gh-pages
-  local-dir: directories
+  cleanup: true
+  token: $GITHUB_ACCESS_TOKEN
+  target_branch: gh-pages
+  local_dir: directories
   on:
     branch: master
