@@ -1,5 +1,5 @@
 <template>
-  <ul v-if="list.length" class="m-nav-list">
+  <ul v-if="list.length" :class="classes">
     <a-nav-item
       v-for="item in list"
       :key="item.label"
@@ -21,7 +21,20 @@ export default {
     ANavItem
   },
   props: {
-    list: Array
+    list: Array,
+    direction: {
+      type: String,
+      required: true,
+      default: 'horizontal'
+    }
+  },
+  computed: {
+    classes () {
+      return {
+        'm-nav-list': true,
+        [`m-nav-list--${this.direction}`]: true
+      }
+    }
   },
   methods: {
     onClick () {

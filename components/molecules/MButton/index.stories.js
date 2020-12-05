@@ -1,62 +1,73 @@
 import { action } from '@storybook/addon-actions'
-import AButton from './index.vue'
+import MButton from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers.js'
 
 export default storyFactory({
-  title: 'Atom/Button',
-  component: AButton,
+  title: 'Molecules/Button',
+  component: MButton,
   description: 'The completed documentation will sooner release. This docs is about Button Atom',
   argTypes: {
     backgroundColor: { control: 'color' },
-    color: { control: 'color' },
+    labelColor: { control: 'color' },
+    iconColor: { control: { type: 'select', options: ['red', 'black'] } },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
     type: { control: { type: 'select', options: ['a', 'button', 'router-link'] } },
-    label: { control: 'text' },
-    primary: {
-      table: {
-        disable: true
-      }
-    },
-    secondary: {
-      table: {
-        disable: true
-      }
-    },
-    success: {
-      table: {
-        disable: true
-      }
-    },
-    warning: {
-      table: {
-        disable: true
-      }
-    },
-    error: {
-      table: {
-        disable: true
-      }
-    },
-    disabled: {
-      table: {
-        disable: true
-      }
-    }
+    label: { control: 'text' }
+    // primary: {
+    //   table: {
+    //     disable: true
+    //   }
+    // },
+    // secondary: {
+    //   table: {
+    //     disable: true
+    //   }
+    // },
+    // success: {
+    //   table: {
+    //     disable: true
+    //   }
+    // },
+    // warning: {
+    //   table: {
+    //     disable: true
+    //   }
+    // },
+    // error: {
+    //   table: {
+    //     disable: true
+    //   }
+    // },
+    // disabled: {
+    //   table: {
+    //     disable: true
+    //   }
+    // }
   },
   excludeStories: /.*Data$/
 })
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { AButton },
-  template: '<a-button @onClick="action" v-bind="$props"/>',
+  components: { MButton },
+  template: '<m-button @onClick="action" :style="classes" v-bind="$props"/>',
+  computed: {
+    classes () {
+      return {
+        backgroundColor: this.backgroundColor
+      }
+    }
+  },
   methods: { action: action('clicked') }
 })
 
 export const Sandbox = Template.bind({})
 Sandbox.args = {
   label: 'Sandbox',
-  type: 'button'
+  type: 'button',
+  icon: 'twitter',
+  labelColor: 'white',
+  iconColor: 'white'
 }
 
 export const Primary = Template.bind({})

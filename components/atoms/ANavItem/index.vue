@@ -14,9 +14,13 @@ export default {
   name: 'ANavItem',
   props: {
     to: {
-      type: [String, Object]
+      type: [String, Object],
+      default: undefined
     },
-    href: String
+    href: {
+      type: String,
+      default: undefined
+    }
   },
   methods: {
     onClick (event) {

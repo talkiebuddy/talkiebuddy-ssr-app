@@ -70,7 +70,6 @@ typings/
 .nuxt-storybook
 storybook-static
 
-
 # Nuxt generate
 dist
 
@@ -80,8 +79,14 @@ dist
 # Serverless directories
 .serverless
 
-# IDE / Editor
+# Editor directories and files
 .idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Service worker
 sw.*

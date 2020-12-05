@@ -1,5 +1,5 @@
 <template>
-	<div
+	<i
 		:class="[
 			'a-icon',
 			`a-icon--${color}`,
@@ -7,7 +7,7 @@
 			`a-icon--${name}`,
 		]"
 		v-html="svg"
-	></div>
+	></i>
 </template>
 
 <script>
@@ -26,8 +26,8 @@ export default {
 			type: String,
 			validator(value) {
 				return ['x-small', 'small', 'medium', 'large'].indexOf(value) !== -1
-			},
-			default: 'small'
+      },
+      default: 'small'
 		},
 	},
 	data() {

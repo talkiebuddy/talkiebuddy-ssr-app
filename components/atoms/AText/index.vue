@@ -1,5 +1,5 @@
 <template>
-  <component :is="`${tag}`" class="a-text">
+  <component :is="`${tag}`" class="a-text" :style="classes">
     <slot />
   </component>
 </template>
@@ -10,7 +10,18 @@ export default {
   props: {
     tag: {
       type: String,
-      default: 'p'
+      default: 'span'
+    },
+    color: {
+      type: String,
+      default: 'white'
+    }
+  },
+  computed: {
+    classes () {
+      return {
+        color: this.color
+      }
     }
   }
 }

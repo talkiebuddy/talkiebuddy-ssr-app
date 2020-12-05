@@ -2,11 +2,12 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
-.a-button {
+.m-button {
 	border-radius: 0.3rem;
 	color: white;
 	cursor: pointer;
-	display: inline-flex;
+  display: inline-flex;
+  align-items: center;
 	font-family: inherit;
 	font-size: 1.6rem;
 	border: 0;
@@ -16,7 +17,7 @@
 	position: relative;
 	overflow: hidden;
 	text-align: center;
-	user-select: none;
+  user-select: none;
 
 	&__label {
 		position: relative;

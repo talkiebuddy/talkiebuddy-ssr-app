@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div>
+    <!-- <div>
       <Logo />
       <h1 class="title">
         talkiebuddy-ssr-app
@@ -24,45 +24,35 @@
         </a>
       </div>
     </div>
-    <a-button>Atomic Button</a-button>
+    <m-button>Atomic Button</m-button>
 
-    <a-button primary>
+    <m-button primary>
       Click here2
-    </a-button>
-    <a-button secondary>
+    </m-button>
+    <m-button secondary>
       Click here2
-    </a-button>
-    <a-button success>
+    </m-button>
+    <m-button success>
       Click here2
-    </a-button>
-    <a-button error>
+    </m-button>
+    <m-button error>
       Click here
-    </a-button>
-    <a-button warning>
+    </m-button>
+    <m-button warning>
       Click here
-    </a-button>
+    </m-button>
 
-    <a-button disabled>
+    <m-button disabled>
       Click here
-    </a-button>
-    <a-button href="https://google.com">
+    </m-button>
+    <m-button href="https://google.com">
       Click here
-    </a-button>
+    </m-button>
     <a-image />
-    <a-icon name="twitter" size="large" />
+    <a-icon name="twitter" size="large" /> -->
   </div>
 </template>
 
 <script>
-import AButton from '@/components/atoms/AButton'
-import AImage from '@/components/atoms/AImage'
-import AIcon from '@/components/atoms/AIcon'
-
-export default {
-  components: {
-    AButton,
-    AImage,
-    AIcon
-  }
-}
+export default {}
 </script>
