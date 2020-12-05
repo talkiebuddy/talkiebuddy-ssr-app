@@ -11,7 +11,8 @@
     "lint": "npm run lint:js",
     "test": "jest",
     "storybook:serve": "npx nuxt storybook",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
@@ -42,6 +43,7 @@
     "node-sass": "^5.0.0",
     "push-dir": "^0.4.1",
     "sass-loader": "^10.1.0",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "execa": "latest"
   }
 }

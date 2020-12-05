@@ -1,21 +1,19 @@
-name: ci
+name: Deploy to github pages
 
 on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
-  ci:
+  gh-pages-deploy:
+    name: Deploying to gh-pages
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [12.x]
 
     steps:
       - name: Checkout 🛎
@@ -37,8 +35,7 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
 
-      # - name: Run linter 👀
-      #   run: npm run lint
-
-      # - name: Run tests 🧪
-      #   run: npm run test
+      - name: Run deploy script
+          run: |
+            git config user.name "fbtwitter" && git config user.email "rzaugusdi354@gmail.com"
+            npm run gh-pages-deploy
