@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   ci:
@@ -12,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [12.x]
+        node: [14]
 
     steps:
       - name: Checkout 🛎
@@ -35,6 +38,6 @@ jobs:
         run: npm ci
 
       - name: Run deploy script
-          run: |
-            git config user.name "fbtwitter" && git config user.email "rzaugusdi354@gmail.com"
-            npm run gh-pages-deploy
+        run: |
+          git config user.name "fbtwitter" && git config user.email "rzaugusdi354@gmail.com"
+          npm run gh-pages-deploy
