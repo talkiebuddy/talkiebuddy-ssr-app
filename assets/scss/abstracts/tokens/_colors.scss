@@ -1,0 +1,108 @@
+// - - - - - - - - - - - - - - - - - - -
+// - - colors
+// define global colors
+
+/**
+ * @tokens SCSS: Colors
+ * @presenter Color
+ */
+
+$b100: #b3d3ff; /* A description text of your token */
+$b200: #77acff;
+$b300: #3c81ff;
+$b400: #1e6cff;
+$b500: #05f;
+$b600: #004fdf;
+$b700: #0048bf;
+$b800: #00419f;
+$b900: #003880;
+
+$n0: #fff;
+$n100: #fbfbfb;
+$n200: #f5f6f7;
+$n300: #e4e5e7;
+$n400: #dbdddf;
+$n500: #bfc2c6;
+$n600: #82888f;
+$n700: #60666c;
+$n800: #404347;
+$n900: #1b1b1b;
+$n1000: #000;
+
+$g500: #09c675;
+
+$y500: #ffdd38;
+
+$r500: #ff5722;
+
+$primary-light: $b200;
+$primary: $b500;
+$primary-dark: $b600;
+
+$error: $r500;
+$success: $g500;
+
+$draft: $y500;
+$published: $g500;
+$prototype: $primary;
+$unpublished: $r500;
+
+$text-dark: $n900;
+$text-light: $n0;
+
+// - Neutral Colors
+$color-gray1: #ffffff;
+$color-gray2: #fafafa;
+$color-gray3: #f5f5f5;
+$color-gray4: #e8e8e8;
+$color-gray5: #d9d9d9;
+$color-gray6: #a5a5a5;
+$color-gray7: #474747;
+$color-gray8: #1e2225;
+$color-gray9: #eceef1;
+
+// - - - - - - - - - - - - - - - - - - -
+// - - descriptive colors
+
+// - Theme Colors
+$color-brandPrimary: #A8437E;
+$color-brandPrimaryLighter: #ECA4CE;
+$color-brandPrimaryDarker: #900757;
+
+$color-neutralGrayLighter:#EEEFF1;
+$color-neutralGraySemi: #E0E2E9;
+$color-neutralGrayDarker: #9393A0;
+$color-neutralGray: #9393A0;
+$color-neutralWhite: #FFFFFF;
+$color-neutralBlack: #191D3A;
+
+// - Semantic
+$color-semanticInfo: #3bb7ed;
+$color-semanticInfoSoft: #e2f6ff;
+$color-semanticInfoDark: #005d85;
+$color-semanticWarning: #ffb84b;
+$color-semanticWarningSoft: #fff3e1;
+$color-semanticWarningDark: #c17500;
+$color-semanticDanger: #f14130;
+$color-semanticDangerSoft: #ffe0dd;
+$color-semanticDangerDark: #870c00;
+$color-semanticSuccess: #5ecd64;
+$color-semanticSuccessDark: #006505;
+$color-semanticSuccessSoft: #f0fff1;
+
+$gradient: linear-gradient(90deg, #f00 0%, #0f0 50%, #f00 100%);
+// - - - - - - - - - - - - - - - - - - -
+// - - functional colors
+$text-color: $color-neutralBlack;
+
+// - - base
+$body-backgroundColor: $color-neutralWhite;
+$body-textColor: $color-neutralBlack;
+$body-textColorLight: $color-neutralWhite;
+
+
+// - - button
+
+// - - forms
+
+// - - tables

@@ -1,0 +1,30 @@
+// Import Font
+@import "../../base/fonts";
+
+/**
+ * @tokens SCSS: Font Families
+ */
+
+// Typefaces
+$font-regular: "roboto";
+$font-regularItalic: "roboto_italic";
+// $font-light: "roboto_light";
+// $font-lightItalic: "roboto_light_italic";
+// $font-medium: "roboto_medium";
+// $font-mediumItalic: "roboto_medium_italic";
+// $font-bold: "roboto_bold";
+// $font-boldItalic: "roboto_bold_italic";
+// $font-thin: "roboto_thin";
+// $font-thinItalic: "roboto_thin_italic";
+// $font-black: "roboto_thin";
+// $font-blackItalic: "roboto_thin_italic";
+
+$font-family:  $font-regular, "Open Sans", "Helvetica Neue Light",
+"Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+$font-family-monospace: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", monospace !default;
+
+$font-family-italic: $font-regularItalic;
+
+// Global
+$primary-font: $font-family;
