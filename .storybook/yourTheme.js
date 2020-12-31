@@ -38,9 +38,9 @@ import { create } from '@storybook/theming/create';
 
 
 export default create({
-  base: 'dark',
+  base: 'white',
   backgroundColor: 'white',
   brandTitle: 'TalkieBuddy Atomic Design',
   brandUrl: 'https://talkiebuddy.com',
-  // brandImage: 'https://placehold.it/350x150',
+  brandImage: './static/icon.png',
 });
