@@ -35,15 +35,16 @@ const listHref = [
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MNavList },
-  template: '<m-nav-list :list="list"></m-nav-list>'
+  template: '<m-nav-list :list="list" v-bind="$props"></m-nav-list>'
 })
 
-export const RouterLink = Template.bind({})
-RouterLink.args = {
+export const HorizontalList = Template.bind({})
+HorizontalList.args = {
   list: listRoute
 }
 
-// export const Href = Template.bind({})
-// Href.args = {
-//   list: listHref
-// }
+export const VerticalList = Template.bind({})
+VerticalList.args = {
+  list: listHref,
+  direction: 'vertical'
+}

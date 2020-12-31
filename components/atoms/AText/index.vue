@@ -1,5 +1,5 @@
 <template>
-  <component :is="`${tag}`" class="a-text" :style="classes">
+  <component :is="`${tag}`" class="a-text" :style="styles">
     <slot />
   </component>
 </template>
@@ -18,7 +18,7 @@ export default {
     }
   },
   computed: {
-    classes () {
+    styles () {
       return {
         color: this.color
       }

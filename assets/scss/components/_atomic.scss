@@ -1,9 +1,5 @@
 // Atomic design Structure
 
-// Tokens
-@import 'tokens/color';
-@import 'tokens/typography';
-
 // Atom
 @import 'atoms/image';
 @import 'atoms/text';
@@ -13,3 +9,6 @@
 // Molecule
 @import 'molecules/button';
 @import 'molecules/nav-list';
+
+// Organism
+@import 'organisms/header';

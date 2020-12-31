@@ -3,14 +3,14 @@ import MButton from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers.js'
 
 export default storyFactory({
-  title: 'Molecules/Button',
+  title: 'Molecule/Button',
   component: MButton,
   description: 'The completed documentation will sooner release. This docs is about Button Atom',
   argTypes: {
     backgroundColor: { control: 'color' },
     labelColor: { control: 'color' },
     iconColor: { control: { type: 'select', options: ['red', 'black'] } },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    size: { control: { type: 'select', options: ['s', 'm', 'l'] } },
     type: { control: { type: 'select', options: ['a', 'button', 'router-link'] } },
     label: { control: 'text' }
     // primary: {

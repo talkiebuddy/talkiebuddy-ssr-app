@@ -8,9 +8,16 @@
     :class="classes"
     :target="computedTarget"
     :disabled="disabled"
+    :title="title"
     :style="style"
     @click="onClick"
   >
+    <slot />
+    <slot v-if="iconLeft" name="icon">
+      <div class="m-button__icon m-button__icon--left">
+        <a-icon :name="icon" :size="size" />
+      </div>
+    </slot>
     <slot name="label">
       <div class="m-button__label">
         <a-text :color="labelColor">
@@ -18,10 +25,14 @@
         </a-text>
       </div>
     </slot>
-
-    <slot v-if="icon" name="icon">
+    <!-- <slot v-if="icon" name="icon">
       <div class="m-button__icon">
         <a-icon :name="icon" :color="iconColor" :size="size" />
+      </div>
+    </slot> -->
+    <slot v-if="iconRight" name="icon">
+      <div class="m-button__icon m-button__icon--right">
+        <a-icon :name="icon" :size="size" />
       </div>
     </slot>
   </component>
@@ -40,22 +51,10 @@ export default {
       required: false,
       default: undefined
     },
-    label: {
-      type: String,
-      required: false,
-      default: 'label'
-    },
     type: {
       type: String,
       required: true,
       default: 'button'
-    },
-    size: {
-      type: String,
-      default: 'medium',
-      validator (value) {
-        return ['small', 'medium', 'large'].includes(value)
-      }
     },
     labelColor: {
       type: String,
@@ -73,14 +72,36 @@ export default {
     },
     // backgroundColor: String,
     // color: String,
-    href: String,
+    href: {
+      type: String,
+      required: false,
+      default: undefined
+    },
+    appearance: String,
     target: String,
-    primary: Boolean,
-    secondary: Boolean,
-    success: Boolean,
-    warning: Boolean,
-    error: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    iconLeft: String,
+    iconRight: String,
+    label: {
+      type: String,
+      required: false,
+      default: 'label'
+    },
+    size: {
+      type: String,
+      default: 'm',
+      validator (value) {
+        return ['s', 'm', 'l'].includes(value)
+      }
+    },
+    square: Boolean,
+    stretch: Boolean,
+    title: String
+    // primary: Boolean,
+    // secondary: Boolean,
+    // success: Boolean,
+    // warning: Boolean,
+    // error: Boolean
   },
   computed: {
     computedTarget () {
@@ -89,13 +110,19 @@ export default {
     classes () {
       return {
         'm-button': true,
-        'm-button--primary': this.primary,
-        'm-button--secondary': this.secondary,
-        'm-button--disabled': this.disabled,
-        'm-button--success': this.success,
-        'm-button--error': this.error,
-        'm-button--warning': this.warning,
-        [`m-button--${this.size}`]: true
+        [`m-button--appearance-${this.appearance}`]: !!this.appearance,
+        [`m-button--size-${this.size}`]: !!this.size,
+        'm-button--only-icon': !this.label && (this.iconLeft || this.iconRight),
+        'm-button--stretch': this.stretch,
+        'm-button--square': this.square
+        // 'm-button': true,
+        // 'm-button--primary': this.primary,
+        // 'm-button--secondary': this.secondary,
+        // 'm-button--disabled': this.disabled,
+        // 'm-button--success': this.success,
+        // 'm-button--error': this.error,
+        // 'm-button--warning': this.warning,
+        // [`m-button--${this.size}`]: true
       }
     },
     tag () {
