@@ -40,7 +40,7 @@ export default {
 	},
 	computed: {
 		svgLoader() {
-			return () => import(/* webpackChunkName: "Icon" */ `!html-loader!./icons/${this.name}.svg`)
+			return () => import(/* webpackChunkName: "Icon" */ `!html-loader!@/assets/images/icons/${this.name}.svg`)
 		}
 	},
 	watch: {
