@@ -1,0 +1,68 @@
+/**
+ * @tokens SCSS: Font Families
+ * @presenter FontFamily
+ */
+
+// Typefaces
+$font-regular: "roboto";
+$font-regularItalic: "roboto_italic";
+$font-medium: "roboto_medium";
+
+$font-family: $font-medium, "Open Sans", "Helvetica Neue Light",
+  "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+$font-family-monospace: "Courier New", "DejaVu Sans Mono",
+  "Bitstream Vera Sans Mono", "Monaco", monospace !default;
+
+$font-family-italic: $font-regularItalic;
+
+// Global
+$primary-font: $font-family;
+
+/**
+ * @tokens SCSS: Font Sizes
+ * @presenter FontSize
+ */
+
+$font-size-inherit: inherit;
+$font-size-base: 16px;
+$font-size-xs: 1rem; //16px
+$font-size-s: 1.25rem; //20px
+$font-size-m: 1.5rem; //24px
+$font-size-l: 1.875rem; // 30px
+$font-size-xl: 2.375rem; // 38px;
+$font-size-2xl: 2.875rem; //46px;
+$font-size-3xl: 3.5rem; // 56px;
+$font-size-4xl: 4.25rem; //68px;
+
+/**
+ * @tokens SCSS: Line Heights
+ * @presenter LineHeight
+ */
+
+$line-height: 1.5;
+$line-height-inherit: inherit;
+$line-height-base: 1;
+$line-height-input: 1.15;
+$line-height-heading: 1.25;
+$line-height-text: 1.5;
+
+// $line-height-xs: 24px;
+// $line-height-s: 28px;
+// $line-height-m: 32px;
+// $line-height-l: 38px;
+// $line-height-xl: 46px;
+// $line-height-2xl: 54px;
+// $line-height-3xl: 64px;
+// $line-height-4xl: 76px;
+
+/**
+ * @tokens SCSS: Font Weights
+ * @presenter FontWeight
+ */
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semiBold: 600;
+$font-weight-bold: 700;

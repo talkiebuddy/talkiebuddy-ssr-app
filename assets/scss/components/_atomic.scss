@@ -1,14 +1,17 @@
 // Atomic design Structure
 
 // Atom
-@import 'atoms/image';
-@import 'atoms/text';
-@import 'atoms/icon';
-@import 'atoms/nav-item';
+@import "atoms/heading";
+@import "atoms/image";
+@import "atoms/text";
+@import "atoms/icon";
+@import "atoms/nav-item";
+@import "atoms/inputtext";
+@import "atoms/hamburger";
 
 // Molecule
-@import 'molecules/button';
-@import 'molecules/nav-list';
+@import "molecules/buttons";
+@import "molecules/nav-list";
 
 // Organism
-@import 'organisms/header';
+@import "organisms/header";

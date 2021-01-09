@@ -1,13 +1,13 @@
 .a-text {
-	color: $body-textColor;
-	font-weight: normal;
+  color: $body-textColor;
+  font-weight: inherit;
 
-	strong,
-	a {
-		font-weight: bold;
-	}
+  strong,
+  a {
+    font-weight: bold;
+  }
 
-	a {
-		color: $color-semanticInfo;
-	}
+  a {
+    color: $color-semanticInfo;
+  }
 }

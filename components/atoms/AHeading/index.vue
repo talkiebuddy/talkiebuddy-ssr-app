@@ -9,10 +9,12 @@ export default {
   name: 'AHeading',
   props: {
     level: {
+      /** Heading level. Options[1, 2, 3, 4]. For example '1' will result in a <h1> tag */
       type: Number,
       validation (val) {
-        return [1, 2, 3, 4].includes(val)
+        return [1, 2, 3, 4, 5, 6].includes(val)
       },
+      default: 1,
       required: true
     }
   },

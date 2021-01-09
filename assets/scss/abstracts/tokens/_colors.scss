@@ -7,49 +7,6 @@
  * @presenter Color
  */
 
-$b100: #b3d3ff; /* A description text of your token */
-$b200: #77acff;
-$b300: #3c81ff;
-$b400: #1e6cff;
-$b500: #05f;
-$b600: #004fdf;
-$b700: #0048bf;
-$b800: #00419f;
-$b900: #003880;
-
-$n0: #fff;
-$n100: #fbfbfb;
-$n200: #f5f6f7;
-$n300: #e4e5e7;
-$n400: #dbdddf;
-$n500: #bfc2c6;
-$n600: #82888f;
-$n700: #60666c;
-$n800: #404347;
-$n900: #1b1b1b;
-$n1000: #000;
-
-$g500: #09c675;
-
-$y500: #ffdd38;
-
-$r500: #ff5722;
-
-$primary-light: $b200;
-$primary: $b500;
-$primary-dark: $b600;
-
-$error: $r500;
-$success: $g500;
-
-$draft: $y500;
-$published: $g500;
-$prototype: $primary;
-$unpublished: $r500;
-
-$text-dark: $n900;
-$text-light: $n0;
-
 // - Neutral Colors
 $color-gray1: #ffffff;
 $color-gray2: #fafafa;
@@ -65,16 +22,16 @@ $color-gray9: #eceef1;
 // - - descriptive colors
 
 // - Theme Colors
-$color-brandPrimary: #A8437E;
-$color-brandPrimaryLighter: #ECA4CE;
+$color-brandPrimary: #a8437e;
+$color-brandPrimaryLighter: #eca4ce;
 $color-brandPrimaryDarker: #900757;
 
-$color-neutralGrayLighter:#EEEFF1;
-$color-neutralGraySemi: #E0E2E9;
-$color-neutralGrayDarker: #9393A0;
-$color-neutralGray: #9393A0;
-$color-neutralWhite: #FFFFFF;
-$color-neutralBlack: #191D3A;
+$color-neutralGrayLighter: #eeeff1;
+$color-neutralGraySemi: #e0e2e9;
+$color-neutralGrayDarker: #9393a0;
+$color-neutralGray: #c5c4cf;
+$color-neutralWhite: #ffffff;
+$color-neutralBlack: #191d3a;
 
 // - Semantic
 $color-semanticInfo: #3bb7ed;
@@ -90,6 +47,8 @@ $color-semanticSuccess: #5ecd64;
 $color-semanticSuccessDark: #006505;
 $color-semanticSuccessSoft: #f0fff1;
 
+$color-transparent: transparent;
+
 $gradient: linear-gradient(90deg, #f00 0%, #0f0 50%, #f00 100%);
 // - - - - - - - - - - - - - - - - - - -
 // - - functional colors
@@ -99,7 +58,6 @@ $text-color: $color-neutralBlack;
 $body-backgroundColor: $color-neutralWhite;
 $body-textColor: $color-neutralBlack;
 $body-textColorLight: $color-neutralWhite;
-
 
 // - - button
 

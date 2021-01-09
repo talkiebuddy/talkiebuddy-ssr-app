@@ -14,7 +14,7 @@
       </div>
 
       <div class="o-header__hamburger">
-        <VHamburger :is-open="menuIsOpen" @click="toggleMenu" />
+        <a-hamburger :is-open="menuIsOpen" @click="toggleMenu" />
       </div>
 
       <div class="o-header__menu">
@@ -52,6 +52,13 @@ export default {
       menuIsOpen: false
     }
   },
+  // computed: {
+  //   mobile(){
+  //     return {
+  //       ''
+  //     }
+  //   }
+  // }
   methods: {
     toggleMenu () {
       this.menuIsOpen = !this.menuIsOpen

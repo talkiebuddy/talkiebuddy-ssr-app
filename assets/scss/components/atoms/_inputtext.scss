@@ -1,0 +1,37 @@
+.a-input-text {
+  border-bottom: 0.1rem solid $color-neutralGray;
+  width: 100%;
+  // border-radius: $border-radius-s;
+  position: relative;
+
+  input {
+    font-size: inherit;
+    line-height: $line-height-input;
+    padding: $spacing-xs $spacing-s;
+    background: none;
+    width: 100%;
+    border: 0;
+    color: inherit;
+
+    @include on-event() {
+      border-bottom: 0.1rem solid $color-brandPrimaryDarker;
+      // box-shadow: 0px 2px 3px 0px $color-brandPrimary;
+    }
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &--password {
+    input {
+      padding-right: $spacing-m;
+    }
+  }
+}
