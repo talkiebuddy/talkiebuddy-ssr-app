@@ -14,4 +14,4 @@ const Template = (args, { argTypes }) => ({
   template: '<a-nav-item to="/nav-item-1" @click="action">Sample Nav Item</a-nav-item>'
 })
 
-export const Sandbox = Template.bind({})
+export const Playground = Template.bind({})

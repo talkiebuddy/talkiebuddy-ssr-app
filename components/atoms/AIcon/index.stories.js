@@ -18,21 +18,10 @@ const Template = (args, { argTypes }) => ({
   template: '<a-icon v-bind="$props"></a-icon>'
 })
 
-export const Sandbox = Template.bind({})
-Sandbox.args = {
+export const Playground = Template.bind({})
+Playground.args = {
   name: 'twitter'
 }
-
-export const Size = () => ({
-  components: { AIcon },
-  template: `
-    <div>
-      <a-icon name="twitter" size="small"></a-icon>
-      <a-icon name="twitter" size="medium"></a-icon>
-      <a-icon name="twitter" size="large"></a-icon>
-    </div>
-    `
-})
 
 export const Color = () => ({
   components: { AIcon },
@@ -41,6 +30,17 @@ export const Color = () => ({
       <a-icon name="twitter" fill="black"></a-icon>
       <a-icon name="twitter" fill="red"></a-icon>
       <a-icon name="twitter" fill="green"></a-icon>
+    </div>
+    `
+})
+
+export const Size = () => ({
+  components: { AIcon },
+  template: `
+    <div>
+      <a-icon name="twitter" size="small"></a-icon>
+      <a-icon name="twitter" size="medium"></a-icon>
+      <a-icon name="twitter" size="large"></a-icon>
     </div>
     `
 })

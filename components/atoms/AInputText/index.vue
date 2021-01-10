@@ -59,7 +59,7 @@ export default {
     /** Value of the input */
     value: {
       type: String,
-      default: ''
+      default: null
     },
     /** Placeholder text for the input */
     placeholder: {

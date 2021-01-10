@@ -25,13 +25,13 @@ const Template = (args, { argTypes }) => ({
   template: '<a-image v-bind="$props"/>'
 })
 
-// export const Sandbox = Template.bind({});
-// Sandbox.args = {
+// export const Playground = Template.bind({});
+// Playground.args = {
 //   src: LogoImageSkeleton,
 //   alt: 'logo'
 // };
 
-export const Sandbox = () => ({
+export const Playground = () => ({
   components: { AImage },
   props: {
     variant: {

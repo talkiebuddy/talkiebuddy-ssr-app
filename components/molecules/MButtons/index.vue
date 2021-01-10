@@ -9,20 +9,21 @@
     :target="computedTarget"
     :disabled="disabled"
     :title="title"
-    @click="onClick"
+    @click="handleClick"
   >
-    <slot v-if="iconPrefix" name="icon">
+    <slot v-if="iconPrefix" name="iconPrefix">
       <div class="m-buttons__icon">
         <a-icon :name="iconPrefix" :fill="iconColor" />
       </div>
     </slot>
     <div class="m-buttons__label">
-      <a-text :color="labelColor">
+      <!-- <a-text :color="labelColor">
         {{ label }}
-        <slot />
-      </a-text>
+      </a-text> -->
+      {{ label }}
+      <slot />
     </div>
-    <slot v-if="iconSuffix" name="icon">
+    <slot v-if="iconSuffix" name="iconSuffix">
       <div class="m-buttons__icon">
         <a-icon :name="iconSuffix" :fill="iconColor" />
       </div>
@@ -36,21 +37,19 @@ export default {
   props: {
     id: {
       type: String,
-      default: undefined
+      default: ''
     },
     type: {
       type: String,
-      required: true,
-      default: 'buttons'
+      default: 'button'
     },
     to: {
       type: [Object, String],
-      default: undefined
+      default: ''
     },
     href: {
       type: String,
-      required: false,
-      default: undefined
+      default: ''
     },
     variant: {
       type: String,
@@ -60,17 +59,13 @@ export default {
       type: String,
       default: ''
     },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     iconSuffix: {
       type: String,
-      default: ''
+      default: null
     },
     iconPrefix: {
       type: String,
-      default: ''
+      default: null
     },
     iconColor: {
       type: String,
@@ -78,7 +73,7 @@ export default {
     },
     label: {
       type: String,
-      default: undefined
+      default: ''
     },
     labelColor: {
       type: String,
@@ -91,6 +86,7 @@ export default {
       },
       default: 'x-small'
     },
+    disabled: Boolean,
     square: Boolean,
     stretch: Boolean,
     isOutlined: Boolean,
@@ -127,8 +123,12 @@ export default {
     }
   },
   methods: {
-    onClick (event) {
-      this.$emit('onClick', event)
+    handleClick (event) {
+      /**
+       * Click event
+       * @type {Event}
+       */
+      this.$emit('click', event)
     }
   }
 }

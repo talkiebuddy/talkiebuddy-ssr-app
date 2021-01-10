@@ -7,7 +7,7 @@
  */
 .clearfix::after {
   clear: both;
-  content: '';
+  content: "";
   display: table;
 }
 
@@ -24,7 +24,7 @@
   padding-left: 20px; /* 3 */
   padding-right: 20px; /* 3 */
   width: 100%; /* 1 */
- }
+}
 
 /**
  * Hide text while making it readable for screen readers
@@ -52,4 +52,90 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+// Form Field Utility
+.u {
+  &-form-field {
+    $this: &;
+
+    &__label {
+      font-size: $font-size-s;
+      line-height: $line-height-label;
+      margin-bottom: $spacing-xs;
+    }
+
+    &__input {
+      font-size: $font-size-s;
+      line-height: $line-height-label;
+      border: 0.1rem solid $color-neutralGraySemi;
+      border-radius: $border-radius-s;
+      position: relative;
+
+      > div {
+        border-radius: 0;
+        border: 0;
+      }
+
+      &:focus-within {
+        box-shadow: $shadow-md;
+      }
+    }
+
+    &__validation-messages {
+      margin-top: $spacing-xs;
+    }
+
+    &--error {
+      #{$this}__validation-messages,
+      #{$this}__input,
+      #{$this}__label {
+        color: $color-semanticDanger;
+      }
+
+      #{$this}__input {
+        border-color: $color-semanticDanger;
+      }
+
+      .a-input-radio__circle,
+      .a-input-checkbox__box {
+        background: $color-semanticDanger;
+      }
+
+      .a-select__arrow {
+        fill: $color-semanticDanger;
+      }
+    }
+
+    .m-validation-messages__message--success {
+      color: $color-semanticSuccess;
+    }
+
+    .m-validation-messages__message--error {
+      color: $color-semanticDanger;
+    }
+
+    &--disabled,
+    &__option--disabled {
+      #{$this}__input {
+        background: $color-neutralGrayLighter;
+        color: $color-neutralGray;
+        cursor: not-allowed;
+      }
+
+      #{$this}__label {
+        color: $color-neutralGray;
+      }
+
+      .a-label {
+        color: $color-neutralGray;
+        cursor: not-allowed !important;
+      }
+
+      .a-input-radio__circle,
+      .a-input-checkbox__box {
+        background: $color-neutralGray;
+      }
+    }
+  }
 }

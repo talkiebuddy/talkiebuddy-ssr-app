@@ -36,8 +36,8 @@ const Template = (args, { argTypes }) => ({
   template: '<a-heading v-bind="$props">{{text}}</a-heading'
 })
 
-export const Sandbox = Template.bind({})
-Sandbox.args = {
+export const Playground = Template.bind({})
+Playground.args = {
   level: 1,
   text: 'Heading 1'
 }

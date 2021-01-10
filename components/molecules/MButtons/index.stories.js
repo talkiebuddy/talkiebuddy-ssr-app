@@ -32,10 +32,10 @@ const Template = (args, { argTypes }) => ({
   methods: { action: action('clicked') }
 })
 
-export const Sandbox = Template.bind({})
-Sandbox.args = {
+export const Playground = Template.bind({})
+Playground.args = {
   type: 'button',
-  label: 'Sandbox',
+  label: 'Playground',
   iconPrefix: 'twitter'
 }
 

@@ -79,11 +79,12 @@
   }
 
   &:hover:not(:disabled) {
-    background-color: $color-semanticInfoDark;
+    box-shadow: $shadow-md;
   }
 
   &:focus {
     outline: none;
+    background-color: inherit;
     box-shadow: $shadow-md;
   }
 

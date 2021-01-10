@@ -10,8 +10,8 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "test": "jest",
-    "storybook:serve": "npx nuxt storybook",
-    "storybook:build": "npx nuxt storybook build",
+    "storybook:serve": "npx nuxt storybook --static-dir static",
+    "storybook:build": "npx nuxt storybook build --static-dir static",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
   },
@@ -38,6 +38,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.5.0",
     "chalk": "latest",
+    "chromatic": "^5.5.0",
     "eslint": "^7.10.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "execa": "latest",

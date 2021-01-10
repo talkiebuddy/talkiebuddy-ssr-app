@@ -8,13 +8,22 @@
 export default {
   name: 'AText',
   props: {
+    /** The html tag to be used for text wrapper */
     tag: {
       type: String,
-      default: 'span'
+      default: 'p'
     },
     color: {
       type: String,
-      default: 'black'
+      default: 'inherit'
+    },
+    weight: {
+      type: String,
+      default: 'inherit'
+    },
+    size: {
+      type: String,
+      default: 'inherit'
     }
   },
   computed: {

@@ -16,8 +16,8 @@ const Template = (args, { argTypes }) => ({
   template: '<a-input-text v-bind="$props"></a-input-text>'
 })
 
-export const Sandbox = Template.bind({})
-Sandbox.args = {
+export const Playground = Template.bind({})
+Playground.args = {
   type: 'text',
   defaultValue: 40
 }

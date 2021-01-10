@@ -15,8 +15,8 @@ const Template = (args, { argTypes }) => ({
   template: '<a-hamburger v-bind="$props"></a-hamburger>'
 })
 
-export const Sandbox = Template.bind({})
-Sandbox.args = {
+export const Playground = Template.bind({})
+Playground.args = {
   isOpen: false
 }
 

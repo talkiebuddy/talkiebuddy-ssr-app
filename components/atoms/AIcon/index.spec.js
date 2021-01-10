@@ -12,6 +12,5 @@ describe('Atom - AIcon', () => {
     })
 
     expect(wrapper.attributes().class).toContain('large')
-    expect(wrapper.attributes().class).toContain('green')
   })
 })
