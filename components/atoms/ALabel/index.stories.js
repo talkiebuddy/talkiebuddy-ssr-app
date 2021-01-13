@@ -13,7 +13,7 @@ export default storyFactory({
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  component: { ALabel },
+  components: { ALabel },
   template: `<a-label v-bind="$props">{{label}}</a-label>
   `,
   data () {

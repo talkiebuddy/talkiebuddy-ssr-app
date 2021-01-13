@@ -2,13 +2,13 @@ import { mount } from '@vue/test-utils'
 import MButtons from '.'
 
 describe('Molecule - MButtons', () => {
-  test('Default tag is <button>', () => {
+  it('Default tag is <button>', () => {
     const wrapper = mount(MButtons)
 
     expect(wrapper.find('button').exists()).toBe(true)
   })
 
-  test('Tag should be <a> if href is available', () => {
+  it('Tag should be <a> if href is available', () => {
     const wrapper = mount(MButtons, {
       propsData: {
         href: 'https://www.google.com'
@@ -19,7 +19,7 @@ describe('Molecule - MButtons', () => {
     expect(wrapper.attributes().href).toBe('https://www.google.com')
   })
 
-  test('Tag should be <router-link> if "to" prop is available', () => {
+  it('Tag should be <router-link> if "to" prop is available', () => {
     const wrapper = mount(MButtons, {
       propsData: {
         to: '/home'
@@ -31,7 +31,7 @@ describe('Molecule - MButtons', () => {
     expect(wrapper.attributes().to).toBe('/home')
   })
 
-  test('Renders the correct classes based on props passed', () => {
+  it('Renders the correct classes based on props passed', () => {
     const wrapper = mount(MButtons, {
       propsData: {
         square: true,
@@ -50,7 +50,7 @@ describe('Molecule - MButtons', () => {
     expect(wrapper.attributes().class).toContain('size-small')
   })
 
-  test('Renders slots', () => {
+  it('Renders slots', () => {
     const wrapper = mount(MButtons, {
       slots: {
         default: 'Click here'
@@ -60,7 +60,7 @@ describe('Molecule - MButtons', () => {
     expect(wrapper.text()).toContain('Click here')
   })
 
-  test('Emits click event', () => {
+  it('Emits click event', () => {
     const wrapper = mount(MButtons)
     wrapper.find('button').trigger('click')
     expect(wrapper.emitted().click).toBeTruthy()

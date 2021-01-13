@@ -1,4 +1,6 @@
 module.exports = {
+  verbose: false,
+  watchman: false,
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
@@ -17,5 +19,9 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue'
+  ],
+  coverageReporters: [
+    'html',
+    'text-summary'
   ]
 }

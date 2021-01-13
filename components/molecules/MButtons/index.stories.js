@@ -7,21 +7,42 @@ export default storyFactory({
   component: MButtons,
   description: 'The completed documentation will sooner release. This docs is about Button Atom',
   argTypes: {
-    backgroundColor: { control: 'color' },
-    labelColor: { control: 'color' },
-    iconColor: { control: 'color' },
+    backgroundColor: {
+      control: 'color',
+      table: {
+        category: 'Colors'
+      }
+    },
+    iconColor: {
+      control: 'color',
+      table: {
+        category: 'Colors'
+      }
+    },
+    labelColor: {
+      control: 'color',
+      table: {
+        category: 'Colors'
+      }
+    },
+    label: { control: 'text' },
     size: { control: { type: 'select', options: ['x-small', 'small', 'medium', 'large'] } },
     type: { control: { type: 'select', options: ['a', 'button', 'router-link'] } },
-    label: { control: 'text' },
     variant: { control: { type: 'select', options: ['default', 'primary', 'success', 'info', 'danger', 'warning'] } }
   },
   excludeStories: /.*Data$/
 })
 
+const wrapper = {
+  components: {
+    MButtons
+  }
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { MButtons },
-  template: '<m-buttons @onClick="action" :style="styles" v-bind="$props" />',
+  template: '<m-buttons @click="action" :style="styles" v-bind="$props" />',
   computed: {
     styles () {
       return {
@@ -29,7 +50,7 @@ const Template = (args, { argTypes }) => ({
       }
     }
   },
-  methods: { action: action('clicked') }
+  methods: { action: action('button clicked') }
 })
 
 export const Playground = Template.bind({})
@@ -40,7 +61,7 @@ Playground.args = {
 }
 
 export const Variant = () => ({
-  components: { MButtons },
+  ...wrapper,
   template: `
   <div>
     <m-buttons variant="default">Heading 1</m-buttons>

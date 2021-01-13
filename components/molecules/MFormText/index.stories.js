@@ -13,7 +13,7 @@ export default storyFactory({
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  component: { MFormText },
+  components: { MFormText },
   template: `<m-form-text v-bind="$props"></m-form-text>
   `
 })

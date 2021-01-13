@@ -1,18 +1,14 @@
 <template>
   <i
-    :class="[
-      'a-icon',
-      `a-icon--${size}`,
-      `a-icon--${name}`
-    ]"
+    :class="classes"
     :style="styles"
     v-html="svg"
-  ></i>
+  />
 </template>
 
 <script>
 export default {
-  name: "AIcon",
+  name: 'AIcon',
   props: {
     /** Icon name. This is the svg filename located in 'assets/images/icons' without .svg extension */
     name: {
@@ -23,52 +19,57 @@ export default {
     /** Icon color */
     fill: {
       type: String,
-      default: "black"
+      default: 'black'
     },
     /** Icon size. Options: ['small', 'medium', 'large'] */
     size: {
       type: String,
-      validator(value) {
-        return ["x-small", "small", "medium", "large"].indexOf(value) !== -1;
+      validator (value) {
+        return ['x-small', 'small', 'medium', 'large'].includes(value)
       },
-      default: "x-small"
+      default: 'x-small'
     }
   },
-  data() {
+  data () {
     return {
       svg: null
-    };
-  },
-  created() {
-    this.loadSvg();
+    }
   },
   computed: {
-    svgLoader() {
+    svgLoader () {
       return () =>
-        import(
-          /* webpackChunkName: "Icon" */ `!html-loader!@/assets/images/icons/${this.name ? this.name : 'meh'}.svg`
-        );
+        import(/* webpackChunkName: "Icon" */ '!html-loader!@/assets/images/icons/' + (this.name ? this.name : 'meh') + '.svg')
     },
     styles () {
       return {
         color: this.fill
       }
+    },
+    classes () {
+      return {
+        'a-icon': true,
+        [`a-icon--${this.size}`]: true,
+        [`a-icon--${this.name}`]: true
+      }
     }
   },
   watch: {
-    name() {
-      this.loadSvg();
+    name () {
+      this.loadSvg()
     }
   },
+  created () {
+    this.loadSvg()
+  },
   methods: {
-    async loadSvg() {
+    async loadSvg () {
       try {
-        let component = await this.svgLoader();
-        this.svg = component.default;
+        const component = await this.svgLoader()
+        this.svg = component.default
       } catch (e) {
-        throw new Error(`Could not load icon svg - ${e}`);
+        throw new Error(`Could not load icon svg - ${e}`)
       }
     }
   }
-};
+}
 </script>

@@ -10,9 +10,9 @@ module.exports = nuxifyStorybook({
   ],
   addons: [
     'storybook-design-token',
-    '@storybook/addon-knobs',
+    // '@storybook/addon-knobs',
     '@storybook/addon-actions',
-    '@storybook/addon-controls',
+    // '@storybook/addon-controls',
     '@storybook/addon-docs',
     // '@storybook/addon-links',
     // 'storybook-contrast',

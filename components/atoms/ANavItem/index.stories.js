@@ -1,6 +1,6 @@
+import { action } from '@storybook/addon-actions'
 import ANavItem from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
-// import { action } from '@storybook/addon-actions'
 
 export default storyFactory({
   title: 'Atom/Navigation Item',
@@ -11,7 +11,13 @@ export default storyFactory({
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ANavItem },
-  template: '<a-nav-item to="/nav-item-1" @click="action">Sample Nav Item</a-nav-item>'
+  template: '<a-nav-item v-bind="$props" @click="action">Sample Nav Item</a-nav-item>',
+  methods: {
+    action: action('button clicked')
+  }
 })
 
 export const Playground = Template.bind({})
+Playground.args = {
+  to: '/nav-item-1'
+}

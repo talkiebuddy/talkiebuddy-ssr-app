@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import ALabel from '.'
 
 describe('Atom - ALabel', () => {
-  test('Renders correctly', () => {
+  it('Renders correctly', () => {
     const wrapper = mount(ALabel, {
       propsData: {
         htmlFor: 'text-input'
@@ -18,7 +18,7 @@ describe('Atom - ALabel', () => {
     expect(label.text()).toBe('Full Name')
   })
 
-  test('renders a * if the label is required', () => {
+  it('renders a * if the label is required', () => {
     const wrapper = mount(ALabel, {
       propsData: {
         required: true

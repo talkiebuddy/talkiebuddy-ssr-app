@@ -1,18 +1,22 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'talkiebuddy-ssr-app',
+    title: 'Talkiebuddy NuxtJs',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Talkiebuddy.com is a web app to practice English pronunciation and conversation using Speech Recognition and Speech Synthesis technology'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
-  target: 'static',
+  target: 'server',
   router: {
     base: '/talkiebuddy-ssr-app'
   },
@@ -22,8 +26,10 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+
   plugins: [
-    '~/plugins/helpers/uid.js'
+    { src: '~/plugins/helpers/uid.js' },
+    { src: '~/plugins/helpers/is-url.js' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

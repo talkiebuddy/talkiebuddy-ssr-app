@@ -3,7 +3,7 @@ import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
   title: 'Atom/Text',
-  components: AText,
+  component: AText,
   description: 'The completed documentation will sooner release. This docs is about Text Atom',
   argTypes: {
   },
@@ -12,8 +12,8 @@ export default storyFactory({
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  component: { AText },
-  template: '<AText v-bind="$props">{{text}}</AText>'
+  components: { AText },
+  template: '<a-text v-bind="$props">{{text}}</a-text>'
 })
 
 export const defaults = Template.bind({})

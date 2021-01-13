@@ -28,14 +28,13 @@
           </a-text>
         </div>
       </template>
-
-      <a-text
-        v-else-if="typeof errorMessages === 'string' && error"
-        size="x-small"
-      >
-        {{ errorMessages }}
-      </a-text>
     </template>
+    <a-text
+      v-else-if="typeof errorMessages === 'string' && error"
+      size="x-small"
+    >
+      {{ errorMessages }}
+    </a-text>
   </div>
 </template>
 

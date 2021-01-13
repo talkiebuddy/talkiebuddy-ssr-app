@@ -17,11 +17,10 @@
       </div>
     </slot>
     <div class="m-buttons__label">
-      <!-- <a-text :color="labelColor">
+      <a-text :color="labelColor">
         {{ label }}
-      </a-text> -->
-      {{ label }}
-      <slot />
+        <slot />
+      </a-text>
     </div>
     <slot v-if="iconSuffix" name="iconSuffix">
       <div class="m-buttons__icon">
@@ -35,35 +34,43 @@
 export default {
   name: 'MButtons',
   props: {
+    /** ID attribute */
     id: {
       type: String,
       default: ''
     },
+    /** Type attribute for button - ie type="submit" */
     type: {
       type: String,
       default: 'button'
     },
+    /** "to" prop for vue-router - renders a <router-link> */
     to: {
       type: [Object, String],
       default: ''
     },
+    /** "href" for link - renders an <a> component */
     href: {
       type: String,
       default: ''
     },
+    /** Variant button mode ex. Success, Warning, Error, Info */
     variant: {
       type: String,
       default: 'default'
     },
+    /** target attrbitue for the <a> tag */
     target: {
       type: String,
       default: ''
     },
-    iconSuffix: {
+    /** "IconPrefix" prop for Icon before label */
+    iconPrefix: {
       type: String,
       default: null
     },
-    iconPrefix: {
+    /** "IconSuffix" prop for Icon after label */
+    iconSuffix: {
       type: String,
       default: null
     },
@@ -86,10 +93,22 @@ export default {
       },
       default: 'x-small'
     },
-    disabled: Boolean,
-    square: Boolean,
-    stretch: Boolean,
-    isOutlined: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    square: {
+      type: Boolean,
+      default: false
+    },
+    stretch: {
+      type: Boolean,
+      default: false
+    },
+    isOutlined: {
+      type: Boolean,
+      default: false
+    },
     title: {
       type: String,
       default: ''

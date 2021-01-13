@@ -1,14 +1,11 @@
 <template>
   <header
-    :class="{
-      'o-header': 1,
-      'o-header--is-open': menuIsOpen,
-    }"
+    :class="classes"
   >
     <div class="o-header__bar">
-      <router-link to="/" class="o-header__logo">
+      <nuxt-link to="/" class="o-header__logo">
         <a-logo />
-      </router-link>
+      </nuxt-link>
       <div class="o-header__nav">
         <m-nav-list :list="navList" />
       </div>
@@ -27,29 +24,37 @@
 </template>
 
 <script>
-const defaultNav = [
-  {
-    label: 'NavItem',
-    to: ''
-  },
-  {
-    label: 'NavItem',
-    to: ''
-  }
-]
+// const defaultNav = [
+//   {
+//     label: 'NavItem',
+//     to: ''
+//   },
+//   {
+//     label: 'NavItem',
+//     to: ''
+//   }
+// ]
 
 export default {
   name: 'OHeader',
   props: {
+    /** An array of nav item objects. List format: { label: String, to: [String, Array], href: String } */
     navList: {
       type: Array,
-      required: true,
-      default: defaultNav
+      default: () => []
     }
   },
   data () {
     return {
       menuIsOpen: false
+    }
+  },
+  computed: {
+    classes () {
+      return {
+        'o-header': true,
+        'o-header--is-open': this.menuIsOpen
+      }
     }
   },
   // computed: {

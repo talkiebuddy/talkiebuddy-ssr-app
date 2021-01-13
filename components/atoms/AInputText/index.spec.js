@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import AInputText from '.'
 
 describe('Atom - AInputText', () => {
-  test('Two way data binding', () => {
+  it('Two way data binding', () => {
     const wrapper = mount(AInputText, {
       propsData: {
         type: 'text'

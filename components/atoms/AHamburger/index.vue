@@ -1,5 +1,5 @@
 <template>
-  <button :class="classes" @click="$emit('click')">
+  <button :class="classes" @click="handleClick">
     <span class="a-hamburger__bar" />
   </button>
 </template>
@@ -14,12 +14,32 @@ export default {
       default: false
     }
   },
+  data () {
+    return {
+      isSwitched: this.isOpen
+    }
+  },
   computed: {
     classes () {
       return {
         'a-hamburger': 1,
-        'a-hamburger--is-open': this.isOpen
+        'a-hamburger--is-open': this.isSwitched
       }
+    }
+  },
+  watch: {
+    isOpen (newVal) {
+      this.isSwitched = newVal
+    }
+  },
+  methods: {
+    handleClick (event) {
+      /**
+       * Click event
+       * @type {Event}
+       */
+      this.isSwitched = !this.isSwitched
+      this.$emit('click', event)
     }
   }
 }

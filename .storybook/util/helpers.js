@@ -15,6 +15,9 @@ export const storyFactory = (options) => {
           type: 'inline-radio',
           options: { English: 'en', Indonesia: 'in' },
         },
+        table: {
+          category: 'Locale'
+        }
       },
       ...argTypes,
     },
@@ -22,7 +25,7 @@ export const storyFactory = (options) => {
       docs: {
         description: {
           component: description,
-        }
+        },
       }
     }
   }

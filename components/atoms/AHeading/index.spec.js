@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import AHeading from './'
 
 describe('Atom - AHeading', () => {
-  test('Renders the correct tag', () => {
+  it('Renders the correct tag', () => {
     const wrapper = mount(AHeading, {
       propsData: {
         level: 2
@@ -12,7 +12,7 @@ describe('Atom - AHeading', () => {
     expect(wrapper.find('h2').exists()).toBe(true)
   })
 
-  test('Renders slots', () => {
+  it('Renders slots', () => {
     const wrapper = mount(AHeading, {
       propsData: {
         level: 1

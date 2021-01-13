@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import AIcon from './'
 
 describe('Atom - AIcon', () => {
-  test('Renders the correct classes based on props passed', () => {
+  it('Renders the correct classes based on props passed', () => {
     const wrapper = mount(AIcon, {
       propsData: {
         name: 'linkedin',

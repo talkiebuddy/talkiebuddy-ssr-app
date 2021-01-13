@@ -46,7 +46,7 @@ export default {
   props: {
     label: {
       type: String,
-      default: null
+      default: ''
     },
     type: {
       type: String,

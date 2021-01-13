@@ -1,11 +1,11 @@
 <template>
-  <li class="a-nav-item" @click="onClick">
+  <li class="a-nav-item" @click="handleClick">
     <a v-if="href" :href="href" target="_blank">
       <slot />
     </a>
-    <router-link v-else :to="to">
+    <nuxt-link v-else :to="to">
       <slot />
-    </router-link>
+    </nuxt-link>
   </li>
 </template>
 
@@ -13,17 +13,18 @@
 export default {
   name: 'ANavItem',
   props: {
+    /** to attribute for <router-link> */
     to: {
       type: [String, Object],
-      default: undefined
+      default: null
     },
     href: {
       type: String,
-      default: undefined
+      default: null
     }
   },
   methods: {
-    onClick (event) {
+    handleClick (event) {
       this.$emit('click', event)
     }
   }

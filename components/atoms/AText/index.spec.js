@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import AText from '.'
 
 describe('Atom - AText', () => {
-  test('Renders tag and classes based on props passed', async () => {
+  it('Renders tag and classes based on props passed', async () => {
     const wrapper = mount(AText)
 
     // With default props
@@ -18,7 +18,7 @@ describe('Atom - AText', () => {
     expect(wrapper.find('span').exists()).toBe(true)
   })
 
-  test('Renders slots', () => {
+  it('Renders slots', () => {
     const wrapper = mount(AText, {
       slots: {
         default: 'Text Sample'

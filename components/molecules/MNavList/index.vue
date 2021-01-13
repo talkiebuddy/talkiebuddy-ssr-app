@@ -5,7 +5,7 @@
       :key="item.label"
       :to="item.to"
       :href="item.href"
-      @click="onClick"
+      @click="handleClick"
     >
       {{ item.label }}
     </a-nav-item>
@@ -21,10 +21,13 @@ export default {
     ANavItem
   },
   props: {
-    list: Array,
+    /** An array of nav item objects. List format: { label: String, to: [String, Array], href: String } */
+    list: {
+      type: Array,
+      default: () => []
+    },
     direction: {
       type: String,
-      required: true,
       default: 'horizontal'
     }
   },
@@ -37,7 +40,7 @@ export default {
     }
   },
   methods: {
-    onClick () {
+    handleClick () {
       this.$emit('click', this.$emit)
     }
   }

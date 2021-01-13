@@ -1,74 +1,60 @@
-import LogoImageSkeleton from '@/assets/images/skeleton/logo.png'
-import CardImageSkeleton from '@/assets/images/skeleton/400x300.png'
-import GalleryImageSkeleton from '@/assets/images/skeleton/600x400.png'
-import GalleryThumbSkeleton from '@/assets/images/skeleton/200x130.png'
-
-import { files, text, select } from '@storybook/addon-knobs'
 import AImage from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
   title: 'Atom/Image',
   component: AImage,
-  description: 'The completed documentation will sooner release. This docs is about Image Atom',
-  parameters: {
-    controls: {
-      disabled: true
-    }
+  description: 'The completed documentation will sooner release. This docs is about Images Atom',
+  argTypes: {
+
   },
   excludeStories: /.*Data$/
 })
 
+const wrapper = {
+  components: {
+    AImage
+  }
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { AImage },
-  template: '<a-image v-bind="$props"/>'
+  template: '<a-image v-bind="$props"></a-image>'
 })
 
-// export const Playground = Template.bind({});
-// Playground.args = {
-//   src: LogoImageSkeleton,
-//   alt: 'logo'
-// };
+export const Playground = Template.bind({})
+Playground.args = {
+  src: 'logo.png',
+  alt: 'vue logo'
+}
 
-export const Playground = () => ({
-  components: { AImage },
-  props: {
-    variant: {
-      default: select('Variant', { Default: 'normal', Logo: 'logo', Card: 'card', GalleryImage: 'gallery-image', GalleryThumb: 'gallery-thumb' })
-    },
-    file: {
-      default: files('Image', ['.jpg', '.png'], [])
-    },
-    alt: {
-      default: text('Alt', '')
-    }
-  },
+export const LocalImage = () => ({
+  ...wrapper,
+  template: '<a-image src="logo.png" alt="vue logo"></a-image>'
+})
+
+export const UrlImage = () => ({
+  ...wrapper,
+  template: '<a-image src="https://source.unsplash.com/random/400x300" alt="unsplash image"></a-image>'
+})
+
+export const PictureTag = () => ({
+  ...wrapper,
   template: `
-    <a-image :variant="variant" :src="file[0] ? file[0] : undefined" :alt="alt"/>
-    `
+  <a-image
+    src="https://via.placeholder.com/800x800"
+    :sources="[
+      {
+            srcset: 'https://via.placeholder.com/300x300',
+            media: '(max-width: 300px)'
+          },
+          {
+            srcset: 'https://via.placeholder.com/600x600',
+            media: '(max-width: 600px)'
+          }
+    ]"
+    picture
+  />
+  `
 })
-
-export const LogoImage = Template.bind({})
-LogoImage.args = {
-  src: LogoImageSkeleton,
-  alt: 'logo'
-}
-
-export const CardImage = Template.bind({})
-CardImage.args = {
-  src: CardImageSkeleton,
-  alt: 'logo'
-}
-
-export const GalleryImage = Template.bind({})
-GalleryImage.args = {
-  src: GalleryImageSkeleton,
-  alt: 'logo'
-}
-
-export const GalleryThumb = Template.bind({})
-GalleryThumb.args = {
-  src: GalleryThumbSkeleton,
-  alt: 'logo'
-}

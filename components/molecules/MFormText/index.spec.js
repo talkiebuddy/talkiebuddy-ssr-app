@@ -1,24 +1,58 @@
-// import { mount } from '@vue/test-utils'
-// import MFormText from '.'
+import { shallowMount } from '@vue/test-utils'
+import MFormText from './index.vue'
 
-// describe('Molecule - MFormText', () => {
-//   let wrapper
+describe('Molecule - MFormText', () => {
+  let wrapper
+  const factory = (computed = {}) => {
+    return shallowMount(MFormText, {
+      propsData: {
+        value: ''
+      },
+      mocks: {},
+      stubs: {},
+      methods: {},
+      computed
+    })
+  }
 
-//   beforeEach(() => {
-//     wrapper = mount(MFormText, {
-//       propsData: {
-//         value: ''
-//       }
-//     })
-//   })
+  beforeEach(() => {
+    wrapper = factory()
+  })
 
-//   test('Renders the label if passed', async () => {
-//     expect(wrapper.find({ name: 'ALabel' }).exists()).toBe(false)
+  afterEach(() => {
+    wrapper.destroy()
+  })
 
-//     await wrapper.setProps({
-//       label: 'Enter your telephone number'
-//     })
+  it('Render s the label if passed', async () => {
+    expect(wrapper.find('a-label').exists()).toBe(false)
 
-//     expect(wrapper.find({ name: 'ALabel' }).text()).toContain('Enter you telephone number')
-//   })
-// })
+    await wrapper.setProps({
+      label: 'Enter your telephone number'
+    })
+
+    expect(wrapper.find('a-label').text()).toContain('Enter your telephone number')
+  })
+
+  it('Shows error message if available', async () => {
+    expect(wrapper.find('m-validation-messages').text()).toBe('')
+
+    await wrapper.setProps({
+      errorMessages: 'Please enter your name',
+      error: true
+    })
+
+    await wrapper.vm.$nextTick(() => {
+      expect(wrapper.find('m-validation-messages').html()).toContain('Please enter your name')
+    })
+  })
+
+  it('Renders the correct classes', async () => {
+    await wrapper.setProps({
+      disabled: true,
+      error: true
+    })
+
+    expect(wrapper.attributes().class).toContain('error')
+    expect(wrapper.attributes().class).toContain('disabled')
+  })
+})
