@@ -18,7 +18,7 @@ jobs:
         run: yarn
 
       - name: Build Storybook
-        run: npm storybook:build
+        run: npm run storybook:build
 
         # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
