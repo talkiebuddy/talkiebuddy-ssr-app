@@ -13,11 +13,12 @@ const eRocket = emoji.get('rocket');
     // To build Storybook
     await execa('npm', ['run', 'storybook:build'])
 
-    await execa('npm', ['run', 'chromatic'])
     // Understand if it's dist or build folder
     const folderName = fs.existsSync('storybook-static') ? 'storybook-static' : ''
     await execa('git', ['--work-tree', folderName, 'add', '--all'])
     await execa('git', ['--work-tree', folderName, 'commit', '-m', 'gh-pages'])
+
+    await execa('npm', ['run', 'chromatic'])
     // // To build App
     // await execa('npm', ['run', 'build'])
     // await execa('npm', ['run', 'generate'])
