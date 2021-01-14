@@ -2,7 +2,7 @@ import APlaceholder from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Placeholder',
+  title: 'Design System/Atom/Placeholder',
   component: APlaceholder,
   description: 'The completed documentation will sooner release. This docs is about Placeholder Atom',
   argTypes: {

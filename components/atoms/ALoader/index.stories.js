@@ -2,7 +2,7 @@ import ALoader from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Loader',
+  title: 'Design System/Atom/Loader',
   component: ALoader,
   description: 'The completed documentation will sooner release. This docs is about Loader Atom'
 })

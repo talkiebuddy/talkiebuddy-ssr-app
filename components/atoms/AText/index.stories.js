@@ -2,7 +2,7 @@ import AText from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Text',
+  title: 'Design System/Atom/Text',
   component: AText,
   description: 'The completed documentation will sooner release. This docs is about Text Atom',
   argTypes: {

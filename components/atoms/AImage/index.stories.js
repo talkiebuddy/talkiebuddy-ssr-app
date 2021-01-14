@@ -2,7 +2,7 @@ import AImage from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Image',
+  title: 'Design System/Atom/Image',
   component: AImage,
   description: 'The completed documentation will sooner release. This docs is about Images Atom',
   argTypes: {

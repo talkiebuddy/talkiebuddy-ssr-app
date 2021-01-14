@@ -2,7 +2,7 @@ import MFormText from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers.js'
 
 export default storyFactory({
-  title: 'Molecule/Form Text',
+  title: 'Design System/Molecule/Form Text',
   component: MFormText,
   description: 'The completed documentation will sooner release. This docs is about Form Text Molecule',
   argTypes: {

@@ -3,7 +3,7 @@ import AHamburger from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Hamburger',
+  title: 'Design System/Atom/Hamburger',
   component: AHamburger,
   description: 'The completed documentation will sooner release. This docs is about Hamburger Atom',
   argTypes: {

@@ -2,7 +2,7 @@ import MNavList from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Molecule/Navigation List',
+  title: 'Design System/Molecule/Navigation List',
   component: MNavList,
   description: 'The completed documentation will sooner release. This docs is about Navigation List Atom',
   argTypes: {

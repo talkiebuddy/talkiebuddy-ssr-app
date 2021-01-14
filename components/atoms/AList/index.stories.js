@@ -2,7 +2,7 @@ import AList from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/List',
+  title: 'Design System/Atom/List',
   component: AList,
   description: 'The completed documentation will sooner release. This docs is about List Atom',
   argTypes: {

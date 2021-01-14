@@ -2,7 +2,7 @@ import AHeading from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Heading',
+  title: 'Design System/Atom/Heading',
   component: AHeading,
   description: 'The completed documentation will sooner release. This docs is about Heading Atom',
   argTypes: {

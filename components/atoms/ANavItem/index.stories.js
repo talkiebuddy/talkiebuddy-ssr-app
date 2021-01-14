@@ -3,7 +3,7 @@ import ANavItem from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Navigation Item',
+  title: 'Design System/Atom/Navigation Item',
   component: ANavItem,
   description: 'The completed documentation will sooner release. This docs is about Navigation Item Atom'
 })

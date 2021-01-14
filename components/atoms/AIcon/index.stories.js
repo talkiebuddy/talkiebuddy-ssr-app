@@ -2,7 +2,7 @@ import AIcon from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Icon',
+  title: 'Design System/Atom/Icon',
   component: AIcon,
   description: 'The completed documentation will sooner release. This docs is about Icon Atom',
   argTypes: {

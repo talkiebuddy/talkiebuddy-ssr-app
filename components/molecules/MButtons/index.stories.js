@@ -3,7 +3,7 @@ import MButtons from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers.js'
 
 export default storyFactory({
-  title: 'Molecule/Buttons',
+  title: 'Design System/Molecule/Buttons',
   component: MButtons,
   description: 'The completed documentation will sooner release. This docs is about Button Atom',
   argTypes: {

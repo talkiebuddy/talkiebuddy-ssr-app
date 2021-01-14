@@ -9,10 +9,10 @@
     flex-direction: column;
 
     .a-nav-item {
-      border-bottom: 0.1rem solid $color-gray5;
+      border-bottom: 0.1rem solid $color-neutralGray;
 
       &:first-child {
-        border-top: 0.1rem solid $color-gray5;
+        border-top: 0.1rem solid $color-neutralGray;
       }
     }
   }

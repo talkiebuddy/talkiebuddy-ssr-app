@@ -2,7 +2,7 @@ import ALabel from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Atom/Label',
+  title: 'Design System/Atom/Label',
   component: ALabel,
   description: 'The completed documentation will sooner release. This docs is about Label Atom',
   argTypes: {
