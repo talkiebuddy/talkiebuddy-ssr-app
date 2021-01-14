@@ -17,8 +17,6 @@ const eRocket = emoji.get('rocket');
     const folderName = fs.existsSync('storybook-static') ? 'storybook-static' : ''
     await execa('git', ['--work-tree', folderName, 'add', '--all'])
     await execa('git', ['--work-tree', folderName, 'commit', '-m', 'gh-pages'])
-
-    await execa('npm', ['run', 'chromatic'])
     // // To build App
     // await execa('npm', ['run', 'build'])
     // await execa('npm', ['run', 'generate'])
