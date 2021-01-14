@@ -13,7 +13,8 @@
     "storybook:serve": "npx nuxt storybook --static-dir static",
     "storybook:build": "npx nuxt storybook build --static-dir static",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
-    "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.js",
+    "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
