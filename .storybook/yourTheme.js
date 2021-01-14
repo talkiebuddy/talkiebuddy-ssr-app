@@ -40,7 +40,7 @@ import { create } from '@storybook/theming/create';
 export default create({
   base: 'dark',
   backgroundColor: 'white',
-  brandTitle: 'TalkieBuddy Atomic Design',
+  brandTitle: 'Talkie Buddy Atomic Design',
   brandUrl: 'https://talkiebuddy.com',
-  brandImage: '~/static/icon.png',
+  brandImage: './icon.png',
 });
