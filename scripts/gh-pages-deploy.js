@@ -12,6 +12,7 @@ const eRocket = emoji.get('rocket');
     console.log(`${eArrows} ${chalk.yellow('Building...')}`)
     // To build Storybook
     await execa('npm', ['run', 'storybook:build'])
+
     await execa('npm', ['run', 'chromatic'])
     // Understand if it's dist or build folder
     const folderName = fs.existsSync('storybook-static') ? 'storybook-static' : ''
