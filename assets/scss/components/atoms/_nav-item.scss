@@ -4,14 +4,20 @@
 
 	a {
     color: $color-neutralBlack;
-    background: $color-neutralGrayLighter;
+    background: $color-transparent;
+    // background: $color-neutralGrayLighter;
 		transition: background 0.3s;
 		display: block;
 		padding: 1rem;
 
 		&:hover {
-      background: $color-neutralGray;
-      color: #808080;
-		}
+      border-bottom: 1px solid $color-brandPrimary;
+      background: rgba($color-brandPrimaryLighter, $opacity-half);
+      color: rgba($color-neutralBlack, $opacity-half);
+    }
+
+    &:active {
+      border-bottom: 1px solid $color-brandPrimaryDarker
+    }
 	}
 }

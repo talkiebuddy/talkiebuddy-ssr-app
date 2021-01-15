@@ -40,12 +40,12 @@ export default {
     /** Id attribute for the input */
     id: {
       type: String,
-      default: ''
+      default: null
     },
     /** name attribute for input */
     name: {
       type: String,
-      default: ''
+      default: null
     },
     /** This is a necessary prop for using v-model with this component. Should NOT be set */
     modelValue: {

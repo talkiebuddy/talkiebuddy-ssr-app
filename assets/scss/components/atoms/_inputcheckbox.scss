@@ -1,0 +1,31 @@
+.a-input-checkbox {
+  $this: &;
+  display: inline-flex;
+
+  &__box {
+    width: 2rem;
+    height: 2rem;
+    background: $color-brandPrimary;
+    border-radius: $border-radius-s;
+    display: flex;
+    font-size: $font-size-l;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__graphic {
+    width: .6em;
+    height: .6em;
+    fill: $color-neutralWhite;
+    opacity: 0;
+    transition: opacity $duration-s;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + #{$this}__box #{$this}__graphic {
+      opacity: 1;
+    }
+  }
+}

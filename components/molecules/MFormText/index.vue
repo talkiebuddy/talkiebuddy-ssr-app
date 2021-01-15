@@ -7,10 +7,7 @@
     ]"
   >
     <div class="u-form-field__label">
-      <a-label v-if="label" :html-for="`#${id}`" :error="error">
-        <template v-if="required">
-          *
-        </template>
+      <a-label v-if="label" :html-for="`#${id}`" :error="error" :required="required">
         {{ label }}
       </a-label>
     </div>
@@ -62,7 +59,7 @@ export default {
     },
     errorMessages: {
       type: [String, Array],
-      default: () => []
+      default: ''
     },
     name: {
       type: String,

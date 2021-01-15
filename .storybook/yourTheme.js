@@ -42,5 +42,5 @@ export default create({
   backgroundColor: 'white',
   brandTitle: 'Talkie Buddy Atomic Design',
   brandUrl: 'https://talkiebuddy.com',
-  brandImage: './icon.png',
+  // brandImage: './icon.png',
 });

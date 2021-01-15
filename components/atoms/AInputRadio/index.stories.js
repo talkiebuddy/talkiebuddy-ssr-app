@@ -18,8 +18,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Playground = Template.bind({})
 Playground.args = {
-  checked: true,
-  value: 'option1'
 }
 
 export const Default = () => ({

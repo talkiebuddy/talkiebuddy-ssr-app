@@ -30,7 +30,17 @@ const wrapper = {
 //   to: '/nav-item-1'
 // }
 
-export const Test = () => ({
+export const Th = () => ({
+  ...wrapper,
+  template: `
+  <a-table-row>
+    <a-table-cell heading>Cell 1</a-table-cell>
+    <a-table-cell heading>Cell 2</a-table-cell>
+  </a-table-row>
+  `
+})
+
+export const Td = () => ({
   ...wrapper,
   template: `
   <a-table-row>
