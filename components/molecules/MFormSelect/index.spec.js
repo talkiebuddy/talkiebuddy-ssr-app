@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
-import MFormText from './index.vue'
+import MFormSelect from '.'
 
-describe('Molecule - MFormText', () => {
+describe('Molecule - MFormSelect', () => {
   let wrapper
   const factory = (computed = {}) => {
-    return shallowMount(MFormText, {
+    return shallowMount(MFormSelect, {
       propsData: {
         value: ''
       },
@@ -23,26 +23,25 @@ describe('Molecule - MFormText', () => {
     wrapper.destroy()
   })
 
-  it('Renders the label if passed', async () => {
+  it('Render the label if passed', async () => {
     expect(wrapper.find('a-label').exists()).toBe(false)
 
     await wrapper.setProps({
-      label: 'Enter your telephone number'
+      label: 'Choose your food'
     })
-
-    expect(wrapper.find('a-label').text()).toContain('Enter your telephone number')
+    expect(wrapper.find('a-label').text()).toContain('Choose your food')
   })
 
   it('Shows error message if available', async () => {
     expect(wrapper.find('m-validation-messages').text()).toBe('')
 
     await wrapper.setProps({
-      errorMessages: 'Please enter your name',
+      errorMessages: 'Please select your food',
       error: true
     })
 
     await wrapper.vm.$nextTick(() => {
-      expect(wrapper.find('m-validation-messages').html()).toContain('Please enter your name')
+      expect(wrapper.find('m-validation-messages').html()).toContain('Please select your food')
     })
   })
 

@@ -15,7 +15,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'inherit'
+      default: ''
     },
     weight: {
       type: String,

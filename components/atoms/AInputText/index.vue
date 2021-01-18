@@ -64,7 +64,7 @@ export default {
     /** Placeholder text for the input */
     placeholder: {
       type: String,
-      default: 'placeholder'
+      default: ''
     },
     /** Id attribute for the input */
     id: {

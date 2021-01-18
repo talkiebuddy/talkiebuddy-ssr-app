@@ -55,18 +55,18 @@ export const Default = () => ({
         <m-form-select
           label="Choose your food"
           emptyValueLabel="Please select a food"
-          v-model="frieldValue"
+          v-model="fieldValue"
           :options="options"
         />
 
         <br/><br/>
 
-        Field value is: {{ frieldValue }}
+        Field value is: {{ fieldValue }}
       </div>
     `,
   data () {
     return {
-      frieldValue: 'c',
+      fieldValue: 'c',
       options
     }
   }
@@ -79,7 +79,7 @@ export const Invalid = () => ({
         <m-form-select
           label="Choose your food"
           emptyValueLabel="Please select a food"
-          v-model="frieldValue"
+          v-model="fieldValue"
           :options="options"
           error
           errorMessages="Please choose one of the options"
@@ -88,7 +88,7 @@ export const Invalid = () => ({
     `,
   data () {
     return {
-      frieldValue: '',
+      fieldValue: '',
       options
     }
   }
@@ -101,7 +101,7 @@ export const Required = () => ({
         <m-form-select
           label="Choose your food"
           emptyValueLabel="Please select a food"
-          v-model="frieldValue"
+          v-model="fieldValue"
           :options="options"
           required
         />
@@ -109,7 +109,7 @@ export const Required = () => ({
     `,
   data () {
     return {
-      frieldValue: '',
+      fieldValue: '',
       options
     }
   }
@@ -122,7 +122,7 @@ export const Disabled = () => ({
         <m-form-select
           label="Choose your food"
           emptyValueLabel="Please select a food"
-          v-model="frieldValue"
+          v-model="fieldValue"
           :options="options"
           disabled
         />
@@ -130,7 +130,7 @@ export const Disabled = () => ({
     `,
   data () {
     return {
-      frieldValue: '',
+      fieldValue: '',
       options
     }
   }

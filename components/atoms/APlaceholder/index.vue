@@ -73,7 +73,8 @@
 </template>
 
 <script>
-import uid from '@/plugins/helpers/uid'
+import uid from '~/plugins/helpers/uid'
+
 export default {
   name: 'APlaceholder',
   props: {
@@ -82,7 +83,7 @@ export default {
       type: String,
       required: true,
       validator (value) {
-        return ['text', 'image', 'bullet-list'].includes(value)
+        return ['text', 'image', 'bullet-list', 'custom'].includes(value)
       }
     },
     /** Available only on 'image' type. The name of graphic to be used as the center icon */

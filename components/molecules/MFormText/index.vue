@@ -1,10 +1,6 @@
 <template>
   <div
-    :class="[
-      'v-m-form-text u-form-field',
-      `${error ? 'u-form-field--error' : ''}`,
-      `${disabled ? 'u-form-field--disabled' : ''}`
-    ]"
+    :class="classes"
   >
     <div class="u-form-field__label">
       <a-label v-if="label" :html-for="`#${id}`" :error="error" :required="required">
@@ -37,7 +33,8 @@
 </template>
 
 <script>
-import uid from '~/plugins/helpers/uid.js'
+import uid from '~/plugins/helpers/uid'
+
 export default {
   name: 'MFormText',
   props: {
@@ -93,21 +90,14 @@ export default {
   computed: {
     id () {
       return uid()
+    },
+    classes () {
+      return {
+        'm-form-text u-form-field': true,
+        [`${this.error ? 'u-form-field--error' : ''}`]: true,
+        [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true
+      }
     }
-    // classes(){
-    //   return {
-    //     'm-form-text u-form-field',
-    //     `${this.error ? 'u-form-field--error': ''}`,
-    //     `${this.disabled ? 'u-form-field--disabled' : ''}`
-
-    //     'm-buttons': true,
-    //     'm-buttons--only-icon': !this.label && (this.iconPrefix || this.iconSuffix),
-    //     'm-buttons--stretch': this.stretch,
-    //     'm-buttons--square': this.square,
-    //     'm-buttons--outline': this.isOutlined,
-    //     [`m-buttons--variant-${this.variant}`]: !!this.variant,
-    //   }
-    // }
   }
 }
 </script>

@@ -67,12 +67,12 @@ export default {
     /** "IconPrefix" prop for Icon before label */
     iconPrefix: {
       type: String,
-      default: null
+      default: ''
     },
     /** "IconSuffix" prop for Icon after label */
     iconSuffix: {
       type: String,
-      default: null
+      default: ''
     },
     iconColor: {
       type: String,

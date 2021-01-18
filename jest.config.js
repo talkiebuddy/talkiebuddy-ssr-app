@@ -23,5 +23,6 @@ module.exports = {
   coverageReporters: [
     'html',
     'text-summary'
-  ]
+  ],
+  setupFilesAfterEnv: ['./test/jest.setup.js']
 }

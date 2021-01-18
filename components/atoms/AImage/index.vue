@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import isUrl from '~/plugins/helpers/is-url.js'
+import isUrl from '~/plugins/helpers/is-url'
 
 export default {
   name: 'AImage',

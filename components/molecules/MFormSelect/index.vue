@@ -28,14 +28,14 @@
 </template>
 
 <script>
-import uid from '@/plugins/helpers/uid'
+import uid from '~/plugins/helpers/uid'
 
 export default {
   name: 'MFormSelect',
   props: {
     label: {
       type: String,
-      default: 'default label'
+      default: ''
     },
     options: {
       type: Array,
@@ -54,7 +54,6 @@ export default {
       type: Boolean,
       default: false
     },
-
     emptyValueLabel: {
       type: String,
       default: ''

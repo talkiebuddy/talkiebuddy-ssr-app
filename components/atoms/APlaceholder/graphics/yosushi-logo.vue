@@ -26,3 +26,9 @@
     />
   </clipPath>
 </template>
+
+<script>
+export default {
+  name: 'YosushiLogo'
+}
+</script>

@@ -29,7 +29,8 @@ export default {
 
   plugins: [
     { src: '~/plugins/helpers/uid.js' },
-    { src: '~/plugins/helpers/is-url.js' }
+    { src: '~/plugins/helpers/is-url.js' },
+    { src: '~/plugins/vue-tel-input' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -41,6 +42,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources'
   ],
+
   styleResources: {
     scss: ['~/assets/scss/main.scss']
   },
@@ -57,5 +59,5 @@ export default {
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  build: { }
 }

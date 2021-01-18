@@ -1,3 +1,8 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to Atomic Design of the site/application.
+// -----------------------------------------------------------------------------
+
+
 // Atomic design Structure
 
 // Atom
@@ -8,17 +13,21 @@
 @import "atoms/nav-item";
 @import "atoms/inputtext";
 @import "atoms/hamburger";
+@import "atoms/list";
 @import "atoms/label";
 @import "atoms/placeholder";
 @import "atoms/loader";
 @import "atoms/tablecell";
 @import "atoms/inputradio";
 @import "atoms/inputcheckbox";
+@import "atoms/inputtel";
 @import "atoms/select";
+@import "atoms/textarea";
 
 // Molecule
 @import "molecules/buttons";
 @import "molecules/nav-list";
+@import "molecules/formcheckbox";
 
 // Organism
 @import "organisms/header";

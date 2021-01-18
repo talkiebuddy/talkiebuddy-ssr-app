@@ -6,3 +6,9 @@
     <circle cx="177.88" cy="130.88" r="22.13" />
   </clipPath>
 </template>
+
+<script>
+export default {
+  name: 'Image'
+}
+</script>

@@ -43,3 +43,9 @@
     <circle cx="30" cy="30" r="30" />
   </clipPath>
 </template>
+
+<script>
+export default {
+  name: 'Card'
+}
+</script>

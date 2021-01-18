@@ -19,3 +19,9 @@
     </template>
   </clipPath>
 </template>
+
+<script>
+export default {
+  name: 'BulletList'
+}
+</script>
