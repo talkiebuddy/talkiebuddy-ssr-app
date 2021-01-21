@@ -73,8 +73,6 @@
 </template>
 
 <script>
-import uid from '~/plugins/helpers/uid'
-
 export default {
   name: 'APlaceholder',
   props: {
@@ -178,7 +176,7 @@ export default {
       return '0 0 400 240'
     },
     shapeId () {
-      return uid()
+      return this.$uid()
     },
     classes () {
       return {
@@ -202,3 +200,46 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-placeholder {
+  max-width: 50rem;
+  $this: &;
+
+  &__graphic {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--image {
+    background: $color-neutralGrayLighter;
+
+    .a-placeholder__graphic-container {
+      width: 100%;
+      position: relative;
+    }
+
+    .a-placeholder__graphic {
+      position: absolute;
+      width: 40%;
+      height: 40%;
+      max-width: 15rem;
+      max-height: 15rem;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &--custom {
+    background: $color-neutralGrayLighter;
+
+    .a-placeholder__graphic-container {
+      width: 100%;
+      position: relative;
+    }
+  }
+}
+
+</style>

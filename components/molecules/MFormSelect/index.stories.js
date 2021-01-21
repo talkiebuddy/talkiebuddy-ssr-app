@@ -18,7 +18,21 @@ const wrapper = {
 const Template = (args, { argTypes }) => ({
   ...wrapper,
   props: Object.keys(argTypes),
-  template: '<m-form-select v-bind="$props"></m-form-select>'
+  template: `
+  <div>
+  <m-form-select v-model="fieldValue" v-bind="$props"></m-form-select>
+
+  <br/><br/>
+
+  Field value :
+  <pre>{{ fieldValue }}</pre>
+  </div>
+  `,
+  data () {
+    return {
+      fieldValue: ''
+    }
+  }
 })
 
 const options = [
@@ -61,29 +75,8 @@ export const Default = () => ({
 
         <br/><br/>
 
-        Field value is: {{ fieldValue }}
-      </div>
-    `,
-  data () {
-    return {
-      fieldValue: 'c',
-      options
-    }
-  }
-})
-
-export const Invalid = () => ({
-  ...wrapper,
-  template: `
-      <div>
-        <m-form-select
-          label="Choose your food"
-          emptyValueLabel="Please select a food"
-          v-model="fieldValue"
-          :options="options"
-          error
-          errorMessages="Please choose one of the options"
-        />
+        Field value :
+        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data () {
@@ -105,6 +98,36 @@ export const Required = () => ({
           :options="options"
           required
         />
+        <br/><br/>
+
+        Field value :
+        <pre>{{ fieldValue }}</pre>
+      </div>
+    `,
+  data () {
+    return {
+      fieldValue: '',
+      options
+    }
+  }
+})
+
+export const Invalid = () => ({
+  ...wrapper,
+  template: `
+      <div>
+        <m-form-select
+          label="Choose your food"
+          emptyValueLabel="Please select a food"
+          v-model="fieldValue"
+          :options="options"
+          error
+          errorMessages="Please choose one of the options"
+        />
+        <br/><br/>
+
+        Field value :
+        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data () {
@@ -126,6 +149,10 @@ export const Disabled = () => ({
           :options="options"
           disabled
         />
+        <br/><br/>
+
+        Field value :
+        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data () {

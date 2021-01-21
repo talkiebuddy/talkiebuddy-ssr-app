@@ -38,7 +38,7 @@ export default {
   computed: {
     svgLoader () {
       return () =>
-        import(/* webpackChunkName: "Icon" */ '!html-loader!@/assets/images/icons/' + (this.name ? this.name : 'meh') + '.svg')
+        import(/* webpackChunkName: "Icon" */ '../../../assets/images/icons/' + (this.name ? this.name : 'meh') + '.svg')
     },
     styles () {
       return {
@@ -73,3 +73,36 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-icon {
+  display: block;
+
+  &--x-small {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  &--small {
+    width: 2.4em;
+    height: 2.4em;
+  }
+
+  &--medium {
+    width: 3.6em;
+    height: 3.6em;
+  }
+
+  &--large {
+    width: 4.8em;
+    height: 4.8em;
+  }
+
+  svg {
+    display: block;
+    fill: currentColor;
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>

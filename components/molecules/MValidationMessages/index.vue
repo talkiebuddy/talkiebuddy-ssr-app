@@ -6,7 +6,11 @@
           error && errorMessages.length && typeof errorMessages[0] === 'string'
         "
       >
-        <a-text v-for="message in errorMessages" :key="message" size="x-small">
+        <a-text
+          v-for="message in errorMessages"
+          :key="message"
+          size="x-small"
+        >
           {{ message }}
         </a-text>
       </template>

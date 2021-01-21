@@ -28,13 +28,15 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
 
   plugins: [
-    { src: '~/plugins/helpers/uid.js' },
-    { src: '~/plugins/helpers/is-url.js' },
-    { src: '~/plugins/vue-tel-input' }
+    { src: '~/plugins/helpers' },
+    { src: '~/plugins' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  components: [{
+    path: '~/components/',
+    extensions: ['vue']
+  }],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -59,5 +61,30 @@ export default {
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: { }
+  build: {
+    extend (config, { isDev, isClient }) {
+      const svgRule = config.module.rules.find(rule => typeof rule.test.test === 'function' && rule.test.test('.svg'))
+      svgRule.test = new RegExp(svgRule.test.source.replace('svg|', ''))
+
+      // Add a new rule for svg files only
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true
+            }
+          }
+        ]
+      })
+      // config.module.rules.push({
+      //   test: /\.svg$/,
+      //   loader: 'html-loader',
+      //   options: {
+      //     minimize: true
+      //   }
+      // })
+    }
+  }
 }

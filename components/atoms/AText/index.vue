@@ -35,3 +35,19 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-text {
+  color: inherit;
+  font-weight: inherit;
+
+  strong,
+  a {
+    font-weight: bold;
+  }
+
+  a {
+    color: $color-semanticInfo;
+  }
+}
+</style>

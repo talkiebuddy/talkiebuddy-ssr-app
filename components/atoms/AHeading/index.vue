@@ -31,3 +31,37 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-heading {
+  &--1 {
+    font-size: $font-size-4xl;
+    line-height: $line-height-heading;
+  }
+
+  &--2 {
+    font-size: $font-size-3xl;
+    line-height: $line-height-heading;
+  }
+
+  &--3 {
+    font-size: $font-size-2xl;
+    line-height: $line-height-heading;
+  }
+
+  &--4 {
+    font-size: $font-size-xl;
+    line-height: $line-height-heading;
+  }
+
+  &--5 {
+    font-size: $font-size-l;
+    line-height: $line-height-heading;
+  }
+
+  &--6 {
+    font-size: $font-size-m;
+    line-height: $line-height-heading;
+  }
+}
+</style>

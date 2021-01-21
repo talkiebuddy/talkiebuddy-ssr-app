@@ -19,19 +19,33 @@ const wrapper = {
 const Template = (args, { argTypes }) => ({
   ...wrapper,
   props: Object.keys(argTypes),
-  template: '<a-input-tel v-bind="$props"></a-input-tel>'
+  template: `
+  <div>
+  <a-input-tel v-model="phoneNumber" v-bind="$props"></a-input-tel>
+
+  <br/>
+
+  <pre>{{ phoneNumber }}</pre>
+
+  </div>`,
+  data () {
+    return {
+      phoneNumber: {
+        number: '+447792916879'
+      }
+    }
+  }
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
-  placeholder: 'Enter your phone number'
 }
 
 export const single = () => ({
   ...wrapper,
   template: `
       <div>
-        <a-input-tel v-model="phoneNumber" placeholder="hahahah"/>
+        <a-input-tel v-model="phoneNumber" placeholder="djiosjadoijsaoijdsa"/>
 
         <pre>{{ phoneNumber }}</pre>
 

@@ -5,7 +5,7 @@ describe('Atom - AIcon', () => {
   it('Renders the correct classes based on props passed', () => {
     const wrapper = mount(AIcon, {
       propsData: {
-        name: 'linkedin',
+        name: 'twitter',
         size: 'large',
         fill: 'green'
       }

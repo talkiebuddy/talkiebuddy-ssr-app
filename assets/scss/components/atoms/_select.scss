@@ -1,33 +1,33 @@
-.a-select {
-  background: $color-neutralGrayLighter;
-  position: relative;
-  display: inline-flex;
-  border: .1rem solud $color-neutralGrayLighter;
-  border-radius: $border-radius-s;
+// .a-select {
+//   background: $color-neutralGrayLighter;
+//   position: relative;
+//   display: inline-flex;
+//   border: .1rem solud $color-neutralGrayLighter;
+//   border-radius: $border-radius-s;
 
-  &__input {
-    border: 0;
-    padding: $spacing-s $spacing-m;
-    display: block;
-    font-size: inherit;
-    padding-right: $spacing-2xl;
-    background: inherit;
-    width: 100%;
-    color: inherit;
+//   &__input {
+//     border: 0;
+//     padding: $spacing-s $spacing-m;
+//     display: block;
+//     font-size: inherit;
+//     padding-right: $spacing-2xl;
+//     background: inherit;
+//     width: 100%;
+//     color: inherit;
 
-    &:focus {
-      box-shadow: $shadow-lg;
-    }
-  }
+//     &:focus {
+//       box-shadow: $shadow-lg;
+//     }
+//   }
 
-  &__arrow {
-    width: 1em;
-    height: 1em;
-    position: absolute;
-    right: 1rem;
-    fill: $color-neutralGray;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
-}
+//   &__arrow {
+//     width: 1em;
+//     height: 1em;
+//     position: absolute;
+//     right: 1rem;
+//     fill: $color-neutralGray;
+//     top: 0;
+//     bottom: 0;
+//     margin: auto;
+//   }
+// }

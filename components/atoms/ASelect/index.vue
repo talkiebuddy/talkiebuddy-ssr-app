@@ -25,9 +25,7 @@
       </option>
     </select>
 
-    <svg class="a-select__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284.929 284.929">
-      <path d="M282.082 76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856-2.471 0-4.661.95-6.563 2.856L142.466 174.441 30.262 62.241c-1.903-1.906-4.093-2.856-6.567-2.856-2.475 0-4.665.95-6.567 2.856L2.856 76.515C.95 78.417 0 80.607 0 83.082c0 2.473.953 4.663 2.856 6.565l133.043 133.046c1.902 1.903 4.093 2.854 6.567 2.854s4.661-.951 6.562-2.854L282.082 89.647c1.902-1.903 2.847-4.093 2.847-6.565 0-2.475-.945-4.665-2.847-6.571z" />
-    </svg>
+    <a-icon name="down" class="a-select__arrow" />
   </div>
 </template>
 
@@ -82,3 +80,39 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-select {
+  background: $color-neutralGrayLighter;
+  position: relative;
+  display: inline-flex;
+  border: .1rem solud $color-neutralGrayLighter;
+  border-radius: $border-radius-s;
+
+  &__input {
+    border: 0;
+    padding: $spacing-s $spacing-m;
+    display: block;
+    font-size: inherit;
+    padding-right: $spacing-2xl;
+    background: inherit;
+    width: 100%;
+    color: inherit;
+
+    &:focus {
+      box-shadow: $shadow-lg;
+    }
+  }
+
+  &__arrow {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    right: 1rem;
+    fill: $color-neutralGray;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+</style>

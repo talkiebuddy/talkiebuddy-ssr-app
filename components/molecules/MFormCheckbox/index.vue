@@ -55,8 +55,6 @@
 </template>
 
 <script>
-import uid from '~/plugins/helpers/uid'
-
 export default {
   name: 'MFormCheckbox',
   model: {
@@ -123,7 +121,7 @@ export default {
   },
   computed: {
     id () {
-      return uid()
+      return this.$uid()
     },
     classes () {
       return {
@@ -149,3 +147,36 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.m-form-checkbox {
+  $this: &;
+  border: 0;
+
+  .m-validation-messages {
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+  }
+
+  // &__question{
+  //   .a-text {
+  //     color: $color-neutralBlack;
+  //     font-weight: $font-weight-regular;
+  //   }
+  // }
+
+  &__options {
+    margin-bottom: 1.5rem;
+
+    .a-input-checkbox {
+      margin-right: .5rem;
+    }
+
+    .a-label {
+      display: inline-flex;
+      cursor: pointer;
+    }
+  }
+}
+
+</style>

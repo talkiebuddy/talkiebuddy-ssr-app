@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import uid from '~/plugins/helpers/uid'
-
 export default {
   name: 'MFormSelect',
   props: {
@@ -77,7 +75,7 @@ export default {
   },
   computed: {
     id () {
-      return uid()
+      return this.$uid()
     },
     classes () {
       return {

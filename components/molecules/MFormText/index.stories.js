@@ -14,8 +14,22 @@ export default storyFactory({
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MFormText },
-  template: `<m-form-text v-bind="$props"></m-form-text>
-  `
+  template: `
+  <div>
+  <m-form-text v-model="fieldValue" v-bind="$props"></m-form-text>
+
+  <br/><br/>
+
+  Field value :
+  <pre>{{ fieldValue }}</pre>
+
+  </div>
+  `,
+  data () {
+    return {
+      fieldValue: ''
+    }
+  }
 })
 
 export const Playground = Template.bind({})
@@ -30,9 +44,11 @@ export const defaults = () => ({
   template: `
   <div>
   <m-form-text label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue"></m-form-text>
+
   <br/><br/>
 
-  <pre>Field value is: {{ fieldValue }}</pre>
+  Field value :
+  <pre>{{ fieldValue }}</pre>
   </div>
   `,
   data () {
@@ -42,9 +58,59 @@ export const defaults = () => ({
   }
 })
 
-export const invalid = () => ({
+export const Required = () => ({
   component: { MFormText },
   template: `
-  <m-form-text label="Full Name" type="text" value="4123213" error errorMessages="Name can not include numbers"></m-form-text>
-  `
+  <div>
+  <m-form-text label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue" required></m-form-text>
+
+  <br/><br/>
+
+  Field value :
+  <pre>{{ fieldValue }}</pre>
+  </div>
+  `,
+  data () {
+    return {
+      fieldValue: ''
+    }
+  }
+})
+
+export const Invalid = () => ({
+  component: { MFormText },
+  template: `
+  <div>
+  <m-form-text label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue" error errorMessages="Name can not include numbers"></m-form-text>
+
+  <br/><br/>
+
+  Field value :
+  <pre>{{ fieldValue }}</pre>
+  </div>
+  `,
+  data () {
+    return {
+      fieldValue: '4123213'
+    }
+  }
+})
+
+export const Disabled = () => ({
+  component: { MFormText },
+  template: `
+  <div>
+  <m-form-text label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue" disabled></m-form-text>
+
+  <br/><br/>
+
+  Field value :
+  <pre>{{ fieldValue }}</pre>
+  </div>
+  `,
+  data () {
+    return {
+      fieldValue: ''
+    }
+  }
 })

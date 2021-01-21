@@ -21,8 +21,6 @@
 </template>
 
 <script>
-import isUrl from '~/plugins/helpers/is-url'
-
 export default {
   name: 'AImage',
   props: {
@@ -68,7 +66,7 @@ export default {
     calculatedSrc () {
       const { src } = this
 
-      return isUrl(src) ? src : require(`@/assets/images/${src}`)
+      return this.$isUrl(src) ? src : require(`~/assets/images/${src}`)
     },
     classes () {
       return {
@@ -97,7 +95,7 @@ export default {
       if (this.sources) {
         this.calculatedSources = await this.sources.map((source) => {
           const src = this.imageSrc
-          const srcset = isUrl(src) ? source.srcset : require(`@/assets/images/${source.srcset}`)
+          const srcset = this.$isUrl(src) ? source.srcset : require(`~/assets/images/${source.srcset}`)
           source.srcset = srcset
 
           return source
@@ -107,3 +105,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+</style>

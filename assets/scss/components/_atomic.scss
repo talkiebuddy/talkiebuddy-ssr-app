@@ -6,28 +6,33 @@
 // Atomic design Structure
 
 // Atom
-@import "atoms/heading";
-@import "atoms/image";
-@import "atoms/text";
-@import "atoms/icon";
-@import "atoms/nav-item";
-@import "atoms/inputtext";
-@import "atoms/hamburger";
-@import "atoms/list";
-@import "atoms/label";
-@import "atoms/placeholder";
-@import "atoms/loader";
-@import "atoms/tablecell";
-@import "atoms/inputradio";
-@import "atoms/inputcheckbox";
-@import "atoms/inputtel";
-@import "atoms/select";
-@import "atoms/textarea";
+// @import "atoms/heading";
+// @import "atoms/image";
+// @import "atoms/text";
+// @import "atoms/icon";
+// @import "atoms/nav-item";
+// @import "atoms/inputtext";
+// @import "atoms/hamburger";
+// @import "atoms/list";
+// @import "atoms/label";
+// @import "atoms/placeholder";
+// @import "atoms/loader";
+// @import "atoms/tablecell";
+// @import "atoms/inputradio";
+// @import "atoms/inputcheckbox";
+// @import "atoms/inputtel";
+// @import "atoms/select";
+// @import "atoms/textarea";
+// @import "atoms/inputcreditcard";
 
 // Molecule
-@import "molecules/buttons";
-@import "molecules/nav-list";
-@import "molecules/formcheckbox";
+// @import "molecules/buttons";
+// @import "molecules/nav-list";
+// @import "molecules/formcheckbox";
+// @import "molecules/formcreditcardnumber";
+// @import "molecules/formradio";
 
 // Organism
-@import "organisms/header";
+// @import "organisms/header";
+// @import "organisms/formpayment";
+// @import "organisms/genericform";

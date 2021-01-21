@@ -46,3 +46,25 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.m-nav-list {
+  display: flex;
+  width: 100%;
+
+  &--horizontal {
+    flex-direction: row;
+  }
+  &--vertical {
+    flex-direction: column;
+
+    .a-nav-item {
+      border-bottom: 0.1rem solid $color-neutralGray;
+
+      &:first-child {
+        border-top: 0.1rem solid $color-neutralGray;
+      }
+    }
+  }
+}
+</style>

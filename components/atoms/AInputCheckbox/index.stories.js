@@ -19,12 +19,29 @@ const wrapper = {
 const Template = (args, { argTypes }) => ({
   ...wrapper,
   props: Object.keys(argTypes),
-  template: '<a-input-checkbox v-bind="$props"></a-input-checkbox>'
+  template: `
+  <div>
+  <a-input-checkbox v-model="selectedValue" v-bind="$props"></a-input-checkbox>
+
+  <br/><br/>
+
+  Field Value :
+  <pre>{{ selectedValue }}</pre>
+
+  </div>
+  `,
+  data () {
+    return {
+      selectedValue: ''
+    }
+  }
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
-  checked: true
+  checked: true,
+  value: true,
+  label: 'Do you accept the terms and conditions?'
 }
 
 export const Default = () => ({

@@ -1,37 +1,37 @@
-.a-input-radio {
-  $this: &;
-  display: inline-flex;
+// .a-input-radio {
+//   $this: &;
+//   display: inline-flex;
 
-  &__circle {
-    width: $spacing-l;
-    height: $spacing-l;
-    background: $color-brandPrimaryDarker;
-    border-radius: $border-radius-round;
-    display: flex;
-    font-size: $font-size-xs;
-    justify-content: center;
-    align-items: center;
+//   &__circle {
+//     width: $spacing-l;
+//     height: $spacing-l;
+//     background: $color-brandPrimaryDarker;
+//     border-radius: $border-radius-round;
+//     display: flex;
+//     font-size: $font-size-xs;
+//     justify-content: center;
+//     align-items: center;
 
-    &::before {
-      content: '';
-      width: $spacing-xs;
-      height: $spacing-xs;
-      background: $color-neutralWhite;
-      border-radius: $border-radius-round;
-      opacity: 0;
-      transition: opacity $duration-s;
-    }
-  }
+//     &::before {
+//       content: '';
+//       width: $spacing-xs;
+//       height: $spacing-xs;
+//       background: $color-neutralWhite;
+//       border-radius: $border-radius-round;
+//       opacity: 0;
+//       transition: opacity $duration-s;
+//     }
+//   }
 
-  &:focus {
-    box-shadow: $shadow-m;
-  }
+//   &:focus {
+//     box-shadow: $shadow-m;
+//   }
 
-  &__input {
-    display: none;
+//   &__input {
+//     display: none;
 
-    &:checked + #{$this}__circle::before {
-      opacity: 1;
-    }
-  }
-}
+//     &:checked + #{$this}__circle::before {
+//       opacity: 1;
+//     }
+//   }
+// }

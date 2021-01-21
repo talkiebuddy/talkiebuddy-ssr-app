@@ -29,3 +29,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-label {
+  font-size: inherit;
+  user-select: none;
+  display: flex;
+  align-items: center;
+
+  &--error {
+    color: $color-semanticDanger;
+  }
+
+  &--success {
+    color: $color-semanticSuccess;
+  }
+}
+</style>

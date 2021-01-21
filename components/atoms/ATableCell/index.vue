@@ -27,3 +27,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-table-cell {
+  padding: $spacing-s;
+  background: $color-neutralGrayLighter;
+  border: .1rem solid $color-neutralGraySemi;
+  text-align: left;
+
+  &--heading {
+    font-weight: bold;
+    background: $color-neutralWhite;
+  }
+}
+</style>

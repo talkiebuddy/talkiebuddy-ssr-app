@@ -18,10 +18,24 @@ const wrapper = {
 const Template = (args, { argTypes }) => ({
   ...wrapper,
   props: Object.keys(argTypes),
-  template: '<m-form-checkbox v-bind="$props"></m-form-checkbox>'
+  template: `
+  <div>
+    <m-form-checkbox v-model="fieldValue" v-bind="$props"></m-form-checkbox>
+
+    <br/>
+
+    Field Value :
+    <pre>{{ fieldValue }}</pre>
+  </div>
+  `,
+  data () {
+    return {
+      fieldValue: {}
+    }
+  }
 })
 
-const option = [
+const options = [
   {
     label: 'Option A',
     value: 'optiona'
@@ -44,8 +58,7 @@ const option = [
 export const Playground = Template.bind({})
 Playground.args = {
   label: 'Choose your food',
-  required: true,
-  options: option
+  options
 }
 
 export const Single = () => ({
@@ -54,19 +67,20 @@ export const Single = () => ({
       <div>
         <m-form-checkbox
           label="Do you accept our terms & conditions?"
-          v-model="selection"
+          v-model="fieldValue"
           required
           checked
         />
 
         <br/><br/>
 
-        Field value is: {{ selection }}
+        Field Value :
+    <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data () {
     return {
-      selection: ''
+      fieldValue: ''
     }
   }
 })
@@ -77,7 +91,7 @@ export const SingleDisabled = () => ({
       <div>
         <m-form-checkbox
           label="Do you accept our terms & conditions?"
-          v-model="selection"
+          v-model="fieldValue"
           disabled
         />
 
@@ -103,36 +117,19 @@ export const Multiple = () => ({
 
         <br/><br/>
 
-        Field value is: {{ fieldValue }}
+        Field Value :
+        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data () {
     return {
-      fieldValue: ['nyc', 'amsterdam'],
-      options: [
-        {
-          label: 'New York City',
-          value: 'nyc'
-        },
-        {
-          label: 'Paris - Disabled',
-          value: 'paris',
-          disabled: true
-        },
-        {
-          label: 'London',
-          value: 'london'
-        },
-        {
-          label: 'Amsterdam',
-          value: 'amsterdam'
-        }
-      ]
+      fieldValue: ['optiona', 'optionc'],
+      options
     }
   }
 })
 
-export const Disabled = () => ({
+export const Required = () => ({
   ...wrapper,
   template: `
       <div>
@@ -140,32 +137,19 @@ export const Disabled = () => ({
           label="Choose some of your favourite cities"
           :options="options"
           v-model="fieldValue"
-          disabled
+          required
         />
+
+        <br/><br/>
+
+        Field Value :
+        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data () {
     return {
-      fieldValue: '',
-      options: [
-        {
-          label: 'New York City',
-          value: 'nyc'
-        },
-        {
-          label: 'Paris - Disabled',
-          value: 'paris',
-          disabled: true
-        },
-        {
-          label: 'London',
-          value: 'london'
-        },
-        {
-          label: 'Amsterdam',
-          value: 'amsterdam'
-        }
-      ]
+      fieldValue: [],
+      options
     }
   }
 })
@@ -181,30 +165,42 @@ export const Invalid = () => ({
           error
           errorMessages="Please select one of the available options"
         />
+
+        <br/>
+
+        Field Value :
+        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data () {
     return {
       fieldValue: '',
-      options: [
-        {
-          label: 'New York City',
-          value: 'nyc'
-        },
-        {
-          label: 'Paris - Disabled',
-          value: 'paris',
-          disabled: true
-        },
-        {
-          label: 'London',
-          value: 'london'
-        },
-        {
-          label: 'Amsterdam',
-          value: 'amsterdam'
-        }
-      ]
+      options
+    }
+  }
+})
+
+export const Disabled = () => ({
+  ...wrapper,
+  template: `
+      <div>
+        <m-form-checkbox
+          label="Choose some of your favourite cities"
+          :options="options"
+          v-model="fieldValue"
+          disabled
+        />
+
+        <br/>
+
+        Field Value :
+        <pre>{{ fieldValue }}</pre>
+      </div>
+    `,
+  data () {
+    return {
+      fieldValue: '',
+      options
     }
   }
 })

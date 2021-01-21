@@ -152,3 +152,226 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.m-buttons {
+  border-radius: $border-radius-xl;
+  border: 1px solid transparent;
+  color: $color-neutralWhite;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  border-radius: 3em;
+  line-height: 1;
+  padding: $spacing-xs $spacing-s;
+  text-align: center;
+  user-select: none;
+  letter-spacing: 0.25px;
+  min-height: 2.5rem;
+  position: relative;
+
+  > * + * {
+    margin-left: $spacing-2xs;
+  }
+
+  &:hover:not(:disabled) {
+    box-shadow: $shadow-md;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: inherit;
+    box-shadow: $shadow-md;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: $opacity-half;
+  }
+
+  &--only-icon {
+    width: 40px;
+    min-width: 0;
+    padding: 0;
+
+    > * + * {
+      margin-left: 0;
+    }
+
+    &:not(.m-buttons--square) {
+      border-radius: $border-radius-round;
+    }
+  }
+
+  &--square {
+    border-radius: $border-radius-s;
+
+    &.m-buttons--size-l {
+      width: 60px;
+    }
+
+    &.m-buttons--size-xl {
+      width: 100px;
+      padding: $spacing-m;
+
+      & .m-buttons__icon {
+        margin-bottom: $spacing-s;
+      }
+    }
+  }
+
+  &--outline {
+    border: 1px solid currentColor;
+    background-color: transparent;
+  }
+
+  &--variant {
+    &-default {
+      color: $color-neutralGrayDarker;
+
+      &:hover:not(:disabled) {
+        color: $color-neutralWhite;
+        background-color: $color-neutralGrayDarker;
+        border: 1px solid transparent;
+      }
+
+      &:not(.m-buttons--outline) {
+        color: $color-neutralGrayDarker;
+        background-color: $color-neutralGrayLighter;
+
+        &:hover:not(:disabled) {
+          color: $color-neutralGrayDarker;
+          background-color: $color-neutralGraySemi;
+        }
+      }
+    }
+
+    &-primary {
+      color: $color-brandPrimaryDarker;
+
+      &:hover:not(:disabled) {
+        color: $color-neutralWhite;
+        background-color: $color-brandPrimaryDarker;
+        border: 1px solid transparent;
+      }
+
+      &:not(.m-buttons--outline) {
+        color: $color-neutralWhite;
+        background-color: $color-brandPrimary;
+
+        &:hover:not(:disabled) {
+          color: $color-neutralWhite;
+          background-color: $color-brandPrimaryDarker;
+        }
+      }
+    }
+
+    &-success {
+      color: $color-semanticSuccessDark;
+
+      &:hover:not(:disabled) {
+        color: $color-neutralWhite;
+        background-color: $color-semanticSuccessDark;
+        border: 1px solid transparent;
+      }
+
+      &:not(.m-buttons--outline) {
+        color: $color-neutralWhite;
+        background-color: $color-semanticSuccess;
+
+        &:hover:not(:disabled) {
+          color: $color-neutralWhite;
+          background-color: $color-semanticSuccessDark;
+        }
+      }
+    }
+
+    &-info {
+      color: $color-semanticInfo;
+
+      &:hover:not(:disabled) {
+        color: $color-neutralWhite;
+        background-color: $color-semanticInfoDark;
+        border: 1px solid transparent;
+      }
+
+      &:not(.m-buttons--outline) {
+        color: $color-neutralWhite;
+        background-color: $color-semanticInfo;
+
+        &:hover:not(:disabled) {
+          color: $color-neutralWhite;
+          background-color: $color-semanticInfoDark;
+        }
+      }
+    }
+
+    &-danger {
+      color: $color-semanticDanger;
+
+      &:hover:not(:disabled) {
+        color: $color-neutralWhite;
+        background-color: $color-semanticDangerDark;
+        border: 1px solid transparent;
+      }
+
+      &:not(.m-buttons--outline) {
+        color: $color-neutralWhite;
+        background-color: $color-semanticDanger;
+
+        &:hover:not(:disabled) {
+          color: $color-neutralWhite;
+          background-color: $color-semanticDangerDark;
+        }
+      }
+    }
+
+    &-warning {
+      color: $color-semanticWarning;
+
+      &:hover:not(:disabled) {
+        color: $color-neutralWhite;
+        background-color: $color-semanticWarningDark;
+        border: 1px solid transparent;
+      }
+
+      &:not(.m-buttons--outline) {
+        color: $color-neutralWhite;
+        background-color: $color-semanticWarning;
+
+        &:hover:not(:disabled) {
+          color: $color-neutralWhite;
+          background-color: $color-semanticWarningDark;
+        }
+      }
+    }
+  }
+
+  &--size {
+    &-small {
+      height: 60px;
+      font-size: $font-size-m;
+
+      &.m-buttons--only-icon {
+        width: 60px;
+      }
+    }
+    &-large {
+      height: 100px;
+      font-size: $font-size-s;
+
+      &.m-buttons--only-icon {
+        width: 100px;
+      }
+    }
+  }
+
+  &--stretch {
+    width: 100%;
+  }
+}
+</style>

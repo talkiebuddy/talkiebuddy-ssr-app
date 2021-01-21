@@ -30,3 +30,29 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-nav-item {
+  list-style: none;
+  display: block;
+
+  a {
+    color: $color-neutralBlack;
+    background: $color-transparent;
+    // background: $color-neutralGrayLighter;
+    transition: background 0.3s;
+    display: block;
+    padding: 1rem;
+
+    &:hover {
+      border-bottom: 1px solid $color-brandPrimary;
+      background: rgba($color-brandPrimaryLighter, $opacity-half);
+      color: rgba($color-neutralBlack, $opacity-half);
+    }
+
+    &:active {
+      border-bottom: 1px solid $color-brandPrimaryDarker
+    }
+  }
+}
+</style>

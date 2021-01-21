@@ -11,9 +11,7 @@
       @change="toggle"
     >
     <div class="a-input-checkbox__box">
-      <svg class="a-input-checkbox__graphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
-        <path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z" />
-      </svg>
+      <a-icon name="check" class="a-input-checkbox__graphic" />
     </div>
   </div>
 </template>
@@ -102,3 +100,37 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.a-input-checkbox {
+  $this: &;
+  display: inline-flex;
+
+  &__box {
+    width: 2rem;
+    height: 2rem;
+    background: $color-brandPrimary;
+    border-radius: $border-radius-s;
+    display: flex;
+    font-size: $font-size-l;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__graphic {
+    width: .6em;
+    height: .6em;
+    color: $color-neutralWhite !important;
+    opacity: 0;
+    transition: opacity $duration-s;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + #{$this}__box #{$this}__graphic {
+      opacity: 1;
+    }
+  }
+}
+</style>

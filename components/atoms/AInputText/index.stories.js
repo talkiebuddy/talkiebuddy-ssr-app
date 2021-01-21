@@ -2,7 +2,7 @@ import AInputText from './index.vue'
 import { storyFactory } from '~/.storybook/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/InputText',
+  title: 'Design System/Atom/Input Text',
   component: AInputText,
   description: 'The completed documentation will sooner release. This docs is about Input Text Atom',
   argTypes: {
