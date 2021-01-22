@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { uid } from '@/plugins/helpers'
+
 export default {
   name: 'MFormCreditCardNumber',
   props: {
@@ -79,7 +81,7 @@ export default {
   },
   computed: {
     uid () {
-      return this.$uid()
+      return uid()
     },
     classes () {
       return {

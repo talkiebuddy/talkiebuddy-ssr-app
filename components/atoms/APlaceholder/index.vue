@@ -73,6 +73,8 @@
 </template>
 
 <script>
+import { uid } from '@/plugins/helpers'
+
 export default {
   name: 'APlaceholder',
   props: {
@@ -176,7 +178,7 @@ export default {
       return '0 0 400 240'
     },
     shapeId () {
-      return this.$uid()
+      return uid()
     },
     classes () {
       return {

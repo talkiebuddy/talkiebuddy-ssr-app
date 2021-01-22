@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import { uid } from '@/plugins/helpers'
+
 export default {
   name: 'MFormText',
   props: {
@@ -87,7 +89,7 @@ export default {
   },
   computed: {
     id () {
-      return this.$uid()
+      return uid()
     },
     classes () {
       return {

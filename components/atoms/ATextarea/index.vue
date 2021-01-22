@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes">
+  <div :class="['a-textarea']">
     <textarea
       :id="id"
       :name="name"
@@ -37,13 +37,10 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-  computed: {
-    classes () {
-      return {
-        'a-textarea': true
-      }
-    }
   }
 }
 </script>
+
+<style lang="scss">
+.a-textarea {}
+</style>

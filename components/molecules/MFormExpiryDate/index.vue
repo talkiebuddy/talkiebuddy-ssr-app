@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import { uid, limitLength, isNumberKey, onlyDigits } from '@/plugins/helpers'
+
 export default {
   name: 'MFormExpiryDate',
   props: {
@@ -74,13 +76,13 @@ export default {
   },
   data () {
     return {
-      expiry: this.value ? this.$onlyDigits(this.value).slice(0, 4) : '',
+      expiry: this.value ? onlyDigits(this.value).slice(0, 4) : '',
       lastDate: ''
     }
   },
   computed: {
     id () {
-      return this.$uid()
+      return uid()
     },
     formattedExpiry: {
       get () {
@@ -89,7 +91,7 @@ export default {
       set (newVal) {
         this.lastDate = this.expiry
         if (newVal.length === 1 && newVal > 1) { newVal = `0${newVal}` }
-        this.expiry = this.lastDate.lenght >= newVal.length ? '' : this.$onlyDigits(newVal).slice(0, 4)
+        this.expiry = this.lastDate.lenght >= newVal.length ? '' : onlyDigits(newVal).slice(0, 4)
         this.$emit('input', this.expiry)
       }
     },
@@ -103,17 +105,17 @@ export default {
   },
   watch: {
     'value' (newValue) {
-      this.expiry = this.$onlyDigits(newValue).slice(0, 4)
+      this.expiry = onlyDigits(newValue).slice(0, 4)
     }
   },
   methods: {
     handleChange (e) {
       const { value } = e.target
-      this.expiry = this.$onlyDigits(value).slice(0, 4)
+      this.expiry = onlyDigits(value).slice(0, 4)
     },
     format (e) {
-      this.$limitLength(e, 5)
-      this.$isNumberKey(e)
+      limitLength(e, 5)
+      isNumberKey(e)
     },
     onPaste (e) {
       const clipboardData = e.clipboardData || window.clipboardData
@@ -121,7 +123,7 @@ export default {
       const isNumber = pastedData.match(/^[0-9/]+$/g)
 
       if (isNumber) {
-        this.expiry = this.$onlyDigits(pastedData).slice(0, 4)
+        this.expiry = onlyDigits(pastedData).slice(0, 4)
       } else {
         e.preventDefault()
       }

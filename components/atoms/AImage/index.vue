@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { isUrl } from '@/plugins/helpers'
+
 export default {
   name: 'AImage',
   props: {
@@ -66,7 +68,7 @@ export default {
     calculatedSrc () {
       const { src } = this
 
-      return this.$isUrl(src) ? src : require(`~/assets/images/${src}`)
+      return isUrl(src) ? src : require(`~/assets/images/${src}`)
     },
     classes () {
       return {
@@ -95,7 +97,7 @@ export default {
       if (this.sources) {
         this.calculatedSources = await this.sources.map((source) => {
           const src = this.imageSrc
-          const srcset = this.$isUrl(src) ? source.srcset : require(`~/assets/images/${source.srcset}`)
+          const srcset = isUrl(src) ? source.srcset : require(`~/assets/images/${source.srcset}`)
           source.srcset = srcset
 
           return source

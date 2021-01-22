@@ -56,6 +56,7 @@
 <script>
 import validationErrorMessages from '@/mixins/validationErrorMessages'
 import { required, creditCard, expiry, minLength } from '@/validations'
+import { limitLength, isNumberKey } from '@/plugins/helpers'
 
 export default {
   name: 'OFormPayment',
@@ -184,8 +185,8 @@ export default {
         size = this.payment.creditCard.type.code.size
       }
 
-      this.$limitLength(e, (size || 4))
-      this.$isNumberKey(e)
+      limitLength(e, (size || 4))
+      isNumberKey(e)
     }
   },
   validations () {

@@ -153,7 +153,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .m-buttons {
   border-radius: $border-radius-xl;
   border: 1px solid transparent;
@@ -374,4 +374,5 @@ export default {
     width: 100%;
   }
 }
+
 </style>

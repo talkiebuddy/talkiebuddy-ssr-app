@@ -1,5 +1,8 @@
 export * from '~~/.nuxt-storybook/storybook/preview.js'
 
+// import "!style-loader!css-loader!sass-loader!../assets/scss/setting.scss";
+// import "!style-loader!css-loader!sass-loader!../assets/scss/main.scss";
+
 const scssReq = require.context(
   '!!raw-loader!../assets/scss/',
   true,

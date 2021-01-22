@@ -112,23 +112,23 @@ export default {
       border: 0;
     }
 
-    input {
-      font-size: inherit;
-      padding: 0.8rem 1rem;
-      color: inherit;
-      line-height: 1;
-    }
+    .vti {
+      &__input {
+        font-size: inherit;
+        padding: 0.8rem 1rem;
+        color: inherit;
+        line-height: 1;
+      }
+      &__flag {
+        box-shadow: none;
+      }
+      &__dropdown {
+        border-radius: 0;
+        position: static;
 
-    .vti__flag {
-      box-shadow: none;
-    }
-
-    .vti__dropdown {
-      border-radius: 0;
-      position: static;
-
-      &-item {
-        padding: 1.2rem 0.8rem;
+        &-item {
+          padding: 1.2rem 0.8rem;
+        }
       }
     }
 
