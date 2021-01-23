@@ -9,7 +9,7 @@
       :disabled="disabled"
       :name="name"
       @change="toggle"
-    >
+    />
     <div class="a-input-radio__circle" />
   </div>
 </template>
@@ -19,72 +19,74 @@ export default {
   name: 'AInputRadio',
   model: {
     prop: 'modelValue',
-    event: 'change'
+    event: 'change',
   },
   props: {
     /** Value of radio button */
     value: {
       type: [String, Boolean],
-      required: true
+      required: true,
+      default: '',
     },
     /** Whether the radio is checked. Can also be checked programatically using v-bind. */
     checked: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /** Disables the input by adding "disabled" attribute */
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /** Id attribute for the input */
     id: {
       type: String,
-      default: null
+      default: null,
     },
     /** name attribute for input */
     name: {
       type: String,
-      default: null
+      default: null,
     },
     /** This is a necessary prop for using v-model with this component. Should NOT be set */
     modelValue: {
       type: String,
-      default: undefined
-    }
+      default: null,
+    },
   },
   computed: {
-    shouldBeChecked () {
+    shouldBeChecked() {
       if (this.modelValue === null) {
         return this.checked
       }
 
       return this.modelValue === this.value
-    }
+    },
   },
   watch: {
-    checked () {
+    checked() {
       if (this.checked) {
         this.toggle()
       }
-    }
+    },
   },
-  mounted () {
+  mounted() {
     if (this.checked) {
       this.toggle()
     }
   },
   methods: {
-    toggle () {
+    toggle() {
       this.$emit('change', this.value)
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .a-input-radio {
   $this: &;
+
   display: inline-flex;
 
   &__circle {

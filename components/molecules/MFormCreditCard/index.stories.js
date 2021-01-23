@@ -1,18 +1,17 @@
 import MFormCreditCard from '.'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Form Credit Card',
+  title: 'Design System/Molecule/Credit Card Field',
   component: MFormCreditCard,
-  description: 'The completed documentation will sooner release. This docs is about Form Credit Card Number Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Credit Card Number Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormCreditCard }
+  components: { MFormCreditCard },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -31,16 +30,16 @@ const Template = (args, { argTypes }) => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: {}
+      fieldValue: {},
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
-  label: 'Credit Card Number'
+  label: 'Credit Card Number',
 }
 
 export const Default = () => ({
@@ -58,13 +57,13 @@ export const Default = () => ({
         <pre>{{ creditCard }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       creditCard: {
-        number: '5253111111111111'
-      }
+        number: '5253111111111111',
+      },
     }
-  }
+  },
 })
 
 export const Required = () => ({
@@ -83,13 +82,13 @@ export const Required = () => ({
         <pre>{{ creditCard }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       creditCard: {
-        number: ''
-      }
+        number: '',
+      },
     }
-  }
+  },
 })
 
 export const Invalid = () => ({
@@ -109,13 +108,13 @@ export const Invalid = () => ({
         <pre>{{ creditCard }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       creditCard: {
-        number: '332312321312312'
-      }
+        number: '332312321312312',
+      },
     }
-  }
+  },
 })
 
 export const Disabled = () => ({
@@ -134,11 +133,11 @@ export const Disabled = () => ({
         <pre>{{ creditCard }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       creditCard: {
-        number: ''
-      }
+        number: '',
+      },
     }
-  }
+  },
 })

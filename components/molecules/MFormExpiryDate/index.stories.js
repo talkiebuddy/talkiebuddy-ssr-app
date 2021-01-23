@@ -1,18 +1,17 @@
 import MFormExpiryDate from '.'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Form Expiry Date',
+  title: 'Design System/Molecule/Expiry Date Field',
   component: MFormExpiryDate,
-  description: 'The completed documentation will sooner release. This docs is about Form Expiry Date Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Expiry Date Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormExpiryDate }
+  components: { MFormExpiryDate },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -28,17 +27,17 @@ const Template = (args, { argTypes }) => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: '2222'
+      fieldValue: '2222',
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
   label: 'Expiry Date',
-  required: true
+  required: true,
 }
 
 export const Default = () => ({
@@ -53,11 +52,11 @@ export const Default = () => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: '2222'
+      fieldValue: '2222',
     }
-  }
+  },
 })
 
 export const Invalid = () => ({
@@ -72,11 +71,11 @@ export const Invalid = () => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })
 
 export const Required = () => ({
@@ -91,11 +90,11 @@ export const Required = () => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })
 
 export const Disabled = () => ({
@@ -110,9 +109,9 @@ export const Disabled = () => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })

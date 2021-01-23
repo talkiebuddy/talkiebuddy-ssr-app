@@ -1,9 +1,6 @@
 <template>
-  <i
-    :class="classes"
-    :style="styles"
-    v-html="svg"
-  />
+  <!-- eslint-disable-next-line vue/no-v-html -->
+  <i :class="classes" :style="styles" v-html="svg" />
 </template>
 
 <script>
@@ -14,63 +11,67 @@ export default {
     name: {
       required: true,
       type: String,
-      default: 'meh'
+      default: 'meh',
     },
     /** Icon color */
     fill: {
       type: String,
-      default: 'black'
+      default: 'black',
     },
     /** Icon size. Options: ['small', 'medium', 'large'] */
     size: {
       type: String,
-      validator (value) {
-        return ['x-small', 'small', 'medium', 'large'].includes(value)
+      validator(value) {
+        return ['x-small', 'base', 'small', 'medium', 'large'].includes(value)
       },
-      default: 'x-small'
-    }
+      default: 'x-small',
+    },
   },
-  data () {
+  data() {
     return {
-      svg: null
+      svg: null,
     }
   },
   computed: {
-    svgLoader () {
+    svgLoader() {
       return () =>
-        import(/* webpackChunkName: "Icon" */ '../../../assets/images/icons/' + (this.name ? this.name : 'meh') + '.svg')
+        import(
+          /* webpackChunkName: "Icon" */ '../../../assets/images/icons/' +
+            (this.name ? this.name : 'meh') +
+            '.svg'
+        )
     },
-    styles () {
+    styles() {
       return {
-        color: this.fill
+        color: this.fill,
       }
     },
-    classes () {
+    classes() {
       return {
         'a-icon': true,
         [`a-icon--${this.size}`]: true,
-        [`a-icon--${this.name}`]: true
+        [`a-icon--${this.name}`]: true,
       }
-    }
+    },
   },
   watch: {
-    name () {
+    name() {
       this.loadSvg()
-    }
+    },
   },
-  created () {
+  created() {
     this.loadSvg()
   },
   methods: {
-    async loadSvg () {
+    async loadSvg() {
       try {
         const component = await this.svgLoader()
         this.svg = component.default
       } catch (e) {
         throw new Error(`Could not load icon svg - ${e}`)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

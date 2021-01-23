@@ -1,13 +1,13 @@
 import { action } from '@storybook/addon-actions'
 import AHamburger from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Hamburger',
   component: AHamburger,
-  description: 'The completed documentation will sooner release. This docs is about Hamburger Atom',
-  argTypes: {
-  }
+  description:
+    'The completed documentation will sooner release. This docs is about Hamburger Atom',
+  argTypes: {},
 })
 
 const Template = (args, { argTypes }) => ({
@@ -15,13 +15,13 @@ const Template = (args, { argTypes }) => ({
   components: { AHamburger },
   template: '<a-hamburger v-bind="$props" @click="action" ></a-hamburger>',
   methods: {
-    action: action('hamburger clicked')
-  }
+    action: action('hamburger clicked'),
+  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
-  isOpen: false
+  isOpen: false,
 }
 
 // export const Open = () => ({

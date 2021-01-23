@@ -1,18 +1,17 @@
 import MFormSelect from '.'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Form Select',
+  title: 'Design System/Molecule/Select Field',
   component: MFormSelect,
-  description: 'The completed documentation will sooner release. This docs is about Form Select Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Select Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormSelect }
+  components: { MFormSelect },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -28,38 +27,38 @@ const Template = (args, { argTypes }) => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })
 
 const options = [
   {
     label: 'Option A',
-    value: 'a'
+    value: 'a',
   },
   {
     label: 'Option B',
-    value: 'b'
+    value: 'b',
   },
   {
     label: 'Option C',
-    value: 'c'
+    value: 'c',
   },
   {
     label: 'Option D',
     value: 'd',
-    disabled: true
-  }
+    disabled: true,
+  },
 ]
 
 export const Playground = Template.bind({})
 Playground.args = {
   label: 'Choose your food',
   emptyValueLabel: 'Please select a food',
-  options
+  options,
 }
 
 export const Default = () => ({
@@ -79,12 +78,12 @@ export const Default = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      options
+      options,
     }
-  }
+  },
 })
 
 export const Required = () => ({
@@ -104,12 +103,12 @@ export const Required = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      options
+      options,
     }
-  }
+  },
 })
 
 export const Invalid = () => ({
@@ -130,12 +129,12 @@ export const Invalid = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      options
+      options,
     }
-  }
+  },
 })
 
 export const Disabled = () => ({
@@ -155,10 +154,10 @@ export const Disabled = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      options
+      options,
     }
-  }
+  },
 })

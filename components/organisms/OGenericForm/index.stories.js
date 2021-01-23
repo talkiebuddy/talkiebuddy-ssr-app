@@ -1,22 +1,105 @@
 import { action } from '@storybook/addon-actions'
-import { required, email, password, name, creditCard, expiry } from '@/validations'
+import {
+  required,
+  email,
+  password,
+  name,
+  creditCard,
+  expiry,
+} from '@/validations'
 import countryList from './country-list'
 import securityQuestions from './security-questions'
 import OGenericForm from '.'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Organism/Generic Form',
   component: OGenericForm,
-  description: 'The completed documentation will sooner release. This docs is about Form Select Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Select Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
+
 const wrapper = {
-  components: { OGenericForm }
+  components: { OGenericForm },
 }
+
+const fields = [
+  {
+    name: 'firstName',
+    component: 'm-form-text',
+    placeholder: 'Enter your first name',
+    type: 'text',
+    label: 'First Name',
+  },
+  {
+    name: 'lastName',
+    component: 'm-form-text',
+    placeholder: 'Enter your last name',
+    type: 'text',
+    label: 'Last Name',
+  },
+  {
+    name: 'email',
+    component: 'm-form-text',
+    placeholder: 'Enter your email',
+    type: 'text',
+    label: 'Email',
+  },
+  {
+    name: 'phoneNumber',
+    component: 'm-form-tel',
+    label: 'Phone Number',
+    placeholder: 'Enter your phone number',
+    autocomplete: false,
+    errorMessage: 'Please enter a valid phone number',
+  },
+  {
+    name: 'password',
+    component: 'm-form-text',
+    type: 'password',
+    label: 'Password',
+    placeholder: 'Enter your password',
+    autocomplete: 'off',
+    visibleValidation: true,
+  },
+  {
+    name: 'countryOfResidence',
+    component: 'm-form-select',
+    label: 'Choose your country',
+    emptyValueLabel: 'Select your country',
+    options: countryList,
+  },
+  {
+    name: 'securityQuestion',
+    component: 'm-form-select',
+    label: 'Security Question',
+    emptyValueLabel: 'Select your question',
+    options: securityQuestions,
+  },
+  {
+    name: 'securityAnswer',
+    component: 'm-form-text',
+    type: 'text',
+    label: 'Security Answer',
+    conditionalRendering: {
+      field: 'securityQuestion',
+      operator: '!=',
+      value: '',
+    },
+  },
+  {
+    name: 'payment',
+    component: 'o-form-payment',
+    label: {
+      creditCardNumber: 'Credit Card Number',
+      expiry: 'Expiry Date',
+      cardHolder: "Cardholder's Name",
+      securityCode: 'Security',
+    },
+  },
+]
 
 const Template = (args, { argTypes }) => ({
   ...wrapper,
@@ -31,11 +114,11 @@ const Template = (args, { argTypes }) => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
@@ -47,7 +130,7 @@ Playground.args = {
     password: '',
     countryOfResidence: '',
     phoneNumber: {
-      number: ''
+      number: '',
     },
     language: 'en',
     securityQuestion: '',
@@ -56,8 +139,8 @@ Playground.args = {
       cardHolder: '',
       creditCardNumber: '',
       securityCode: '',
-      expiry: ''
-    }
+      expiry: '',
+    },
   },
   validations: {
     firstName: name,
@@ -73,78 +156,10 @@ Playground.args = {
       creditCard,
       cardHolder: { required },
       securityCode: { required },
-      expiry
-    }
+      expiry,
+    },
   },
-  fields: [
-    {
-      name: 'firstName',
-      component: 'm-form-text',
-      type: 'text',
-      label: 'First Name'
-    },
-    {
-      name: 'lastName',
-      component: 'm-form-text',
-      type: 'text',
-      label: 'Last Name'
-    },
-    {
-      name: 'email',
-      component: 'm-form-text',
-      type: 'text',
-      label: 'Email'
-    },
-    {
-      name: 'phoneNumber',
-      component: 'm-form-tel',
-      label: 'Phone Number',
-      placeholder: 'Enter a phone number',
-      autocomplete: false,
-      errorMessage: 'Please enter a valid phone number'
-    },
-    {
-      name: 'password',
-      component: 'm-form-text',
-      type: 'password',
-      label: 'Password',
-      autocomplete: 'off',
-      visibleValidation: true
-    },
-    {
-      name: 'countryOfResidence',
-      component: 'm-form-select',
-      label: 'Choose your country',
-      options: countryList
-    },
-    {
-      name: 'securityQuestion',
-      component: 'm-form-select',
-      label: 'Security Question',
-      options: securityQuestions
-    },
-    {
-      name: 'securityAnswer',
-      component: 'm-form-text',
-      type: 'text',
-      label: 'Security Answer',
-      conditionalRendering: {
-        field: 'securityQuestion',
-        operator: '!=',
-        value: ''
-      }
-    },
-    {
-      name: 'payment',
-      component: 'o-form-payment',
-      label: {
-        creditCardNumber: 'Credit Card Number',
-        expiry: 'Expiry date',
-        cardHolder: 'Cardholder\'s Name',
-        securityCode: 'Security'
-      }
-    }
-  ]
+  fields,
 }
 
 export const Default = () => ({
@@ -164,12 +179,12 @@ export const Default = () => ({
     `,
   methods: {
     handleSubmit: action('handleSubmit'),
-    processForm (data) {
+    processForm(data) {
       if (data) {
         const dataObject = {
           ...data,
           phoneNumber: data.phoneNumber.number,
-          phoneNumberCountryCode: data.phoneNumber.country.dialCode
+          phoneNumberCountryCode: data.phoneNumber.country.dialCode,
         }
 
         const formData = new FormData()
@@ -177,9 +192,9 @@ export const Default = () => ({
           formData.append(key, dataObject[key])
         }
       }
-    }
+    },
   },
-  data () {
+  data() {
     return {
       formData: {
         email: '',
@@ -188,7 +203,7 @@ export const Default = () => ({
         password: '',
         countryOfResidence: '',
         phoneNumber: {
-          number: ''
+          number: '',
         },
         language: 'en',
         securityQuestion: '',
@@ -197,8 +212,8 @@ export const Default = () => ({
           cardHolder: '',
           creditCardNumber: '',
           securityCode: '',
-          expiry: ''
-        }
+          expiry: '',
+        },
       },
       validations: {
         firstName: name,
@@ -214,78 +229,10 @@ export const Default = () => ({
           creditCard,
           cardHolder: { required },
           securityCode: { required },
-          expiry
-        }
+          expiry,
+        },
       },
-      fields: [
-        {
-          name: 'firstName',
-          component: 'm-form-text',
-          type: 'text',
-          label: 'First Name'
-        },
-        {
-          name: 'lastName',
-          component: 'm-form-text',
-          type: 'text',
-          label: 'Last Name'
-        },
-        {
-          name: 'email',
-          component: 'm-form-text',
-          type: 'text',
-          label: 'Email'
-        },
-        {
-          name: 'phoneNumber',
-          component: 'm-form-tel',
-          label: 'Phone Number',
-          placeholder: 'Enter a phone number',
-          autocomplete: false,
-          errorMessage: 'Please enter a valid phone number'
-        },
-        {
-          name: 'password',
-          component: 'm-form-text',
-          type: 'password',
-          label: 'Password',
-          autocomplete: 'off',
-          visibleValidation: true
-        },
-        {
-          name: 'countryOfResidence',
-          component: 'm-form-select',
-          label: 'Choose your country',
-          options: countryList
-        },
-        {
-          name: 'securityQuestion',
-          component: 'm-form-select',
-          label: 'Security Question',
-          options: securityQuestions
-        },
-        {
-          name: 'securityAnswer',
-          component: 'm-form-text',
-          type: 'text',
-          label: 'Security Answer',
-          conditionalRendering: {
-            field: 'securityQuestion',
-            operator: '!=',
-            value: ''
-          }
-        },
-        {
-          name: 'payment',
-          component: 'o-form-payment',
-          label: {
-            creditCardNumber: 'Credit Card Number',
-            expiry: 'Expiry date',
-            cardHolder: 'Cardholder\'s Name',
-            securityCode: 'Security'
-          }
-        }
-      ]
+      fields,
     }
-  }
+  },
 })

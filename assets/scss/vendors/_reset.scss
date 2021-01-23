@@ -80,8 +80,8 @@ ul {
 blockquote,
 q {
   quotes: none;
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: "";
     content: none;
   }
@@ -125,6 +125,11 @@ textarea {
   max-width: 100%;
 }
 
+textarea {
+  resize: none;
+  width: 100%;
+}
+
 [type="color"]:focus,
 [type="date"]:focus,
 [type="datetime-local"]:focus,
@@ -162,10 +167,6 @@ button {
   cursor: pointer;
 }
 
-textarea {
-  resize: none;
-  width: 100%;
-}
 
 input:disabled,
 input[readonly],

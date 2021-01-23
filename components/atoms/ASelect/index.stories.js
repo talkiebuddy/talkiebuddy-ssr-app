@@ -1,19 +1,18 @@
 import ASelect from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Select',
   component: ASelect,
-  description: 'The completed documentation will sooner release. This docs is about Select Atom',
-  argTypes: {
-
-  }
+  description:
+    'The completed documentation will sooner release. This docs is about Select Atom',
+  argTypes: {},
 })
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ASelect },
-  template: '<a-select v-bind="$props"></a-select>'
+  template: '<a-select v-bind="$props"></a-select>',
 })
 
 export const Playground = Template.bind({})
@@ -22,20 +21,20 @@ Playground.args = {
   options: [
     {
       label: 'Option A',
-      value: 'a'
+      value: 'a',
     },
     {
       label: 'Option B',
-      value: 'b'
+      value: 'b',
     },
     {
       label: 'Option C',
-      value: 'c'
+      value: 'c',
     },
     {
       label: 'Option D',
       value: 'd',
-      disabled: true
-    }
-  ]
+      disabled: true,
+    },
+  ],
 }

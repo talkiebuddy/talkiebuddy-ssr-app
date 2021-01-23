@@ -17,6 +17,7 @@
         :disabled="disabled"
         :name="name"
         :autocomplete="autocomplete"
+        :placeholder="placeholder"
         @focus="$emit('focus', $event)"
         @blur="$emit('blur', $event)"
         @keypress="format"
@@ -39,85 +40,90 @@ export default {
   props: {
     name: {
       type: String,
-      default: null
+      default: null,
     },
     value: {
       type: String,
-      default: ''
+      default: '',
     },
     label: {
       type: String,
-      default: ''
+      default: '',
     },
     placeholder: {
       type: String,
-      default: 'MM/YY'
+      default: 'MM/YY',
     },
     errorMessages: {
       type: [String, Array],
-      default: ''
+      default: '',
     },
     error: {
       type: Boolean,
-      default: false
+      default: false,
     },
     required: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     autocomplete: {
       type: String,
-      default: 'cc-exp'
-    }
+      default: 'cc-exp',
+    },
   },
-  data () {
+  data() {
     return {
       expiry: this.value ? onlyDigits(this.value).slice(0, 4) : '',
-      lastDate: ''
+      lastDate: '',
     }
   },
   computed: {
-    id () {
+    id() {
       return uid()
     },
     formattedExpiry: {
-      get () {
+      get() {
         return this.formatDate(this.expiry)
       },
-      set (newVal) {
+      set(newVal) {
         this.lastDate = this.expiry
-        if (newVal.length === 1 && newVal > 1) { newVal = `0${newVal}` }
-        this.expiry = this.lastDate.lenght >= newVal.length ? '' : onlyDigits(newVal).slice(0, 4)
+        if (newVal.length === 1 && newVal > 1) {
+          newVal = `0${newVal}`
+        }
+        this.expiry =
+          this.lastDate.lenght >= newVal.length
+            ? ''
+            : onlyDigits(newVal).slice(0, 4)
         this.$emit('input', this.expiry)
-      }
+      },
     },
-    classes () {
+    classes() {
       return {
         'm-form-expiry-date u-form-field': true,
         [`${this.error ? 'u-form-field--error' : ''}`]: true,
-        [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true
+        [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true,
       }
-    }
+    },
   },
   watch: {
-    'value' (newValue) {
+    value(newValue) {
       this.expiry = onlyDigits(newValue).slice(0, 4)
-    }
+    },
   },
   methods: {
-    handleChange (e) {
+    handleChange(e) {
       const { value } = e.target
       this.expiry = onlyDigits(value).slice(0, 4)
     },
-    format (e) {
+    format(e) {
       limitLength(e, 5)
       isNumberKey(e)
     },
-    onPaste (e) {
+    onPaste(e) {
       const clipboardData = e.clipboardData || window.clipboardData
       const pastedData = clipboardData.getData('Text')
       const isNumber = pastedData.match(/^[0-9/]+$/g)
@@ -128,7 +134,7 @@ export default {
         e.preventDefault()
       }
     },
-    formatDate (date) {
+    formatDate(date) {
       if (date.length > 2) {
         const month = date.slice(0, 2)
         const year = date.slice(2, 4)
@@ -136,7 +142,7 @@ export default {
         return `${month}/${year}`
       }
       return date
-    }
-  }
+    },
+  },
 }
 </script>

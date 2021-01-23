@@ -1,19 +1,18 @@
 import AInputCheckbox from '.'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Input Checkbox',
   component: AInputCheckbox,
-  description: 'The completed documentation will sooner release. This docs is about Input Checkbox Atom',
-  argTypes: {
-
-  }
+  description:
+    'The completed documentation will sooner release. This docs is about Input Checkbox Atom',
+  argTypes: {},
 })
 
 const wrapper = {
   components: {
-    AInputCheckbox
-  }
+    AInputCheckbox,
+  },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -30,18 +29,18 @@ const Template = (args, { argTypes }) => ({
 
   </div>
   `,
-  data () {
+  data() {
     return {
-      selectedValue: ''
+      selectedValue: '',
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
   checked: true,
   value: true,
-  label: 'Do you accept the terms and conditions?'
+  label: 'Do you accept the terms and conditions?',
 }
 
 export const Default = () => ({
@@ -58,11 +57,11 @@ export const Default = () => ({
         Value is : "{{ selectedValue }}"
       </div>
     `,
-  data () {
+  data() {
     return {
-      selectedValue: null
+      selectedValue: null,
     }
-  }
+  },
 })
 
 export const MultipleChoice = () => ({
@@ -89,9 +88,9 @@ export const MultipleChoice = () => ({
         Value is : "{{ selectedValue }}"
       </div>
     `,
-  data () {
+  data() {
     return {
-      selectedValue: ['option1', 'option3']
+      selectedValue: ['option1', 'option3'],
     }
-  }
+  },
 })

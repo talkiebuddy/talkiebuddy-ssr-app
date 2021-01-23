@@ -1,28 +1,34 @@
 Math.easeInOutQuad = function (t, b, c, d) {
   t /= d / 2
-  if (t < 1) { return c / 2 * t * t + b }
+  if (t < 1) {
+    return (c / 2) * t * t + b
+  }
   t--
-  return -c / 2 * (t * (t - 2) - 1) + b
+  return (-c / 2) * (t * (t - 2) - 1) + b
 }
 
 // requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
 const requestAnimFrame = (function () {
-  return window.requestAnimationFrame ||
-          window.webkitRequestAnimationFrame ||
-          window.mozRequestAnimationFrame ||
-          function (callback) {
-            window.setTimeout(callback, 1000 / 60)
-          }
+  return (
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function (callback) {
+      window.setTimeout(callback, 1000 / 60)
+    }
+  )
 })()
 
 export default {
   methods: {
-    $scrollTo (to, duration = 500, offset = 0, callback) {
+    $scrollTo(to, duration = 500, offset = 0, callback) {
       if (typeof to === 'string') {
         const bodyRect = document.body.getBoundingClientRect()
         const element = document.querySelector(to)
 
-        if (!element) { return }
+        if (!element) {
+          return
+        }
 
         const elemRect = element.getBoundingClientRect()
         to = elemRect.top - bodyRect.top
@@ -37,7 +43,11 @@ export default {
       }
 
       const position = () => {
-        return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop
+        return (
+          document.documentElement.scrollTop ||
+          document.body.parentNode.scrollTop ||
+          document.body.scrollTop
+        )
       }
 
       const start = position()
@@ -55,12 +65,12 @@ export default {
         // do the animation unless its over
         if (currentTime < duration) {
           requestAnimFrame(animateScroll)
-        } else if (callback && typeof (callback) === 'function') {
+        } else if (callback && typeof callback === 'function') {
           // the animation is done so lets callback
           callback()
         }
       }
       animateScroll()
-    }
-  }
+    },
+  },
 }

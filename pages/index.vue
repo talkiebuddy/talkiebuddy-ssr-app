@@ -1,10 +1,9 @@
 <template>
   <div class="container">
     <div>
+      <o-header></o-header>
       <Logo />
-      <h1 class="title">
-        talkiebuddy-ssr-app
-      </h1>
+      <h1 class="title">talkiebuddy-ssr-app</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -24,17 +23,15 @@
         </a>
       </div>
     </div>
-    <m-button label="Atomic Button" />
+    <m-buttons label="Atomic Button" />
+    <m-buttons variant="primary" label="Click here" />
+    <m-buttons variant="success" label="Click here" />
+    <m-buttons variant="danger" label="Click here" />
+    <m-buttons variant="warning" label="Click here" />
 
-    <m-button primary label="Click here" />
-    <m-button secondary label="Click here" />
-    <m-button success label="Click here" />
-    <m-button error label="Click here" />
-    <m-button warning label="Click here" />
-
-    <m-button disabled label="Click here" />
-    <m-button href="https://google.com" label="Click here" />
-    <a-image />
+    <m-buttons disabled label="Click here" />
+    <m-buttons href="https://google.com" label="Visit Google" />
+    <a-image src="https://source.unsplash.com/random/400x300" />
     <a-icon name="twitter" size="large" />
   </div>
 </template>

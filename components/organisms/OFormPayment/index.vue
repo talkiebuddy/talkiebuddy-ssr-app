@@ -34,7 +34,14 @@
         inputmode="numeric"
         :error="$v.payment.securityCode.$error"
         :error-messages="$getErrorMessages('securityCode')"
-        :label="label.securityCode + `${payment.creditCard.type ? ` (${payment.creditCard.type.code.name})` : ''}`"
+        :label="
+          label.securityCode +
+          `${
+            payment.creditCard.type
+              ? ` (${payment.creditCard.type.code.name})`
+              : ''
+          }`
+        "
         :placeholder="placeholder.securityCode"
         @blur="$v.payment.securityCode.$touch()"
         @keypress="handleSecurityKeypress"
@@ -64,102 +71,102 @@ export default {
   props: {
     label: {
       type: Object,
-      default () {
+      default() {
         return {
           cardHolder: '',
           creditCardNumber: '',
           securityCode: '',
-          expiry: ''
+          expiry: '',
         }
-      }
+      },
     },
     placeholder: {
       type: Object,
-      default () {
+      default() {
         return {
-          cardHolder: '',
+          cardHolder: "Cardholder's Name",
           creditCardNumber: '•••• •••• •••• ••••',
           securityCode: 'Security Code',
-          expiry: 'MM/YY'
+          expiry: 'MM/YY',
         }
-      }
+      },
     },
     value: {
       type: Object,
-      required: true
+      required: true,
     },
     error: {
       type: Boolean,
-      default: false
+      default: false,
     },
     success: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     validations: {
       type: Object,
       // default: () => {}
-      default () {
+      default() {
         return {
           payment: {
             creditCard,
             cardHolder: { required, minLength: minLength(3) },
             securityCode: { required },
-            expiry
-          }
+            expiry,
+          },
         }
-      }
+      },
     },
     errorMessages: {
       type: [String, Array],
-      default: ''
-    }
+      default: '',
+    },
   },
-  data () {
+  data() {
     return {
       payment: {
         creditCard: {
-          number: ''
+          number: '',
         },
         cardHolder: '',
         securityCode: '',
-        expiry: ''
-      }
+        expiry: '',
+      },
     }
   },
   computed: {
-    classes () {
+    classes() {
       return {
         'o-form-payment': true,
         [`${this.error ? 'o-form-payment--error' : ''}`]: true,
         [`${this.success ? 'o-form-payment--success' : ''}`]: true,
-        [`${this.disabled ? 'v-o-form-payment--disabled' : ''}`]: true
+        [`${this.disabled ? 'v-o-form-payment--disabled' : ''}`]: true,
       }
-    }
+    },
   },
   watch: {
-    error (newValue) {
+    error(newValue) {
       if (newValue) {
         this.$v.$touch()
       }
     },
-    'payment.creditCard' (newValue) {
+    'payment.creditCard'(newValue) {
       this.$emit('input', this.payment)
     },
-    'payment.cardHolder' (newValue) {
+    'payment.cardHolder'(newValue) {
       this.$emit('input', this.payment)
     },
-    'payment.securityCode' (newValue) {
+    'payment.securityCode'(newValue) {
       this.$emit('input', this.payment)
     },
-    'payment.expiry' (newValue) {
+    'payment.expiry'(newValue) {
       this.$emit('input', this.payment)
     },
-    value (newValue) {
+    value(newValue) {
       const { payment } = this
       const { cardHolder, expiry, securityCode, creditCard } = newValue
 
@@ -167,9 +174,9 @@ export default {
       this.$set(payment, 'securityCode', securityCode)
       this.$set(payment, 'expiry', expiry)
       this.$set(payment, 'cardHolder', cardHolder)
-    }
+    },
   },
-  created () {
+  created() {
     if (this.value) {
       const { cardHolder, expiry, securityCode, creditCard } = this.value
       this.payment.creditCard.number = creditCard ? creditCard.number : ''
@@ -179,20 +186,19 @@ export default {
     }
   },
   methods: {
-    handleSecurityKeypress (e) {
+    handleSecurityKeypress(e) {
       let size
       if (this.payment.creditCard.type) {
         size = this.payment.creditCard.type.code.size
       }
 
-      limitLength(e, (size || 4))
+      limitLength(e, size || 4)
       isNumberKey(e)
-    }
+    },
   },
-  validations () {
+  validations() {
     return this.validations
-  }
-
+  },
 }
 </script>
 

@@ -1,19 +1,18 @@
 import AInputTel from '.'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Input Tel',
   component: AInputTel,
-  description: 'The completed documentation will sooner release. This docs is about Input Tel Atom',
-  argTypes: {
-
-  }
+  description:
+    'The completed documentation will sooner release. This docs is about Input Tel Atom',
+  argTypes: {},
 })
 
 const wrapper = {
   components: {
-    AInputTel
-  }
+    AInputTel,
+  },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -28,18 +27,17 @@ const Template = (args, { argTypes }) => ({
   <pre>{{ phoneNumber }}</pre>
 
   </div>`,
-  data () {
+  data() {
     return {
       phoneNumber: {
-        number: '+447792916879'
-      }
+        number: '+447792916879',
+      },
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
-Playground.args = {
-}
+Playground.args = {}
 
 export const single = () => ({
   ...wrapper,
@@ -51,11 +49,11 @@ export const single = () => ({
 
       </div>
     `,
-  data () {
+  data() {
     return {
       phoneNumber: {
-        number: '+447792916879'
-      }
+        number: '+447792916879',
+      },
     }
-  }
+  },
 })

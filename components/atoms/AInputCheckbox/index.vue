@@ -9,7 +9,7 @@
       :disabled="disabled"
       :name="name"
       @change="toggle"
-    >
+    />
     <div class="a-input-checkbox__box">
       <a-icon name="check" class="a-input-checkbox__graphic" />
     </div>
@@ -21,42 +21,43 @@ export default {
   name: 'AInputCheckbox',
   model: {
     prop: 'modelValue',
-    event: 'input'
+    event: 'input',
   },
   props: {
     /** Value of checkbox */
     value: {
       type: [String, Boolean],
-      required: true
+      required: true,
+      default: '',
     },
     /** Whether the checkbox is checked. Can also be checked programatically using v-bind. */
     checked: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /** Disables the input by adding "disabled" attribute */
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /** Id attribute for the input */
     id: {
       type: String,
-      default: null
+      default: null,
     },
     /** name attribute for input */
     name: {
       type: String,
-      default: null
+      default: null,
     },
     /** This is a necessary prop for using v-model with this component. Should NOT be set */
     modelValue: {
-      type: String,
-      default: undefined
-    }
+      type: [String, Boolean],
+      default: undefined,
+    },
   },
   computed: {
-    shouldBeChecked () {
+    shouldBeChecked() {
       if (this.modelValue === undefined) {
         return this.checked
       }
@@ -66,22 +67,22 @@ export default {
       }
 
       return !!this.modelValue
-    }
+    },
   },
   watch: {
-    checked (newValue) {
+    checked(newValue) {
       if (newValue !== this.shouldBeChecked) {
         this.toggle()
       }
-    }
+    },
   },
-  mounted () {
+  mounted() {
     if (this.checked && !this.shouldBeChecked) {
       this.toggle()
     }
   },
   methods: {
-    toggle () {
+    toggle() {
       let value
       if (Array.isArray(this.modelValue)) {
         value = [...this.modelValue]
@@ -96,14 +97,15 @@ export default {
       }
 
       this.$emit('input', value)
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .a-input-checkbox {
   $this: &;
+
   display: inline-flex;
 
   &__box {
@@ -118,8 +120,8 @@ export default {
   }
 
   &__graphic {
-    width: .6em;
-    height: .6em;
+    width: 0.6em;
+    height: 0.6em;
     color: $color-neutralWhite !important;
     opacity: 0;
     transition: opacity $duration-s;

@@ -1,14 +1,13 @@
 import ALabel from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Label',
   component: ALabel,
-  description: 'The completed documentation will sooner release. This docs is about Label Atom',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Label Atom',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const Template = (args, { argTypes }) => ({
@@ -16,16 +15,16 @@ const Template = (args, { argTypes }) => ({
   components: { ALabel },
   template: `<a-label v-bind="$props">{{label}}</a-label>
   `,
-  data () {
+  data() {
     return {
-      label: ''
+      name: '',
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
-  label: 'Label'
+  name: 'Label',
 }
 
 export const Default = () => ({
@@ -53,11 +52,11 @@ export const Default = () => ({
         </ALabel>
     </div>
   `,
-  data () {
+  data() {
     return {
-      option: null
+      option: null,
     }
-  }
+  },
 })
 
 export const htmlFor = () => ({
@@ -69,5 +68,5 @@ export const htmlFor = () => ({
       <ALabel htmlFor="text-input">Label Full Name</ALabel>
       <input type="text" id="text-input">
     </div>
-  `
+  `,
 })

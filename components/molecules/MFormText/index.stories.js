@@ -1,14 +1,13 @@
 import MFormText from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Form Text',
+  title: 'Design System/Molecule/Text Field',
   component: MFormText,
-  description: 'The completed documentation will sooner release. This docs is about Form Text Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Text Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const Template = (args, { argTypes }) => ({
@@ -25,18 +24,18 @@ const Template = (args, { argTypes }) => ({
 
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
   label: 'Full Name',
   placeholder: 'Please fill in your full name',
-  type: 'text'
+  type: 'text',
 }
 
 export const defaults = () => ({
@@ -51,11 +50,11 @@ export const defaults = () => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })
 
 export const Required = () => ({
@@ -70,11 +69,11 @@ export const Required = () => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })
 
 export const Invalid = () => ({
@@ -89,11 +88,11 @@ export const Invalid = () => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: '4123213'
+      fieldValue: '4123213',
     }
-  }
+  },
 })
 
 export const Disabled = () => ({
@@ -108,9 +107,9 @@ export const Disabled = () => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })

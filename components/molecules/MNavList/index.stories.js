@@ -1,50 +1,51 @@
 import MNavList from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Molecule/Navigation List',
   component: MNavList,
-  description: 'The completed documentation will sooner release. This docs is about Navigation List Atom',
+  description:
+    'The completed documentation will sooner release. This docs is about Navigation List Atom',
   argTypes: {
-    list: { control: { type: 'object' } }
-  }
+    list: { control: { type: 'object' } },
+  },
 })
 
 const listRoute = [
   {
     label: 'Home',
-    to: '/'
+    to: '/',
   },
   {
     label: 'About Us',
-    to: '/about'
-  }
+    to: '/about',
+  },
 ]
 
 const listHref = [
   {
     label: 'Google',
-    href: 'https://google.com'
+    href: 'https://google.com',
   },
   {
     label: 'Talkie Buddy',
-    href: 'https://talkiebuddy.com'
-  }
+    href: 'https://talkiebuddy.com',
+  },
 ]
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MNavList },
-  template: '<m-nav-list :list="list" v-bind="$props"></m-nav-list>'
+  template: '<m-nav-list :list="list" v-bind="$props"></m-nav-list>',
 })
 
 export const HorizontalList = Template.bind({})
 HorizontalList.args = {
-  list: listRoute
+  list: listRoute,
 }
 
 export const VerticalList = Template.bind({})
 VerticalList.args = {
   list: listHref,
-  direction: 'vertical'
+  direction: 'vertical',
 }

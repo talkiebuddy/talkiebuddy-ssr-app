@@ -1,20 +1,19 @@
 import OFormPayment from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Organism/Form Payment',
+  title: 'Design System/Organism/Payment Form',
   component: OFormPayment,
-  description: 'The completed documentation will sooner release. This docs is about Form Text Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Text Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
   components: {
-    OFormPayment
-  }
+    OFormPayment,
+  },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -34,18 +33,18 @@ const Template = (args, { argTypes }) => ({
 
   </div>
   `,
-  data () {
+  data() {
     return {
       fieldValue: {
         creditCard: {
-          number: ''
+          number: '',
         },
         cardHolder: '',
         securityCode: '',
-        expiry: ''
-      }
+        expiry: '',
+      },
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
@@ -54,8 +53,8 @@ Playground.args = {
     securityCode: 'Security Code',
     creditCardNumber: 'Credit Card Number',
     expiry: 'Expiry date',
-    cardHolder: 'Cardholder\'s Name'
-  }
+    cardHolder: "Cardholder's Name",
+  },
 }
 
 export const Default = () => ({
@@ -71,22 +70,22 @@ export const Default = () => ({
         <pre>Field value is: {{ paymentData }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       paymentData: {
         creditCard: {
-          number: ''
+          number: '',
         },
         cardHolder: '',
         securityCode: '',
-        expiry: ''
+        expiry: '',
       },
       label: {
         securityCode: 'Security Code',
         creditCardNumber: 'Credit Card Number',
         expiry: 'Expiry date',
-        cardHolder: 'Cardholder\'s Name'
-      }
+        cardHolder: "Cardholder's Name",
+      },
     }
-  }
+  },
 })

@@ -8,7 +8,7 @@
       :disabled="disabled"
       :required="required"
       @onInput="onInput"
-      @onBlur="$emit('blur', {phone, error, country})"
+      @onBlur="$emit('blur', { phone, error, country })"
     />
   </div>
 </template>
@@ -19,40 +19,40 @@ import { VueTelInput } from 'vue-tel-input'
 export default {
   name: 'AInputTel',
   components: {
-    VueTelInput
+    VueTelInput,
   },
   props: {
     /** The value of tel input */
     value: {
       type: [String, Object],
-      default: ''
+      default: '',
     },
     /** placeholder text for the tel input */
     placeholder: {
       type: String,
-      default: 'Enter your phone number'
+      default: 'Enter your phone number',
     },
     /** An array of prefered countries to show at the top of dropdown */
     preferredCountries: {
       type: Array,
-      default () {
+      default() {
         return ['ID', 'US']
-      }
+      },
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     required: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
-  data () {
+  data() {
     return {
       phone: this.value.number,
       error: null,
-      country: null
+      country: null,
       // bindProps: {
       //   mode: 'international',
       //   defaultCountry: 'ID',
@@ -91,12 +91,12 @@ export default {
      * @param {Boolean} isValid
      * @param {String} country
      */
-    onInput ({ number, isValid, country }) {
+    onInput({ number, isValid, country }) {
       this.error = !isValid
       this.country = country
       this.$emit('input', { number, error: this.error, country })
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -118,6 +118,7 @@ export default {
         padding: 0.8rem 1rem;
         color: inherit;
         line-height: 1;
+        background: transparent;
       }
       &__flag {
         box-shadow: none;
@@ -148,5 +149,4 @@ export default {
     }
   }
 }
-
 </style>

@@ -1,17 +1,18 @@
 // import { action } from '@storybook/addon-actions'
 import ATableCell from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Table Cell',
   component: ATableCell,
-  description: 'The completed documentation will sooner release. This docs is about Table Cell Atom'
+  description:
+    'The completed documentation will sooner release. This docs is about Table Cell Atom',
 })
 
 const wrapper = {
   components: {
-    ATableCell
-  }
+    ATableCell,
+  },
 }
 
 // const Template = (args, { argTypes }) => ({
@@ -32,5 +33,5 @@ export const Test = () => ({
   ...wrapper,
   template: `
     <a-table-cell>Table Cell Content</a-table-cell>
-  `
+  `,
 })

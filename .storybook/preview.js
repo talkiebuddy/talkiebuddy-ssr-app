@@ -1,27 +1,24 @@
 export * from '~~/.nuxt-storybook/storybook/preview.js'
 
-// import "!style-loader!css-loader!sass-loader!../assets/scss/setting.scss";
-// import "!style-loader!css-loader!sass-loader!../assets/scss/main.scss";
-
 const scssReq = require.context(
   '!!raw-loader!../assets/scss/',
   true,
   /.\.scss$/
-);
+)
 
 const scssTokenFiles = scssReq
   .keys()
-  .map((filename) => ({ filename, content: scssReq(filename).default }));
+  .map((filename) => ({ filename, content: scssReq(filename).default }))
 
 const svgIconsReq = require.context(
-  '!!raw-loader!../assets/images/icons', true,
+  '!!raw-loader!../assets/images/icons',
+  true,
   /.\.svg$/
-);
+)
 
 const svgIconTokenFiles = svgIconsReq
   .keys()
-  .map((filename) => ({ filename, content: svgIconsReq(filename).default }));
-
+  .map((filename) => ({ filename, content: svgIconsReq(filename).default }))
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -65,5 +62,5 @@ export const parameters = {
 //       icon: 'circlehollow',
 //       items: ['light', 'dark'],
 //     }
-//   }
+//   },
 // }

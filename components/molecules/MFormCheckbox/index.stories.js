@@ -1,18 +1,17 @@
 import MFormCheckbox from '.'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Form Checkbox',
+  title: 'Design System/Molecule/Checkbox Field',
   component: MFormCheckbox,
-  description: 'The completed documentation will sooner release. This docs is about Form Checkbox Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Checkbox Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormCheckbox }
+  components: { MFormCheckbox },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -28,37 +27,37 @@ const Template = (args, { argTypes }) => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: {}
+      fieldValue: {},
     }
-  }
+  },
 })
 
 const options = [
   {
     label: 'Option A',
-    value: 'optiona'
+    value: 'optiona',
   },
   {
     label: 'Option B',
-    value: 'optionb'
+    value: 'optionb',
   },
   {
     label: 'Option C',
-    value: 'optionc'
+    value: 'optionc',
   },
   {
     label: 'Option D',
     value: 'optiond',
-    disabled: true
-  }
+    disabled: true,
+  },
 ]
 
 export const Playground = Template.bind({})
 Playground.args = {
   label: 'Choose your food',
-  options
+  options,
 }
 
 export const Single = () => ({
@@ -78,11 +77,11 @@ export const Single = () => ({
     <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
-      fieldValue: ''
+      fieldValue: '',
     }
-  }
+  },
 })
 
 export const SingleDisabled = () => ({
@@ -97,11 +96,11 @@ export const SingleDisabled = () => ({
 
       </div>
     `,
-  data () {
+  data() {
     return {
-      selected: ''
+      selected: '',
     }
-  }
+  },
 })
 
 export const Multiple = () => ({
@@ -121,12 +120,12 @@ export const Multiple = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: ['optiona', 'optionc'],
-      options
+      options,
     }
-  }
+  },
 })
 
 export const Required = () => ({
@@ -146,12 +145,12 @@ export const Required = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: [],
-      options
+      options,
     }
-  }
+  },
 })
 
 export const Invalid = () => ({
@@ -172,12 +171,12 @@ export const Invalid = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      options
+      options,
     }
-  }
+  },
 })
 
 export const Disabled = () => ({
@@ -197,10 +196,10 @@ export const Disabled = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      options
+      options,
     }
-  }
+  },
 })

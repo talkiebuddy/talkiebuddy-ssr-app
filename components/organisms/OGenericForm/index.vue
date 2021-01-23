@@ -1,15 +1,16 @@
 <template>
-  <form
-    class="o-generic-form"
-    @submit="handleSubmit"
-  >
+  <form class="o-generic-form" @submit="handleSubmit">
     <div
       v-for="field in visibleFields"
       :key="field.name"
       :class="[
         'o-generic-form__section',
         `o-generic-form__section--${field.name}`,
-        `${$v.formData[field.name] && $v.formData[field.name].$error ? 'o-generic-form__section--error' : ''}`
+        `${
+          $v.formData[field.name] && $v.formData[field.name].$error
+            ? 'o-generic-form__section--error'
+            : ''
+        }`,
       ]"
     >
       <component
@@ -21,15 +22,22 @@
         :disabled="field.disabled"
         :checked="field.checked"
         :placeholder="field.placeholder"
-        :autocomplete="field.autocomplete"
         :empty-value-label="field.emptyValueLabel"
+        :autocomplete="field.autocomplete"
         :value="formData[field.name]"
-        :error="$v.formData[field.name] ? $v.formData[field.name].$error : false"
-        :error-messages="field.errorMessage || $getErrorMessages(field.name, field.visibleValidation)"
+        :error="
+          $v.formData[field.name] ? $v.formData[field.name].$error : false
+        "
+        :error-messages="
+          field.errorMessage ||
+          $getErrorMessages(field.name, field.visibleValidation)
+        "
         :validations="validations || null"
-        @input="value => handleInput(field.name, value)"
-        @change="value => handleInput(field.name, value)"
-        @blur="$v.formData[field.name] ? $v.formData[field.name].$touch() : () => {}"
+        @input="(value) => handleInput(field.name, value)"
+        @change="(value) => handleInput(field.name, value)"
+        @blur="
+          $v.formData[field.name] ? $v.formData[field.name].$touch() : () => {}
+        "
       />
     </div>
 
@@ -48,26 +56,26 @@ export default {
     /** An array objects. Each object represent a form field for example VFormText. */
     fields: {
       type: Array,
-      required: true
+      required: true,
     },
     /** An object including validations of the specific */
     validations: {
       type: Object,
-      default: () => {}
+      default: () => {},
     },
     /** Value of the form object. Includes all form fields */
     value: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  data () {
+  data() {
     return {
-      formData: this.value
+      formData: this.value,
     }
   },
   computed: {
-    visibleFields () {
+    visibleFields() {
       return this.fields.filter((formField) => {
         if (formField && formField.conditionalRendering) {
           const { $v } = this
@@ -88,29 +96,32 @@ export default {
 
         return true
       })
-    }
+    },
   },
   methods: {
-    handleInput (name, value) {
+    handleInput(name, value) {
       this.$set(this.formData, name, value)
       this.$emit('input', this.formData)
     },
-    handleSubmit (e) {
+    handleSubmit(e) {
       e.preventDefault()
       this.$v.formData.$touch()
 
       if (!this.$v.$invalid) {
         this.$emit('submit', this.formData)
       } else {
-        setTimeout(() => this.$scrollTo('.o-generic-form__section--error', 400, -20), 100)
+        setTimeout(
+          () => this.$scrollTo('.o-generic-form__section--error', 400, -20),
+          100
+        )
       }
+    },
+  },
+  validations() {
+    return {
+      formData: this.validations,
     }
   },
-  validations () {
-    return {
-      formData: this.validations
-    }
-  }
 }
 </script>
 

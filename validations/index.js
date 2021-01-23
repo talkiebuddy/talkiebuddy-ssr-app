@@ -3,7 +3,7 @@ import {
   url as urlValidator,
   macAddress as macAddressValidator,
   required as requiredValidator,
-  minLength as minLengthValidator
+  minLength as minLengthValidator,
 } from 'vuelidate/lib/validators'
 
 /**
@@ -34,7 +34,7 @@ export const password = {
   },
   minLength: (value) => {
     return value.length > 8
-  }
+  },
 }
 
 /**
@@ -48,7 +48,7 @@ export const minLength = minLengthValidator
  */
 export const name = {
   required: requiredValidator,
-  minLength: minLength(2)
+  minLength: minLength(2),
 }
 
 /**
@@ -77,9 +77,11 @@ export const expiry = {
     return true
   },
   required: (value) => {
-    if (value.length) { return true }
+    if (value.length) {
+      return true
+    }
     return false
-  }
+  },
 }
 
 /**
@@ -94,16 +96,22 @@ export const creditCard = {
   valid: (card) => {
     const { type, number } = card
     // Do not validate if card number is empty or is less than 2 characters
-    if (!card.number || card.number.length < 2) { return true }
+    if (!card.number || card.number.length < 2) {
+      return true
+    }
     // It needs to be at least minimum character specified in the type
-    if (card.type && number.length < type.lengths[0]) { return false }
+    if (card.type && number.length < type.lengths[0]) {
+      return false
+    }
 
     return !!card.type
   },
   required: (card) => {
-    if (card.number && card.number.length) { return true }
+    if (card.number && card.number.length) {
+      return true
+    }
     return false
-  }
+  },
 }
 
 /**

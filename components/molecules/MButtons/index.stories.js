@@ -1,42 +1,55 @@
 import { action } from '@storybook/addon-actions'
 import MButtons from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Molecule/Buttons',
   component: MButtons,
-  description: 'The completed documentation will sooner release. This docs is about Button Atom',
+  description:
+    'The completed documentation will sooner release. This docs is about Button Atom',
   argTypes: {
     backgroundColor: {
       control: 'color',
       table: {
-        category: 'Colors'
-      }
+        category: 'Colors',
+      },
     },
     iconColor: {
       control: 'color',
       table: {
-        category: 'Colors'
-      }
+        category: 'Colors',
+      },
     },
     labelColor: {
       control: 'color',
       table: {
-        category: 'Colors'
-      }
+        category: 'Colors',
+      },
     },
     label: { control: 'text' },
-    size: { control: { type: 'select', options: ['x-small', 'small', 'medium', 'large'] } },
-    type: { control: { type: 'select', options: ['a', 'button', 'router-link'] } },
-    variant: { control: { type: 'select', options: ['default', 'primary', 'success', 'info', 'danger', 'warning'] } }
+    size: {
+      control: {
+        type: 'select',
+        options: ['x-small', 'small', 'medium', 'large'],
+      },
+    },
+    type: {
+      control: { type: 'select', options: ['a', 'button', 'router-link'] },
+    },
+    variant: {
+      control: {
+        type: 'select',
+        options: ['default', 'primary', 'success', 'info', 'danger', 'warning'],
+      },
+    },
   },
-  excludeStories: /.*Data$/
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
   components: {
-    MButtons
-  }
+    MButtons,
+  },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -44,20 +57,20 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: '<m-buttons @click="action" :style="styles" v-bind="$props" />',
   computed: {
-    styles () {
+    styles() {
       return {
-        backgroundColor: this.backgroundColor
+        backgroundColor: this.backgroundColor,
       }
-    }
+    },
   },
-  methods: { action: action('button clicked') }
+  methods: { action: action('button clicked') },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
   type: 'button',
   label: 'Playground',
-  iconPrefix: 'twitter'
+  iconPrefix: 'twitter',
 }
 
 export const Variant = () => ({
@@ -71,5 +84,5 @@ export const Variant = () => ({
     <m-buttons variant="danger">Heading 1</m-buttons>
     <m-buttons variant="warning">Heading 1</m-buttons>
   </div>
-  `
+  `,
 })

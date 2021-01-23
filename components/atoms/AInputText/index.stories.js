@@ -1,25 +1,24 @@
 import AInputText from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Input Text',
   component: AInputText,
-  description: 'The completed documentation will sooner release. This docs is about Input Text Atom',
-  argTypes: {
-
-  }
+  description:
+    'The completed documentation will sooner release. This docs is about Input Text Atom',
+  argTypes: {},
 })
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { AInputText },
-  template: '<a-input-text v-bind="$props"></a-input-text>'
+  template: '<a-input-text v-bind="$props"></a-input-text>',
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
   type: 'text',
-  defaultValue: 40
+  defaultValue: 40,
 }
 
 export const Type = () => ({
@@ -30,9 +29,9 @@ export const Type = () => ({
     {{inputValue}}
   </div>
   `,
-  data () {
+  data() {
     return {
-      inputValue: ''
+      inputValue: '',
     }
-  }
+  },
 })

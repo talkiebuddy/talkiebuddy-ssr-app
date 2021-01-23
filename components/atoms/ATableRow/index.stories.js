@@ -1,19 +1,20 @@
 // import { action } from '@storybook/addon-actions'
 import ATableCell from '../ATableCell'
 import ATableRow from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Molecule/Table Row',
   component: { ATableRow, ATableCell },
-  description: 'The completed documentation will sooner release. This docs is about Table Row Molecule'
+  description:
+    'The completed documentation will sooner release. This docs is about Table Row Molecule',
 })
 
 const wrapper = {
   components: {
     ATableRow,
-    ATableCell
-  }
+    ATableCell,
+  },
 }
 
 // const Template = (args, { argTypes }) => ({
@@ -37,7 +38,7 @@ export const Th = () => ({
     <a-table-cell heading>Cell 1</a-table-cell>
     <a-table-cell heading>Cell 2</a-table-cell>
   </a-table-row>
-  `
+  `,
 })
 
 export const Td = () => ({
@@ -47,5 +48,5 @@ export const Td = () => ({
     <a-table-cell>Cell 1</a-table-cell>
     <a-table-cell>Cell 2</a-table-cell>
   </a-table-row>
-  `
+  `,
 })

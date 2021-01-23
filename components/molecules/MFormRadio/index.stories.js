@@ -1,18 +1,17 @@
 import MFormRadio from '.'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Form Radio',
+  title: 'Design System/Molecule/Radio Field',
   component: MFormRadio,
-  description: 'The completed documentation will sooner release. This docs is about Form Radio Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Radio Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormRadio }
+  components: { MFormRadio },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -28,39 +27,39 @@ const Template = (args, { argTypes }) => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
-      fieldValue: {}
+      fieldValue: {},
     }
-  }
+  },
 })
 
 const option = [
   {
     label: 'New York City',
-    value: 'new-york'
+    value: 'new-york',
   },
   {
     label: 'Paris - Disabled',
     value: 'paris',
-    disabled: true
+    disabled: true,
   },
   {
     label: 'London',
     value: 'london',
-    checked: true
+    checked: true,
   },
   {
     label: 'Amsterdam',
-    value: 'amsterdam'
-  }
+    value: 'amsterdam',
+  },
 ]
 
 export const Playground = Template.bind({})
 Playground.args = {
-  label: 'What\'s your favourite city',
+  label: "What's your favourite city",
   required: true,
-  options: option
+  options: option,
 }
 
 export const Default = () => ({
@@ -79,12 +78,12 @@ export const Default = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      option
+      option,
     }
-  }
+  },
 })
 
 export const Invalid = () => ({
@@ -105,12 +104,12 @@ export const Invalid = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      option
+      option,
     }
-  }
+  },
 })
 
 export const Required = () => ({
@@ -130,12 +129,12 @@ export const Required = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: '',
-      option
+      option,
     }
-  }
+  },
 })
 
 export const Disabled = () => ({
@@ -155,10 +154,10 @@ export const Disabled = () => ({
         <pre>{{ fieldValue }}</pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       selected: '',
-      option
+      option,
     }
-  }
+  },
 })

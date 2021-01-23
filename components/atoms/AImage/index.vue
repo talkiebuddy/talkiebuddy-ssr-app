@@ -7,15 +7,15 @@
       :alt="alt"
       :srcset="srcset"
       :sizes="sizes"
-    >
+    />
     <picture v-else>
       <source
         v-for="source in calculatedSources"
         :key="source.srcset"
         :media="source.media"
         :srcset="source.srcset"
-      >
-      <img ref="imageNode" :alt="alt" :src="imageSrc">
+      />
+      <img ref="imageNode" :alt="alt" :src="imageSrc" />
     </picture>
   </div>
 </template>
@@ -29,82 +29,84 @@ export default {
     /** src. Can be a url or local filename which loads from assets folder */
     src: {
       type: String,
-      required: true
+      required: true,
     },
     /** alt attribute */
     alt: {
       type: String,
-      default: ''
+      default: '',
     },
     /** srcset attribute */
     srcset: {
       type: String,
-      default: ''
+      default: '',
     },
     /** sizes attribute */
     sizes: {
       type: String,
-      default: ''
+      default: '',
     },
     /** Whether a picture tag should be rendered */
     picture: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /** Sources for picture tag (if picture prop is set) */
     sources: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
-  data () {
+  data() {
     return {
       imageSrc: null,
       imageIsLoaded: false,
-      calculatedSources: []
+      calculatedSources: [],
     }
   },
   computed: {
-    calculatedSrc () {
+    calculatedSrc() {
       const { src } = this
 
       return isUrl(src) ? src : require(`~/assets/images/${src}`)
     },
-    classes () {
+    classes() {
       return {
         'a-image': true,
-        [`${this.imageIsLoaded ? 'a-image--is-loaded' : ''}`]: true
+        [`${this.imageIsLoaded ? 'a-image--is-loaded' : ''}`]: true,
       }
-    }
+    },
   },
-  mounted () {
+  mounted() {
     this.loadImage()
   },
   methods: {
-    loadImage () {
+    loadImage() {
       this.imageSrc = this.calculatedSrc
       this.setSources()
 
-      this.$refs.imageNode.onLoad = () => {
+      this.$refs.imageNode.onload = () => {
         this.$emit('loaded')
         this.imageIsLoaded = true
       }
     },
-    async setSources () {
+    async setSources() {
       // Check webp support from Vuex store
       // let webp = this.$store ? this.$store.state.global.webp : false
 
       if (this.sources) {
         this.calculatedSources = await this.sources.map((source) => {
           const src = this.imageSrc
-          const srcset = isUrl(src) ? source.srcset : require(`~/assets/images/${source.srcset}`)
+          const srcset = isUrl(src)
+            ? source.srcset
+            : require('~/assets/images/' + source.srcset)
           source.srcset = srcset
 
           return source
         })
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1,20 +1,19 @@
 import AList from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/List',
   component: AList,
-  description: 'The completed documentation will sooner release. This docs is about List Atom',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about List Atom',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
   components: {
-    AList
-  }
+    AList,
+  },
 }
 
 // const Template = (args, { argTypes }) => ({
@@ -36,7 +35,7 @@ export const Unordered = () => ({
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
-  </a-list>`
+  </a-list>`,
 })
 
 export const Ordered = () => ({
@@ -47,5 +46,5 @@ export const Ordered = () => ({
     <li>Item 2</li>
     <li>Item 3</li>
   </a-list>
-  `
+  `,
 })

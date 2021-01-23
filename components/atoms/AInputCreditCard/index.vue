@@ -15,7 +15,7 @@
       @keypress="isNumberKey"
       @paste="onPaste"
       @change="handleChange"
-    >
+    />
   </div>
 </template>
 
@@ -28,75 +28,75 @@ export default {
     /** Disables the input by adding "disabled" attribute */
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     /** Autocomplete attribute used for browser autocomplete */
     autocomplete: {
       type: String,
-      default: 'cc-number'
+      default: 'cc-number',
     },
     /** Value of credit card field */
     value: {
       type: [Object, String],
-      default: ''
+      default: '',
     },
     /** Id attribute for the input */
     id: {
       type: String,
-      default: null
+      default: null,
     },
     /** name attribute for credit card input */
     name: {
       type: String,
-      default: null
+      default: null,
     },
     /** Placeholder text for the input */
     placeholder: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
-  data () {
+  data() {
     return {
-      creditCardNumber: this.removeSpace(this.value.number)
+      creditCardNumber: this.removeSpace(this.value.number),
     }
   },
   computed: {
     formatted: {
-      get () {
+      get() {
         return this.format(this.creditCardNumber, this.type)
       },
-      set (newValue) {
+      set(newValue) {
         this.creditCardNumber = this.removeSpace(newValue)
-      }
+      },
     },
-    type () {
+    type() {
       const types = creditCardType(this.creditCardNumber)
       const type = types && types.length === 1 ? types[0] : null
 
       this.$emit('input', {
         number: this.creditCardNumber,
-        type
+        type,
       })
 
       return type
-    }
+    },
   },
   watch: {
-    'value.number' (newValue) {
+    'value.number'(newValue) {
       this.creditCardNumber = this.removeSpace(newValue)
-    }
+    },
   },
   methods: {
-    removeSpace (string) {
+    removeSpace(string) {
       if (string) {
         return string.replace(/\s|\./g, '')
       }
     },
-    handleChange (e) {
+    handleChange(e) {
       this.creditCardNumber = this.removeSpace(e.target.value)
     },
-    onPaste (e) {
+    onPaste(e) {
       const clipboardData = e.clipboardData || window.clipboardData
       const pastedData = clipboardData.getData('Text')
       const isNumber = pastedData.match(/^[0-9 ]+$/g)
@@ -107,15 +107,15 @@ export default {
         e.preventDefault()
       }
     },
-    isNumberKey (e) {
-      const charCode = (e.which) ? e.which : e.keyCode
-      if ((charCode > 31 && (charCode < 48 || charCode > 57))) {
+    isNumberKey(e) {
+      const charCode = e.which ? e.which : e.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
         e.preventDefault()
       } else {
         return true
       }
     },
-    format (creditCardNumber, type) {
+    format(creditCardNumber, type) {
       let number = creditCardNumber
 
       if (type) {
@@ -127,34 +127,36 @@ export default {
 
         gaps.forEach((gap) => {
           const part = number.substring(lastGap, gap)
-          if (part) { parts.push(part) }
+          if (part) {
+            parts.push(part)
+          }
           lastGap = gap
         })
 
         remaining = number.substring(lastGap, maxCardNumber)
         if (parts.length) {
-          number = parts.join(' ') + `${remaining ? ` ${remaining}` : remaining}`
+          number =
+            parts.join(' ') + `${remaining ? ` ${remaining}` : remaining}`
         }
 
         return number
       }
-    }
-
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .a-input-credit-card {
-  border: .1rem solid $color-neutralGrayLighter;
+  border: 0.1rem solid $color-neutralGrayLighter;
   width: 100%;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   position: relative;
 
   input {
     width: 100%;
     font-size: inherit;
-    padding: .9rem 1rem;
+    padding: 0.75em 1em;
     border: 0;
     background: none;
     color: inherit;

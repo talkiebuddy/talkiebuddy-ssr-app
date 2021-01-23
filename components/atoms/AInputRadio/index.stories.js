@@ -1,24 +1,22 @@
 import AInputRadio from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Input Radio',
   component: AInputRadio,
-  description: 'The completed documentation will sooner release. This docs is about Input Radio Atom',
-  argTypes: {
-
-  }
+  description:
+    'The completed documentation will sooner release. This docs is about Input Radio Atom',
+  argTypes: {},
 })
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { AInputRadio },
-  template: '<a-input-radio v-bind="$props"></a-input-radio>'
+  template: '<a-input-radio v-bind="$props"></a-input-radio>',
 })
 
 export const Playground = Template.bind({})
-Playground.args = {
-}
+Playground.args = {}
 
 export const Default = () => ({
   components: { AInputRadio },
@@ -44,9 +42,9 @@ export const Default = () => ({
         Value is : "{{ selectedValue }}"
       </div>
     `,
-  data () {
+  data() {
     return {
-      selectedValue: null
+      selectedValue: null,
     }
-  }
+  },
 })

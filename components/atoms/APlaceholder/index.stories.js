@@ -1,23 +1,23 @@
 import APlaceholder from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Placeholder',
   component: APlaceholder,
-  description: 'The completed documentation will sooner release. This docs is about Placeholder Atom',
-  argTypes: {
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Placeholder Atom',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { APlaceholder }
+  components: { APlaceholder },
 }
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   ...wrapper,
-  template: '<a-placeholder v-bind="$props"></a-placeholder>'
+  template: '<a-placeholder v-bind="$props"></a-placeholder>',
 })
 
 export const Playground = Template.bind({})
@@ -25,7 +25,7 @@ Playground.args = {
   type: 'custom',
   imageGraphic: 'table',
   customWidth: 1000,
-  customHeight: 550
+  customHeight: 550,
 }
 
 // export const Table = () => ({
@@ -35,7 +35,7 @@ Playground.args = {
 
 export const Text = () => ({
   ...wrapper,
-  template: '<a-placeholder type="text" :lines="3"></a-placeholder>'
+  template: '<a-placeholder type="text" :lines="3"></a-placeholder>',
 })
 
 export const LineVariation = () => ({
@@ -54,12 +54,13 @@ export const LineVariation = () => ({
 
         <a-placeholder type="text" :lines="4" :roundedCorners="false"/>
       </div>
-    `
+    `,
 })
 
 export const Colors = () => ({
   ...wrapper,
-  template: '<a-placeholder type="text" backgroundColor="#e74c3c" foregroundColor="#f1c40f"/>'
+  template:
+    '<a-placeholder type="text" backgroundColor="#e74c3c" foregroundColor="#f1c40f"/>',
 })
 
 export const BulletList = () => ({
@@ -72,7 +73,7 @@ export const BulletList = () => ({
 
         <a-placeholder type="bullet-list" :lines="2" :roundedCorners="false"/>
       </div>
-    `
+    `,
 })
 
 export const Image = () => ({
@@ -85,7 +86,7 @@ export const Image = () => ({
 
         <a-placeholder type="image" :speed=".7" imageGraphic="yosushi-logo" />
       </div>
-    `
+    `,
 })
 
 export const Mixed = () => ({
@@ -104,5 +105,5 @@ export const Mixed = () => ({
 
         <br/>
       </div>
-    `
+    `,
 })

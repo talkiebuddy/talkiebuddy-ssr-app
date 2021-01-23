@@ -1,45 +1,39 @@
 import AHeading from './index.vue'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Heading',
   component: AHeading,
-  description: 'The completed documentation will sooner release. This docs is about Heading Atom',
+  description:
+    'The completed documentation will sooner release. This docs is about Heading Atom',
   argTypes: {
     level: {
       name: 'level',
       type: { name: 'number', required: true },
       description: 'Data need : ',
-      defaultValue: '1',
+      defaultValue: 1,
       control: {
         type: 'select',
-        options: [
-          '1',
-          '2',
-          '3',
-          '4',
-          '5',
-          '6'
-        ]
-      }
+        options: [1, 2, 3, 4, 5, 6],
+      },
     },
     text: {
       type: { name: 'string', required: true },
-      control: 'text'
-    }
-  }
+      control: 'text',
+    },
+  },
 })
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { AHeading },
-  template: '<a-heading v-bind="$props">{{text}}</a-heading'
+  template: '<a-heading v-bind="$props">{{text}}</a-heading>',
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
   level: 1,
-  text: 'Heading 1'
+  text: 'Heading 1',
 }
 
 export const Level = () => ({
@@ -53,5 +47,5 @@ export const Level = () => ({
     <a-heading :level="5">Heading 5</a-heading>
     <a-heading :level="6">Heading 6</a-heading>
   </div>
-  `
+  `,
 })

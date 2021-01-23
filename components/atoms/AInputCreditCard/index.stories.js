@@ -1,30 +1,28 @@
 import AInputCreditCard from '.'
-import { storyFactory } from '~/.storybook/util/helpers'
+import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
   title: 'Design System/Atom/Input Credit Card',
   component: AInputCreditCard,
-  description: 'The completed documentation will sooner release. This docs is about Input Tel Atom',
-  argTypes: {
-
-  }
+  description:
+    'The completed documentation will sooner release. This docs is about Input Tel Atom',
+  argTypes: {},
 })
 
 const wrapper = {
   components: {
-    AInputCreditCard
-  }
+    AInputCreditCard,
+  },
 }
 
 const Template = (args, { argTypes }) => ({
   ...wrapper,
   props: Object.keys(argTypes),
-  template: '<a-input-credit-card v-bind="$props"></a-input-credit-card>'
+  template: '<a-input-credit-card v-bind="$props"></a-input-credit-card>',
 })
 
 export const Playground = Template.bind({})
-Playground.args = {
-}
+Playground.args = {}
 
 export const Default = () => ({
   ...wrapper,
@@ -36,14 +34,14 @@ export const Default = () => ({
         <pre> Value is: {{ creditCard }} </pre>
       </div>
     `,
-  data () {
+  data() {
     return {
       creditCard: {
         number: '4111111111111111',
-        type: ''
-      }
+        type: '',
+      },
     }
-  }
+  },
 })
 
 export const Disabled = () => ({
@@ -53,12 +51,12 @@ export const Disabled = () => ({
         <a-input-credit-card disabled v-model="creditCard"/>
       </div>
     `,
-  data () {
+  data() {
     return {
       creditCard: {
         number: '4111111111111111',
-        type: ''
-      }
+        type: '',
+      },
     }
-  }
+  },
 })

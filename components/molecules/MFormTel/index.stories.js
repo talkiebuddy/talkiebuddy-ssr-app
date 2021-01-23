@@ -1,20 +1,19 @@
 import MFormTel from '.'
-import { storyFactory } from '~/.storybook/util/helpers.js'
+import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Form Tel',
+  title: 'Design System/Molecule/Tel Field',
   component: MFormTel,
-  description: 'The completed documentation will sooner release. This docs is about Form Text Molecule',
-  argTypes: {
-
-  },
-  excludeStories: /.*Data$/
+  description:
+    'The completed documentation will sooner release. This docs is about Form Text Molecule',
+  argTypes: {},
+  excludeStories: /.*Data$/,
 })
 
 const wrapper = {
   components: {
-    MFormTel
-  }
+    MFormTel,
+  },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -30,19 +29,19 @@ const Template = (args, { argTypes }) => ({
     <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
       fieldValue: {
-        number: null
-      }
+        number: null,
+      },
     }
-  }
+  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
   label: 'Phone Number',
-  placeholder: 'Enter your phone number'
+  placeholder: 'Enter your phone number',
 }
 
 export const Default = () => ({
@@ -57,13 +56,13 @@ export const Default = () => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
       fieldValue: {
-        number: '+447792916879'
-      }
+        number: '+447792916879',
+      },
     }
-  }
+  },
 })
 
 export const Required = () => ({
@@ -79,13 +78,13 @@ export const Required = () => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
       fieldValue: {
-        number: null
-      }
+        number: null,
+      },
     }
-  }
+  },
 })
 
 export const Invalid = () => ({
@@ -102,13 +101,13 @@ export const Invalid = () => ({
   <pre>{{ fieldValue }}</pre>
   </div>
   `,
-  data () {
+  data() {
     return {
       fieldValue: {
-        number: null
-      }
+        number: null,
+      },
     }
-  }
+  },
 })
 
 export const Disabled = () => ({
@@ -124,11 +123,11 @@ export const Disabled = () => ({
     <pre>{{ fieldValue }}</pre>
     </div>
     `,
-  data () {
+  data() {
     return {
       fieldValue: {
-        number: null
-      }
+        number: null,
+      },
     }
-  }
+  },
 })
