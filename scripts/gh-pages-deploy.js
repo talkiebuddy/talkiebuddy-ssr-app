@@ -29,7 +29,7 @@ const eRocket = emoji.get('rocket')
     console.log(`${eArrows} ${chalk.yellow('Pushing...')}`)
     await execa('git', ['push', 'origin', 'HEAD:gh-pages', '--force'])
     await execa('rm', ['-r', folderName])
-    await execa('git', ['checkout', '-f', 'master'])
+    await execa('git', ['checkout', '-f', 'main'])
     await execa('git', ['branch', '-D', 'gh-pages'])
     console.log(`${eRocket} ${chalk.green('Successfully deployed')} ${eRocket}`)
   } catch (e) {

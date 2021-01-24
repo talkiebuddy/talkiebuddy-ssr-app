@@ -30,7 +30,7 @@ Playground.args = {
 
 export const Text = () => ({
   ...wrapper,
-  template: '<a-placeholder type="text" :lines="3"></a-placeholder>',
+  template: '<a-placeholder type="raw-text" :lines="3"></a-placeholder>',
 })
 
 export const LineVariation = () => ({
@@ -39,15 +39,15 @@ export const LineVariation = () => ({
       <div>
         <p>Heading Placeholder</p><br>
 
-        <a-placeholder type="text" :lines="2" :lineScale="2" :lineHeight=".75"/>
+        <a-placeholder type="raw-text" :lines="2" :lineScale="2" :lineHeight=".75"/>
 
         <br/><p>Paragraph Placeholder</p><br>
 
-        <a-placeholder type="text" :lines="5" />
+        <a-placeholder type="raw-text" :lines="5" />
 
         <br/><p>Paragraph Placeholder non-rounded corners</p><br>
 
-        <a-placeholder type="text" :lines="4" :roundedCorners="false"/>
+        <a-placeholder type="raw-text" :lines="4" :roundedCorners="false"/>
       </div>
     `,
 })
@@ -55,7 +55,7 @@ export const LineVariation = () => ({
 export const Colors = () => ({
   ...wrapper,
   template:
-    '<a-placeholder type="text" backgroundColor="#e74c3c" foregroundColor="#f1c40f"/>',
+    '<a-placeholder type="raw-text" backgroundColor="#e74c3c" foregroundColor="#f1c40f"/>',
 })
 
 export const BulletList = () => ({
@@ -75,11 +75,11 @@ export const Image = () => ({
   ...wrapper,
   template: `
       <div>
-        <a-placeholder type="image" :speed=".7" :aspectRatio="2"/>
+        <a-placeholder type="raw-image" :speed=".7" :aspectRatio="2"/>
 
         <br/
 
-        <a-placeholder type="image" :speed=".7" imageGraphic="yosushi-logo" />
+        <a-placeholder type="raw-image" :speed=".7" imageGraphic="yosushi-logo" />
       </div>
     `,
 })
@@ -88,11 +88,11 @@ export const Mixed = () => ({
   ...wrapper,
   template: `
       <div>
-        <a-placeholder type="image" :speed="1.5" />
+        <a-placeholder type="raw-image" :speed="1.5" />
 
         <br/>
 
-        <a-placeholder type="text" :lines="4" />
+        <a-placeholder type="raw-text" :lines="4" />
 
         <br/>
 

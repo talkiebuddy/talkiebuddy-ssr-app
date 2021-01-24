@@ -5,7 +5,7 @@ describe('Atom - APlaceholder', () => {
   it('calculate the corect viewbox based on type', async () => {
     const wrapper = mount(APlaceholder, {
       propsData: {
-        type: 'text',
+        type: 'raw-text',
         lines: 3,
       },
     })
