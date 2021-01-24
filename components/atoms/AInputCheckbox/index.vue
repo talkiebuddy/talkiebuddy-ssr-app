@@ -28,7 +28,6 @@ export default {
     value: {
       type: [String, Boolean],
       required: true,
-      default: '',
     },
     /** Whether the checkbox is checked. Can also be checked programatically using v-bind. */
     checked: {
@@ -52,7 +51,7 @@ export default {
     },
     /** This is a necessary prop for using v-model with this component. Should NOT be set */
     modelValue: {
-      type: [String, Boolean],
+      type: String,
       default: undefined,
     },
   },

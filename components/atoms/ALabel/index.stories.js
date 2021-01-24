@@ -13,18 +13,13 @@ export default storyFactory({
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ALabel },
-  template: `<a-label v-bind="$props">{{label}}</a-label>
+  template: `<a-label v-bind="$props"></a-label>
   `,
-  data() {
-    return {
-      name: '',
-    }
-  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
-  name: 'Label',
+  label: 'Label Name',
 }
 
 export const Default = () => ({

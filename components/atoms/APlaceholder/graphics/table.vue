@@ -53,9 +53,3 @@
     <rect x="933" y="54" rx="3" ry="3" width="24" height="33" />
   </clipPath>
 </template>
-
-<script>
-export default {
-  name: 'Table',
-}
-</script>

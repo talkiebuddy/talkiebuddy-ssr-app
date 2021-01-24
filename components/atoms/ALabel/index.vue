@@ -2,6 +2,7 @@
   <label :for="htmlFor" :class="classes">
     <template v-if="required">* </template>
     <slot />
+    {{ label }}
   </label>
 </template>
 
@@ -18,6 +19,10 @@ export default {
     required: {
       type: Boolean,
       default: false,
+    },
+    label: {
+      type: String,
+      default: null,
     },
   },
   computed: {

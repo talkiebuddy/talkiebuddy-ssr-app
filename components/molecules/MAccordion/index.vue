@@ -3,6 +3,7 @@
     <m-accordion-item v-for="item in items" :key="item.title">
       <template v-slot:title>{{ item.title }}</template>
       <template v-slot:content>
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <div v-html="item.content"></div>
       </template>
     </m-accordion-item>

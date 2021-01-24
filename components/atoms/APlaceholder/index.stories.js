@@ -28,11 +28,6 @@ Playground.args = {
   customHeight: 550,
 }
 
-// export const Table = () => ({
-//   ...wrapper,
-//   template: '<a-placeholder type="custom" imageGraphic="table" :customWidth="1000" :customHeight="550"></a-placeholder>'
-// })
-
 export const Text = () => ({
   ...wrapper,
   template: '<a-placeholder type="text" :lines="3"></a-placeholder>',

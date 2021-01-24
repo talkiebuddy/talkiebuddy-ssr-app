@@ -164,12 +164,14 @@ export default {
     margin-top: -1rem;
   }
 
+  /*
   // &__question{
   //   .a-text {
   //     color: $color-neutralBlack;
   //     font-weight: $font-weight-regular;
   //   }
   // }
+  */
 
   &__options {
     margin-bottom: 1.5rem;

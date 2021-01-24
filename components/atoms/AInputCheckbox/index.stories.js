@@ -47,10 +47,10 @@ export const Default = () => ({
   ...wrapper,
   template: `
       <div>
-        <a-label>
+        <label>
           <a-input-checkbox v-model="selectedValue" checked/>
           Do you accept the terms and conditions?
-        </a-label>
+        </label>
 
         <br/><br/>
 

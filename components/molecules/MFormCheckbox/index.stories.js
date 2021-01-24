@@ -29,7 +29,7 @@ const Template = (args, { argTypes }) => ({
   `,
   data() {
     return {
-      fieldValue: {},
+      fieldValue: '',
     }
   },
 })
@@ -74,7 +74,7 @@ export const Single = () => ({
         <br/><br/>
 
         Field Value :
-    <pre>{{ fieldValue }}</pre>
+        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data() {
@@ -90,17 +90,12 @@ export const SingleDisabled = () => ({
       <div>
         <m-form-checkbox
           label="Do you accept our terms & conditions?"
-          v-model="fieldValue"
+          value="accept"
           disabled
         />
 
       </div>
     `,
-  data() {
-    return {
-      selected: '',
-    }
-  },
 })
 
 export const Multiple = () => ({
@@ -186,7 +181,6 @@ export const Disabled = () => ({
         <m-form-checkbox
           label="Choose some of your favourite cities"
           :options="options"
-          v-model="fieldValue"
           disabled
         />
 
@@ -198,7 +192,6 @@ export const Disabled = () => ({
     `,
   data() {
     return {
-      fieldValue: '',
       options,
     }
   },

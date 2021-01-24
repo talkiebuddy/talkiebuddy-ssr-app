@@ -2,7 +2,9 @@
   <div :class="classes">
     <div
       class="a-placeholder__graphic-container"
-      :style="type === 'image' ? `padding-top: ${100 / aspectRatio}%` : null"
+      :style="
+        type === 'raw-image' ? `padding-top: ${100 / aspectRatio}%` : null
+      "
     >
       <transition name="fade">
         <svg
@@ -77,40 +79,42 @@ import { uid } from '@/plugins/helpers'
 export default {
   name: 'APlaceholder',
   props: {
-    /** Type of placeholder. Options: ['bullet-list', 'text', 'image'] */
+    /** Type of placeholder. Options: ['bullet-list', 'raw-text', 'raw-image'] */
     type: {
       type: String,
       required: true,
       validator(value) {
-        return ['text', 'image', 'bullet-list', 'custom'].includes(value)
+        return ['raw-text', 'raw-image', 'bullet-list', 'custom'].includes(
+          value
+        )
       },
     },
-    /** Available only on 'image' type. The name of graphic to be used as the center icon */
+    /** Available only on 'raw-image' type. The name of graphic to be used as the center icon */
     imageGraphic: {
       type: String,
       default: null,
     },
-    /** Available only on 'image' type. The ratio of the placeholder box. It equals to width/height. for example 400x300 image ratio will be 400/300 = 1.33 */
+    /** Available only on 'raw-image' type. The ratio of the placeholder box. It equals to width/height. for example 400x300 raw-image ratio will be 400/300 = 1.33 */
     aspectRatio: {
       type: Number,
       default: 1.33,
     },
-    /** Available only on ['text', 'bullet-list'] type. The number of lines of placeholders. */
+    /** Available only on ['raw-text', 'bullet-list'] type. The number of lines of placeholders. */
     lines: {
       type: Number,
       default: 3,
     },
-    /** Available only on ['text', 'bullet-list'] type. The scale multiplier for placeholder lines. For example '2' will double the size of each line */
+    /** Available only on ['raw-text', 'bullet-list'] type. The scale multiplier for placeholder lines. For example '2' will double the size of each line */
     lineScale: {
       type: Number,
       default: 1,
     },
-    /** Available only on ['text', 'bullet-list'] type. The space between each placeholder line. '1.5' would be 1.5 times the space */
+    /** Available only on ['raw-text', 'bullet-list'] type. The space between each placeholder line. '1.5' would be 1.5 times the space */
     lineHeight: {
       type: Number,
       default: 1.5,
     },
-    /** Available only on ['text', 'bullet-list'] type. Make each placeholder line rounded */
+    /** Available only on ['raw-text', 'bullet-list'] type. Make each placeholder line rounded */
     roundedCorners: {
       type: Boolean,
       default: true,
@@ -164,7 +168,7 @@ export default {
     computedViewBox() {
       const { type } = this
 
-      if (type === 'text' || type === 'bullet-list') {
+      if (type === 'raw-text' || type === 'bullet-list') {
         const { lineScale, lineHeight, lines } = this
         let height =
           lineScale * 10 * lines + lineScale * 10 * (lines - 1) * lineHeight
@@ -172,7 +176,7 @@ export default {
         return `0 0 400 ${height}`
       }
 
-      if (type === 'image') {
+      if (type === 'raw-image') {
         return '0 0 400 400'
       }
 
@@ -219,7 +223,7 @@ export default {
     height: 100%;
   }
 
-  &--image {
+  &--raw-image {
     background: $color-neutralGrayLighter;
 
     .a-placeholder__graphic-container {

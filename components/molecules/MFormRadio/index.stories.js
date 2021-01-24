@@ -29,7 +29,7 @@ const Template = (args, { argTypes }) => ({
   `,
   data() {
     return {
-      fieldValue: {},
+      fieldValue: '',
     }
   },
 })
@@ -143,20 +143,13 @@ export const Disabled = () => ({
       <div>
         <m-form-radio
           label="What's you favourite city ?"
-          v-model="fieldValue"
           :options="option"
           disabled
         />
-
-        <br/><br/>
-
-        Field Value :
-        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data() {
     return {
-      selected: '',
       option,
     }
   },
