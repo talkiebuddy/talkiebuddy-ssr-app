@@ -32,6 +32,8 @@ const wrapper = {
 export const Test = () => ({
   ...wrapper,
   template: `
+    <tr>
     <a-table-cell>Table Cell Content</a-table-cell>
+    </tr>
   `,
 })

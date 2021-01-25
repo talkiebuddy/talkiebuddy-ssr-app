@@ -4,15 +4,15 @@
  */
 
 // Typefaces
-$font-regular: "roboto";
-$font-regularItalic: "roboto_italic";
-$font-medium: "roboto_medium";
+$font-regular: 'roboto';
+$font-regularItalic: 'roboto_italic';
+$font-medium: 'roboto_medium';
 
-$font-family: $font-regular, "Open Sans", "Helvetica Neue Light",
-  "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$font-family: $font-regular, 'Open Sans', 'Helvetica Neue Light',
+  'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
-$font-family-monospace: "Courier New", "DejaVu Sans Mono",
-  "Bitstream Vera Sans Mono", "Monaco", monospace !default;
+$font-family-monospace: 'Courier New', 'DejaVu Sans Mono',
+  'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
 $font-family-italic: $font-regularItalic;
 
@@ -41,7 +41,7 @@ $font-size-4xl: 4.25rem; //68px;
  */
 
 $line-height: 1.5;
-$line-height-inherit: inherit;
+// $line-height-inherit: inherit;
 $line-height-base: 1;
 $line-height-input: 1.15;
 $line-height-heading: 1.25;
