@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
-import MFormSelect from '.'
+import MSelectField from '.'
 
-describe('Molecule - MFormSelect', () => {
+describe('Molecule - MSelectField', () => {
   let wrapper
   const factory = (computed = {}) => {
-    return shallowMount(MFormSelect, {
+    return shallowMount(MSelectField, {
       propsData: {
         value: '',
       },

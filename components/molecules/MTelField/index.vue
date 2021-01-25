@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'MFormTel',
+  name: 'MTelField',
   props: {
     label: {
       type: String,
@@ -61,7 +61,7 @@ export default {
   computed: {
     classes() {
       return {
-        'm-form-tel u-form-field': true,
+        'm-tel-field u-form-field': true,
         [`${this.error ? 'u-form-field--error' : ''}`]: true,
         [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true,
       }

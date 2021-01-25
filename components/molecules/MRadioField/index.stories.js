@@ -1,17 +1,17 @@
-import MFormRadio from '.'
+import MRadioField from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Molecule/Radio Field',
-  component: MFormRadio,
+  component: MRadioField,
   description:
-    'The completed documentation will sooner release. This docs is about Form Radio Molecule',
+    'The completed documentation will sooner release. This docs is about Radio Field Molecule',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormRadio },
+  components: { MRadioField },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -19,7 +19,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
   <div>
-    <m-form-radio v-model="fieldValue" v-bind="$props"></m-form-radio>
+    <m-radio-field v-model="fieldValue" v-bind="$props"></m-radio-field>
 
     <br/>
 
@@ -66,7 +66,7 @@ export const Default = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-radio
+        <m-radio-field
           label="What's you favourite city ?"
           v-model="fieldValue"
           :options="option"
@@ -90,7 +90,7 @@ export const Invalid = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-radio
+        <m-radio-field
           label="What's you favourite city ?"
           v-model="fieldValue"
           :options="option"
@@ -116,7 +116,7 @@ export const Required = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-radio
+        <m-radio-field
           label="What's you favourite city ?"
           v-model="fieldValue"
           required
@@ -141,7 +141,7 @@ export const Disabled = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-radio
+        <m-radio-field
           label="What's you favourite city ?"
           :options="option"
           disabled

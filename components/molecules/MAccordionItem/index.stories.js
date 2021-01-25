@@ -1,4 +1,4 @@
-import MAccordionItem from './index.vue'
+import MAccordionItem from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({

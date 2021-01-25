@@ -1,4 +1,4 @@
-import MCarouselSlide from './index.vue'
+import MCarouselSlide from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({

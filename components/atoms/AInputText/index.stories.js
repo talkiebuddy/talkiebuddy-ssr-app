@@ -1,4 +1,4 @@
-import AInputText from './index.vue'
+import AInputText from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -9,24 +9,47 @@ export default storyFactory({
   argTypes: {},
 })
 
+const wrapper = {
+  components: {
+    AInputText,
+  },
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { AInputText },
-  template: '<a-input-text v-bind="$props"></a-input-text>',
+  template: `
+  <div>
+    <a-input-text v-model="inputValue" v-bind="$props"></a-input-text>
+
+    <br/><br/>
+
+    Value :
+    <pre>{{ inputValue }}</pre>
+  </div>
+  `,
+  data() {
+    return {
+      inputValue: '',
+    }
+  },
 })
 
 export const Playground = Template.bind({})
 Playground.args = {
   type: 'text',
-  defaultValue: 40,
 }
 
 export const Type = () => ({
-  components: { AInputText },
+  ...wrapper,
   template: `
   <div>
     <a-input-text type="password" v-model="inputValue"></a-input-text>
-    {{inputValue}}
+
+    <br/><br/>
+
+    Value :
+    <pre>{{ inputValue }}</pre>
   </div>
   `,
   data() {

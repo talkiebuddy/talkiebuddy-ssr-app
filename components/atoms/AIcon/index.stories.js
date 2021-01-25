@@ -1,4 +1,4 @@
-import AIcon from './index.vue'
+import AIcon from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -23,9 +23,15 @@ export default storyFactory({
   },
 })
 
+const wrapper = {
+  components: {
+    AIcon,
+  },
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { AIcon },
   template: '<a-icon v-bind="$props"></a-icon>',
 })
 
@@ -35,7 +41,7 @@ Playground.args = {
 }
 
 export const Color = () => ({
-  components: { AIcon },
+  ...wrapper,
   template: `
     <div>
       <a-icon name="twitter" fill="black"></a-icon>
@@ -46,7 +52,7 @@ export const Color = () => ({
 })
 
 export const Size = () => ({
-  components: { AIcon },
+  ...wrapper,
   template: `
     <div>
       <a-icon name="twitter" size="small"></a-icon>

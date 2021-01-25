@@ -20,13 +20,14 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
   <div>
-  <a-input-tel v-model="phoneNumber" v-bind="$props"></a-input-tel>
+  <a-input-tel v-model="phoneNumber" v-bind="$props" />
 
-  <br/>
+  <br/><br/>
 
+  Value :
   <pre>{{ phoneNumber }}</pre>
-
-  </div>`,
+  </div>
+  `,
   data() {
     return {
       phoneNumber: {
@@ -43,8 +44,11 @@ export const single = () => ({
   ...wrapper,
   template: `
       <div>
-        <a-input-tel v-model="phoneNumber" placeholder="djiosjadoijsaoijdsa"/>
+        <a-input-tel v-model="phoneNumber" placeholder="Enter your phone number"/>
 
+        <br/><br/>
+
+        Value :
         <pre>{{ phoneNumber }}</pre>
 
       </div>

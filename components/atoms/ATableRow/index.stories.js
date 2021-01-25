@@ -1,13 +1,13 @@
 // import { action } from '@storybook/addon-actions'
 import ATableCell from '../ATableCell'
-import ATableRow from './index.vue'
+import ATableRow from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Table Row',
+  title: 'Design System/Atom/Table Row',
   component: { ATableRow, ATableCell },
   description:
-    'The completed documentation will sooner release. This docs is about Table Row Molecule',
+    'The completed documentation will sooner release. This docs is about Table Row Atom',
 })
 
 const wrapper = {

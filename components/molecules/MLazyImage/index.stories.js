@@ -1,4 +1,4 @@
-import MLazyImage from './index.vue'
+import MLazyImage from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({

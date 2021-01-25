@@ -2,7 +2,7 @@
   <fieldset :class="classes">
     <div
       v-if="label && options"
-      class="m-form-checkbox__question u-form-field__label"
+      class="m-checkbox-field__question u-form-field__label"
     >
       <a-text tag="legend">
         <template v-if="required"> * </template>{{ label }}
@@ -13,7 +13,7 @@
       <m-validation-messages :error="error" :error-messages="errorMessages" />
     </div>
 
-    <div v-if="options" class="m-form-checkbox__options">
+    <div v-if="options" class="m-checkbox-field__options">
       <div
         v-for="option in options"
         :key="option.value"
@@ -40,7 +40,7 @@
     <template v-else>
       <div
         :class="[
-          'm-form-checkbox__options',
+          'm-checkbox-field__options',
           `${disabled ? 'u-form-field--disabled' : ''}`,
         ]"
       >
@@ -61,7 +61,7 @@
 import { uid } from '@/plugins/helpers'
 
 export default {
-  name: 'MFormCheckbox',
+  name: 'MCheckboxField',
   model: {
     prop: 'value',
     event: 'change',
@@ -130,7 +130,7 @@ export default {
     },
     classes() {
       return {
-        'm-form-checkbox u-form-field': true,
+        'm-checkbox-field u-form-field': true,
         [`${this.error ? 'u-form-field--error' : ''}`]: true,
         [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true,
       }
@@ -154,7 +154,7 @@ export default {
 </script>
 
 <style lang="scss">
-.m-form-checkbox {
+.m-checkbox-field {
   $this: &;
 
   border: 0;

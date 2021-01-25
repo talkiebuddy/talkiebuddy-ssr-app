@@ -1,4 +1,4 @@
-import APlaceholder from './index.vue'
+import APlaceholder from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({

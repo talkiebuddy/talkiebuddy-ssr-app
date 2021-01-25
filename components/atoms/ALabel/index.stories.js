@@ -1,4 +1,4 @@
-import ALabel from './index.vue'
+import ALabel from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -10,9 +10,15 @@ export default storyFactory({
   excludeStories: /.*Data$/,
 })
 
+const wrapper = {
+  components: {
+    ALabel,
+  },
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { ALabel },
   template: `<a-label v-bind="$props"></a-label>
   `,
 })
@@ -23,7 +29,7 @@ Playground.args = {
 }
 
 export const Default = () => ({
-  components: { ALabel },
+  ...wrapper,
   template: `
     <div>
         <a-heading :level="5">Default Label</a-heading>
@@ -55,7 +61,7 @@ export const Default = () => ({
 })
 
 export const htmlFor = () => ({
-  components: { ALabel },
+  ...wrapper,
   template: `
     <div>
       <a-heading :level="5">Default Label</a-heading>

@@ -10,7 +10,7 @@
       </a-label>
     </div>
 
-    <div class="m-form-credit-card-number__field u-form-field__input">
+    <div class="u-form-field__input">
       <a-input-credit-card
         :id="`card-number${uid}`"
         v-model="creditCard"
@@ -40,7 +40,7 @@
 import { uid } from '@/plugins/helpers'
 
 export default {
-  name: 'MFormCreditCardNumber',
+  name: 'MCreditCardField',
   props: {
     label: {
       type: String,
@@ -93,7 +93,7 @@ export default {
     },
     classes() {
       return {
-        'm-form-credit-card-number u-form-field': true,
+        'm-credit-card-field u-form-field': true,
         [`${this.error ? 'u-form-field--error' : ''}`]: true,
         [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true,
       }
@@ -111,7 +111,7 @@ export default {
 </script>
 
 <style lang="scss">
-.m-form-credit-card-number {
+.m-credit-card-field {
   position: relative;
 
   .a-icon {

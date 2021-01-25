@@ -1,4 +1,4 @@
-import ALoader from './index.vue'
+import ALoader from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({

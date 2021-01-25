@@ -1,4 +1,4 @@
-import AImage from './index.vue'
+import AImage from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({

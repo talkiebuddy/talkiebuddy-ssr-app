@@ -1,17 +1,17 @@
-import MFormExpiryDate from '.'
+import MExpiryDateField from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Molecule/Expiry Date Field',
-  component: MFormExpiryDate,
+  component: MExpiryDateField,
   description:
-    'The completed documentation will sooner release. This docs is about Form Expiry Date Molecule',
+    'The completed documentation will sooner release. This docs is about Expiry Date Field Molecule',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormExpiryDate },
+  components: { MExpiryDateField },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -19,7 +19,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
   <div>
-    <m-form-expiry-date v-model="fieldValue" v-bind="$props"></m-form-expiry-date>
+    <m-expiry-date-field v-model="fieldValue" v-bind="$props"></m-expiry-date-field>
 
     <br/>
 
@@ -44,7 +44,7 @@ export const Default = () => ({
   ...wrapper,
   template: `
   <div>
-    <m-form-expiry-date label="Expiry Date" v-model="fieldValue" ></m-form-expiry-date>
+    <m-expiry-date-field label="Expiry Date" v-model="fieldValue" ></m-expiry-date-field>
 
     <br/>
 
@@ -63,7 +63,7 @@ export const Invalid = () => ({
   ...wrapper,
   template: `
   <div>
-    <m-form-expiry-date label="Expiry Date"  v-model="fieldValue" error errorMessages="Please enter a valid expiry date"></m-form-expiry-date>
+    <m-expiry-date-field label="Expiry Date"  v-model="fieldValue" error errorMessages="Please enter a valid expiry date"></m-expiry-date-field>
 
     <br/>
 
@@ -82,7 +82,7 @@ export const Required = () => ({
   ...wrapper,
   template: `
   <div>
-    <m-form-expiry-date label="Expiry Date"  v-model="fieldValue" required></m-form-expiry-date>
+    <m-expiry-date-field label="Expiry Date"  v-model="fieldValue" required></m-expiry-date-field>
 
     <br/>
 
@@ -101,17 +101,10 @@ export const Disabled = () => ({
   ...wrapper,
   template: `
   <div>
-    <m-form-expiry-date label="Expiry Date"  v-model="fieldValue" disabled></m-form-expiry-date>
-
-    <br/>
-
-    Field Value :
-    <pre>{{ fieldValue }}</pre>
+    <m-expiry-date-field label="Expiry Date" disabled></m-expiry-date-field>
   </div>
   `,
   data() {
-    return {
-      fieldValue: '',
-    }
+    return {}
   },
 })

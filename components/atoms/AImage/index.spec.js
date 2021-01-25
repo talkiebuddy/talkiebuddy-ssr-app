@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AImage from './index.vue'
+import AImage from '.'
 
 describe('Atom - AImage', () => {
   it('Caclculate the src correctly', async () => {

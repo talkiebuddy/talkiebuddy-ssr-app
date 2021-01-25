@@ -1,18 +1,18 @@
-import MFormTel from '.'
+import MTelField from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Molecule/Tel Field',
-  component: MFormTel,
+  component: MTelField,
   description:
-    'The completed documentation will sooner release. This docs is about Form Text Molecule',
+    'The completed documentation will sooner release. This docs is about Tel Field Molecule',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
 
 const wrapper = {
   components: {
-    MFormTel,
+    MTelField,
   },
 }
 
@@ -21,7 +21,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
   <div>
-    <m-form-tel v-model="fieldValue" v-bind="$props"></m-form-tel>
+    <m-tel-field v-model="fieldValue" v-bind="$props"></m-tel-field>
 
     <br/><br/>
 
@@ -48,7 +48,7 @@ export const Default = () => ({
   ...wrapper,
   template: `
   <div>
-  <m-form-tel label="Phone Number" v-model="fieldValue"></m-form-tel>
+  <m-tel-field label="Phone Number" v-model="fieldValue"></m-tel-field>
 
   <br/><br/>
 
@@ -69,8 +69,8 @@ export const Required = () => ({
   ...wrapper,
   template: `
   <div>
-  <m-form-tel
-  label="Phone Number" v-model="fieldValue" required></m-form-tel>
+  <m-tel-field
+  label="Phone Number" v-model="fieldValue" required></m-tel-field>
 
   <br/><br/>
 
@@ -91,9 +91,9 @@ export const Invalid = () => ({
   ...wrapper,
   template: `
   <div>
-  <m-form-tel
+  <m-tel-field
   label="Phone Number" v-model="fieldValue"
-  errorMessages="Please enter a valid phone number"></m-form-tel>
+  errorMessages="Please enter a valid phone number"></m-tel-field>
 
   <br/><br/>
 
@@ -114,20 +114,11 @@ export const Disabled = () => ({
   ...wrapper,
   template: `
   <div>
-    <m-form-tel
-    label="Phone Number" v-model="fieldValue" disabled></m-form-tel>
-
-    <br/><br/>
-
-    Field value :
-    <pre>{{ fieldValue }}</pre>
+    <m-tel-field
+    label="Phone Number" disabled></m-tel-field>
     </div>
     `,
   data() {
-    return {
-      fieldValue: {
-        number: null,
-      },
-    }
+    return {}
   },
 })

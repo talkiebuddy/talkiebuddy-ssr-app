@@ -1,4 +1,4 @@
-import ASelect from './index.vue'
+import ASelect from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -9,9 +9,13 @@ export default storyFactory({
   argTypes: {},
 })
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
+const wrapper = {
   components: { ASelect },
+}
+
+const Template = (args, { argTypes }) => ({
+  ...wrapper,
+  props: Object.keys(argTypes),
   template: '<a-select v-bind="$props"></a-select>',
 })
 

@@ -8,7 +8,7 @@
         <a-placeholder
           v-show="!isLoaded"
           key="1"
-          type="image"
+          type="raw-image"
           :aspect-ratio="aspectRatio"
           :image-graphic="placeholderGraphic"
         ></a-placeholder>

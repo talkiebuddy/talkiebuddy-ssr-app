@@ -1,4 +1,4 @@
-import AText from './index.vue'
+import AText from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -9,6 +9,10 @@ export default storyFactory({
   argTypes: {},
   excludeStories: /.*Data$/,
 })
+
+const wrapper = {
+  components: { AText },
+}
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
@@ -23,7 +27,7 @@ defaults.args = {
 }
 
 export const BySize = () => ({
-  component: { AText },
+  ...wrapper,
   template: `
   <div>
     <a-text size="x-large">Size</a-text>
@@ -35,7 +39,7 @@ export const BySize = () => ({
 })
 
 export const ByWeight = () => ({
-  component: { AText },
+  ...wrapper,
   template: `
   <div>
     <a-text weight="bold">Sample bold text</a-text>
@@ -43,7 +47,7 @@ export const ByWeight = () => ({
 })
 
 export const ByTag = () => ({
-  component: { AText },
+  ...wrapper,
   template: `
   <div>
     <a-text tag="span">Sample text with '&#x3C;span&#x3E;' tag</a-text>

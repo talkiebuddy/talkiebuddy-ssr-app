@@ -1,27 +1,27 @@
-import OFormPayment from './index.vue'
+import OPaymentForm from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Organism/Payment Form',
-  component: OFormPayment,
+  component: OPaymentForm,
   description:
-    'The completed documentation will sooner release. This docs is about Form Text Molecule',
+    'The completed documentation will sooner release. This docs is about Payment Form Organism',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
 
 const wrapper = {
   components: {
-    OFormPayment,
+    OPaymentForm,
   },
 }
 
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { OFormPayment },
   template: `
   <div>
-  <o-form-payment
+  <o-payment-form
     v-model="fieldValue"
     :label="label"
   />
@@ -61,7 +61,7 @@ export const Default = () => ({
   ...wrapper,
   template: `
       <div>
-        <o-form-payment
+        <o-payment-form
           v-model="paymentData"
           :label="label"
         />

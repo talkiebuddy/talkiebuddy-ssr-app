@@ -1,4 +1,4 @@
-import AHeading from './index.vue'
+import AHeading from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -24,9 +24,15 @@ export default storyFactory({
   },
 })
 
+const wrapper = {
+  components: {
+    AHeading,
+  },
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { AHeading },
   template: '<a-heading v-bind="$props">{{text}}</a-heading>',
 })
 
@@ -37,7 +43,7 @@ Playground.args = {
 }
 
 export const Level = () => ({
-  components: { AHeading },
+  ...wrapper,
   template: `
   <div>
     <a-heading>Heading 1</a-heading>

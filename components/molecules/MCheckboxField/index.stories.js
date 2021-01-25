@@ -1,17 +1,17 @@
-import MFormCheckbox from '.'
+import MCheckboxField from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Molecule/Checkbox Field',
-  component: MFormCheckbox,
+  component: MCheckboxField,
   description:
-    'The completed documentation will sooner release. This docs is about Form Checkbox Molecule',
+    'The completed documentation will sooner release. This docs is about Checkbox Field Molecule',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormCheckbox },
+  components: { MCheckboxField },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -19,7 +19,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
   <div>
-    <m-form-checkbox v-model="fieldValue" v-bind="$props"></m-form-checkbox>
+    <m-checkbox-field v-model="fieldValue" v-bind="$props"></m-checkbox-field>
 
     <br/>
 
@@ -64,7 +64,7 @@ export const Single = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-checkbox
+        <m-checkbox-field
           label="Do you accept our terms & conditions?"
           v-model="fieldValue"
           required
@@ -88,7 +88,7 @@ export const SingleDisabled = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-checkbox
+        <m-checkbox-field
           label="Do you accept our terms & conditions?"
           value="accept"
           disabled
@@ -102,7 +102,7 @@ export const Multiple = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-checkbox
+        <m-checkbox-field
           label="Choose some of your favourite cities"
           :options="options"
           v-model="fieldValue"
@@ -127,7 +127,7 @@ export const Required = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-checkbox
+        <m-checkbox-field
           label="Choose some of your favourite cities"
           :options="options"
           v-model="fieldValue"
@@ -152,7 +152,7 @@ export const Invalid = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-checkbox
+        <m-checkbox-field
           label="Choose some of your favourite cities"
           :options="options"
           v-model="fieldValue"
@@ -178,16 +178,11 @@ export const Disabled = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-checkbox
+        <m-checkbox-field
           label="Choose some of your favourite cities"
           :options="options"
           disabled
         />
-
-        <br/>
-
-        Field Value :
-        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data() {

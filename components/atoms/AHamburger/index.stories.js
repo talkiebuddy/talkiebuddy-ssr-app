@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import AHamburger from './index.vue'
+import AHamburger from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -10,9 +10,15 @@ export default storyFactory({
   argTypes: {},
 })
 
+const wrapper = {
+  components: {
+    AHamburger,
+  },
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { AHamburger },
   template: '<a-hamburger v-bind="$props" @click="action" ></a-hamburger>',
   methods: {
     action: action('hamburger clicked'),

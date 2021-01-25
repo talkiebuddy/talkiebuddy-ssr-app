@@ -10,19 +10,21 @@
         {{ label }}
       </a-label>
     </div>
-
     <div class="u-form-field__input">
-      <a-select
+      <a-input-text
         :id="id"
-        :value="value"
+        :type="type"
+        :placeholder="placeholder"
         :disabled="disabled"
-        :empty-value-label="emptyValueLabel"
-        :options="options"
         :autocomplete="autocomplete"
+        :value="value"
         :name="name"
-        @change="(value) => $emit('input', value)"
-        @focus="$emit('focus')"
-        @blur="$emit('blur')"
+        :inputmode="inputmode"
+        :pattern="pattern"
+        @input="(value) => $emit('input', value)"
+        @focus="$emit('focus', $event)"
+        @blur="$emit('blur', $event)"
+        @keypress="$emit('keypress', $event)"
       />
     </div>
 
@@ -36,36 +38,23 @@
 import { uid } from '@/plugins/helpers'
 
 export default {
-  name: 'MFormSelect',
+  name: 'MTextField',
   props: {
     label: {
       type: String,
       default: '',
     },
-    options: {
-      type: Array,
-      required: true,
+    type: {
+      type: String,
+      default: 'text',
     },
     value: {
       type: String,
-      required: true,
-      default: '',
+      default: null,
     },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    emptyValueLabel: {
+    placeholder: {
       type: String,
-      default: '',
-    },
-    autocomplete: {
-      type: String,
-      default: '',
+      default: null,
     },
     errorMessages: {
       type: [String, Array],
@@ -73,9 +62,29 @@ export default {
     },
     name: {
       type: String,
-      default: '',
+      default: null,
     },
     error: {
+      type: Boolean,
+      default: false,
+    },
+    pattern: {
+      type: String,
+      default: null,
+    },
+    inputmode: {
+      type: String,
+      default: null,
+    },
+    required: {
+      type: Boolean,
+      defaut: false,
+    },
+    autocomplete: {
+      type: String,
+      default: null,
+    },
+    disabled: {
       type: Boolean,
       default: false,
     },
@@ -86,9 +95,9 @@ export default {
     },
     classes() {
       return {
-        'm-form-select u-form-field': true,
-        [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true,
+        'm-text-field u-form-field': true,
         [`${this.error ? 'u-form-field--error' : ''}`]: true,
+        [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true,
       }
     },
   },
@@ -96,9 +105,7 @@ export default {
 </script>
 
 <style lang="scss">
-.m-form-select {
-  .a-select {
-    width: 100%;
-  }
+.m-text-field {
+  /* comment */
 }
 </style>

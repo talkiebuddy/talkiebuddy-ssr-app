@@ -24,7 +24,7 @@ const Template = (args, { argTypes }) => ({
 
   <br/><br/>
 
-  Field Value :
+  Value :
   <pre>{{ selectedValue }}</pre>
 
   </div>
@@ -54,7 +54,8 @@ export const Default = () => ({
 
         <br/><br/>
 
-        Value is : "{{ selectedValue }}"
+        Value :
+        <pre>{{ selectedValue }}</pre>
       </div>
     `,
   data() {
@@ -85,7 +86,8 @@ export const MultipleChoice = () => ({
 
         <br/><br/>
 
-        Value is : "{{ selectedValue }}"
+        Value :
+        <pre>{{ selectedValue }}</pre>
       </div>
     `,
   data() {

@@ -1,7 +1,7 @@
 <template>
   <div :class="classes">
-    <div class="o-form-payment__section o-form-payment__section--card-holder">
-      <m-form-text
+    <div class="o-payment-form__section o-payment-form__section--card-holder">
+      <m-text-field
         v-model="payment.cardHolder"
         type="text"
         autocomplete="cc-name"
@@ -13,8 +13,8 @@
       />
     </div>
 
-    <div class="o-form-payment__section o-form-payment__section--card-number">
-      <m-form-credit-card
+    <div class="o-payment-form__section o-payment-form__section--card-number">
+      <m-credit-card-field
         v-model="payment.creditCard"
         autocomplete="cc-number"
         :label="label.creditCardNumber"
@@ -25,8 +25,8 @@
       />
     </div>
 
-    <div class="o-form-payment__section--card-details">
-      <m-form-text
+    <div class="o-payment-form__section--card-details">
+      <m-text-field
         v-model="payment.securityCode"
         type="text"
         pattern="\d*"
@@ -47,7 +47,7 @@
         @keypress="handleSecurityKeypress"
       />
 
-      <m-form-expiry-date
+      <m-expiry-date-field
         v-model="payment.expiry"
         autocomplete="cc-exp"
         :label="label.expiry"
@@ -66,7 +66,7 @@ import { required, creditCard, expiry, minLength } from '@/validations'
 import { limitLength, isNumberKey } from '@/plugins/helpers'
 
 export default {
-  name: 'OFormPayment',
+  name: 'OPaymentForm',
   mixins: [validationErrorMessages],
   props: {
     label: {
@@ -141,10 +141,10 @@ export default {
   computed: {
     classes() {
       return {
-        'o-form-payment': true,
-        [`${this.error ? 'o-form-payment--error' : ''}`]: true,
-        [`${this.success ? 'o-form-payment--success' : ''}`]: true,
-        [`${this.disabled ? 'v-o-form-payment--disabled' : ''}`]: true,
+        'o-payment-form': true,
+        [`${this.error ? 'o-payment-form--error' : ''}`]: true,
+        [`${this.success ? 'o-payment-form--success' : ''}`]: true,
+        [`${this.disabled ? 'v-o-payment-form--disabled' : ''}`]: true,
       }
     },
   },
@@ -203,7 +203,7 @@ export default {
 </script>
 
 <style lang="scss">
-.o-form-payment {
+.o-payment-form {
   display: grid;
 
   &__section {

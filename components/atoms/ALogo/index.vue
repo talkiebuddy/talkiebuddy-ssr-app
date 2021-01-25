@@ -29,6 +29,7 @@
     />
   </svg>
 </template>
+
 <style lang="scss">
 .a-logo {
   display: block;

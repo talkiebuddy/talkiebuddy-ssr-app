@@ -1,21 +1,27 @@
-import MFormText from './index.vue'
+import MTextField from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Molecule/Text Field',
-  component: MFormText,
+  component: MTextField,
   description:
-    'The completed documentation will sooner release. This docs is about Form Text Molecule',
+    'The completed documentation will sooner release. This docs is about Text Field Molecule',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
 
+const wrapper = {
+  components: {
+    MTextField,
+  },
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { MFormText },
   template: `
   <div>
-  <m-form-text v-model="fieldValue" v-bind="$props"></m-form-text>
+  <m-text-field v-model="fieldValue" v-bind="$props"></m-text-field>
 
   <br/><br/>
 
@@ -39,10 +45,10 @@ Playground.args = {
 }
 
 export const defaults = () => ({
-  component: { MFormText },
+  ...wrapper,
   template: `
   <div>
-  <m-form-text label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue"></m-form-text>
+  <m-text-field label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue"></m-text-field>
 
   <br/><br/>
 
@@ -58,10 +64,10 @@ export const defaults = () => ({
 })
 
 export const Required = () => ({
-  component: { MFormText },
+  ...wrapper,
   template: `
   <div>
-  <m-form-text label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue" required></m-form-text>
+  <m-text-field label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue" required></m-text-field>
 
   <br/><br/>
 
@@ -77,10 +83,10 @@ export const Required = () => ({
 })
 
 export const Invalid = () => ({
-  component: { MFormText },
+  ...wrapper,
   template: `
   <div>
-  <m-form-text label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue" error errorMessages="Name can not include numbers"></m-form-text>
+  <m-text-field label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue" error errorMessages="Name can not include numbers"></m-text-field>
 
   <br/><br/>
 
@@ -96,20 +102,13 @@ export const Invalid = () => ({
 })
 
 export const Disabled = () => ({
-  component: { MFormText },
+  ...wrapper,
   template: `
   <div>
-  <m-form-text label="Full Name" type="text" placeholder="Please fill in your full name" v-model="fieldValue" disabled></m-form-text>
-
-  <br/><br/>
-
-  Field value :
-  <pre>{{ fieldValue }}</pre>
+  <m-text-field label="Full Name" type="text" placeholder="Please fill in your full name" disabled></m-text-field>
   </div>
   `,
   data() {
-    return {
-      fieldValue: '',
-    }
+    return {}
   },
 })

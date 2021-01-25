@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
-import MFormText from './index.vue'
+import MTextField from '.'
 
-describe('Molecule - MFormText', () => {
+describe('Molecule - MTextField', () => {
   let wrapper
   const factory = (computed = {}) => {
-    return shallowMount(MFormText, {
+    return shallowMount(MTextField, {
       propsData: {
         value: '',
       },

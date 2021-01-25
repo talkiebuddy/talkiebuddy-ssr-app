@@ -190,6 +190,8 @@ export default {
   }
 
   &__control {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     opacity: 0.3;
     transition: opacity 0.3s;

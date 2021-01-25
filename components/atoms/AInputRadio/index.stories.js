@@ -1,4 +1,4 @@
-import AInputRadio from './index.vue'
+import AInputRadio from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -9,9 +9,15 @@ export default storyFactory({
   argTypes: {},
 })
 
+const wrapper = {
+  components: {
+    AInputRadio,
+  },
+}
+
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { AInputRadio },
   template: '<a-input-radio v-bind="$props"></a-input-radio>',
 })
 
@@ -19,7 +25,7 @@ export const Playground = Template.bind({})
 Playground.args = {}
 
 export const Default = () => ({
-  components: { AInputRadio },
+  ...wrapper,
   template: `
   <div>
         <label>
@@ -39,7 +45,8 @@ export const Default = () => ({
 
         <br/><br/>
 
-        Value is : "{{ selectedValue }}"
+        Value :
+        <pre>{{ selectedValue }}</pre>
       </div>
     `,
   data() {

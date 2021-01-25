@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable-next-line vue/no-v-html -->
-  <i :class="classes" :style="styles" v-html="svg" />
+  <i :class="classes" :style="styles" :aria-label="name" v-html="svg" />
 </template>
 
 <script>

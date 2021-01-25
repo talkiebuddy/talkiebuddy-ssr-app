@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import MButtons from './index.vue'
+import MButtons from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({

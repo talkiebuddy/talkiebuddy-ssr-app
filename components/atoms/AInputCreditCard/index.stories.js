@@ -5,7 +5,7 @@ export default storyFactory({
   title: 'Design System/Atom/Input Credit Card',
   component: AInputCreditCard,
   description:
-    'The completed documentation will sooner release. This docs is about Input Tel Atom',
+    'The completed documentation will sooner release. This docs is about Input Credit Card Atom',
   argTypes: {},
 })
 
@@ -18,20 +18,12 @@ const wrapper = {
 const Template = (args, { argTypes }) => ({
   ...wrapper,
   props: Object.keys(argTypes),
-  template: '<a-input-credit-card v-bind="$props"></a-input-credit-card>',
-})
-
-export const Playground = Template.bind({})
-Playground.args = {}
-
-export const Default = () => ({
-  ...wrapper,
   template: `
       <div>
-        <a-input-credit-card v-model="creditCard"/>
+        <a-input-credit-card v-model="creditCard" v-bind="$props"/>
 
-        <br/><br/>
-        <pre> Value is: {{ creditCard }} </pre>
+        <br/><br/>Value :
+        <pre>{{ creditCard }}</pre>
       </div>
     `,
   data() {
@@ -44,11 +36,17 @@ export const Default = () => ({
   },
 })
 
-export const Disabled = () => ({
+export const Playground = Template.bind({})
+Playground.args = {}
+
+export const Default = () => ({
   ...wrapper,
   template: `
       <div>
-        <a-input-credit-card disabled v-model="creditCard"/>
+        <a-input-credit-card v-model="creditCard"/>
+
+        <br/><br/>Value :
+        <pre>{{ creditCard }}</pre>
       </div>
     `,
   data() {

@@ -1,17 +1,17 @@
-import MFormSelect from '.'
+import MSelectField from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Molecule/Select Field',
-  component: MFormSelect,
+  component: MSelectField,
   description:
-    'The completed documentation will sooner release. This docs is about Form Select Molecule',
+    'The completed documentation will sooner release. This docs is about Select Field Molecule',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormSelect },
+  components: { MSelectField },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -19,7 +19,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
   <div>
-  <m-form-select v-model="fieldValue" v-bind="$props"></m-form-select>
+  <m-select-field v-model="fieldValue" v-bind="$props"></m-select-field>
 
   <br/><br/>
 
@@ -65,7 +65,7 @@ export const Default = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-select
+        <m-select-field
           label="Choose your food"
           emptyValueLabel="Please select a food"
           v-model="fieldValue"
@@ -90,7 +90,7 @@ export const Required = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-select
+        <m-select-field
           label="Choose your food"
           emptyValueLabel="Please select a food"
           v-model="fieldValue"
@@ -115,7 +115,7 @@ export const Invalid = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-select
+        <m-select-field
           label="Choose your food"
           emptyValueLabel="Please select a food"
           v-model="fieldValue"
@@ -141,22 +141,16 @@ export const Disabled = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-select
+        <m-select-field
           label="Choose your food"
           emptyValueLabel="Please select a food"
-          v-model="fieldValue"
           :options="options"
           disabled
         />
-        <br/><br/>
-
-        Field value :
-        <pre>{{ fieldValue }}</pre>
       </div>
     `,
   data() {
     return {
-      fieldValue: '',
       options,
     }
   },

@@ -1,17 +1,17 @@
-import MFormCreditCard from '.'
+import MCreditCardField from '.'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
   title: 'Design System/Molecule/Credit Card Field',
-  component: MFormCreditCard,
+  component: MCreditCardField,
   description:
-    'The completed documentation will sooner release. This docs is about Form Credit Card Number Molecule',
+    'The completed documentation will sooner release. This docs is about Credit Card Number Field Molecule',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
 
 const wrapper = {
-  components: { MFormCreditCard },
+  components: { MCreditCardField },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -19,7 +19,7 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
   <div>
-    <m-form-credit-card
+    <m-credit-card-field
       v-model="fieldValue"
       v-bind="$props"
     />
@@ -46,7 +46,7 @@ export const Default = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-credit-card
+        <m-credit-card-field
           label="Choose card number"
           v-model="creditCard"
         />
@@ -70,7 +70,7 @@ export const Required = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-credit-card
+        <m-credit-card-field
           label="Credit card number"
           v-model="creditCard"
           required
@@ -95,7 +95,7 @@ export const Invalid = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-credit-card
+        <m-credit-card-field
           label="Credit card number"
           v-model="creditCard"
           error
@@ -121,16 +121,11 @@ export const Disabled = () => ({
   ...wrapper,
   template: `
       <div>
-        <m-form-credit-card
+        <m-credit-card-field
           label="Credit card number"
           v-model="creditCard"
           disabled
         />
-
-        <br/><br/>
-
-        Field value :
-        <pre>{{ creditCard }}</pre>
       </div>
     `,
   data() {

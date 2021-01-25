@@ -53,7 +53,7 @@ export default {
     /** Placeholder text for the input */
     placeholder: {
       type: String,
-      default: '',
+      default: 'Enter your credit card',
     },
   },
   data() {

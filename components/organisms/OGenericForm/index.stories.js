@@ -16,7 +16,7 @@ export default storyFactory({
   title: 'Design System/Organism/Generic Form',
   component: OGenericForm,
   description:
-    'The completed documentation will sooner release. This docs is about Form Select Molecule',
+    'The completed documentation will sooner release. This docs is about Generic Form Organism',
   argTypes: {},
   excludeStories: /.*Data$/,
 })
@@ -28,28 +28,28 @@ const wrapper = {
 const fields = [
   {
     name: 'firstName',
-    component: 'm-form-text',
+    component: 'm-text-field',
     placeholder: 'Enter your first name',
     type: 'text',
     label: 'First Name',
   },
   {
     name: 'lastName',
-    component: 'm-form-text',
+    component: 'm-text-field',
     placeholder: 'Enter your last name',
     type: 'text',
     label: 'Last Name',
   },
   {
     name: 'email',
-    component: 'm-form-text',
+    component: 'm-text-field',
     placeholder: 'Enter your email',
     type: 'text',
     label: 'Email',
   },
   {
     name: 'phoneNumber',
-    component: 'm-form-tel',
+    component: 'm-tel-field',
     label: 'Phone Number',
     placeholder: 'Enter your phone number',
     autocomplete: false,
@@ -57,7 +57,7 @@ const fields = [
   },
   {
     name: 'password',
-    component: 'm-form-text',
+    component: 'm-text-field',
     type: 'password',
     label: 'Password',
     placeholder: 'Enter your password',
@@ -65,22 +65,28 @@ const fields = [
     visibleValidation: true,
   },
   {
+    name: 'address',
+    component: 'm-textarea-field',
+    placeholder: 'Enter your address',
+    label: 'Address',
+  },
+  {
     name: 'countryOfResidence',
-    component: 'm-form-select',
+    component: 'm-select-field',
     label: 'Choose your country',
     emptyValueLabel: 'Select your country',
     options: countryList,
   },
   {
     name: 'securityQuestion',
-    component: 'm-form-select',
+    component: 'm-select-field',
     label: 'Security Question',
     emptyValueLabel: 'Select your question',
     options: securityQuestions,
   },
   {
     name: 'securityAnswer',
-    component: 'm-form-text',
+    component: 'm-text-field',
     type: 'text',
     label: 'Security Answer',
     conditionalRendering: {
@@ -91,7 +97,7 @@ const fields = [
   },
   {
     name: 'payment',
-    component: 'o-form-payment',
+    component: 'o-payment-form',
     label: {
       creditCardNumber: 'Credit Card Number',
       expiry: 'Expiry Date',
@@ -129,6 +135,7 @@ Playground.args = {
     lastName: '',
     password: '',
     countryOfResidence: '',
+    address: '',
     phoneNumber: {
       number: '',
     },
@@ -146,6 +153,7 @@ Playground.args = {
     firstName: name,
     lastName: name,
     email: { email, required },
+    address: { required },
     creditCardNumber: { required },
     cardHolder: { required },
     countryOfResidence: { required },
@@ -202,6 +210,7 @@ export const Default = () => ({
         lastName: '',
         password: '',
         countryOfResidence: '',
+        address: '',
         phoneNumber: {
           number: '',
         },
@@ -219,6 +228,7 @@ export const Default = () => ({
         firstName: name,
         lastName: name,
         email: { email, required },
+        address: { required },
         creditCardNumber: { required },
         cardHolder: { required },
         countryOfResidence: { required },

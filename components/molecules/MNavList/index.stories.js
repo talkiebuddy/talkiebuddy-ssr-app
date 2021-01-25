@@ -1,4 +1,4 @@
-import MNavList from './index.vue'
+import MNavList from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -10,6 +10,12 @@ export default storyFactory({
     list: { control: { type: 'object' } },
   },
 })
+
+const wrapper = {
+  components: {
+    MNavList,
+  },
+}
 
 const listRoute = [
   {
@@ -34,8 +40,8 @@ const listHref = [
 ]
 
 const Template = (args, { argTypes }) => ({
+  ...wrapper,
   props: Object.keys(argTypes),
-  components: { MNavList },
   template: '<m-nav-list :list="list" v-bind="$props"></m-nav-list>',
 })
 

@@ -1,4 +1,4 @@
-import AList from './index.vue'
+import AList from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({

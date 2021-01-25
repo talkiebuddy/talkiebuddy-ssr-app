@@ -36,7 +36,7 @@
 import { uid, limitLength, isNumberKey, onlyDigits } from '@/plugins/helpers'
 
 export default {
-  name: 'MFormExpiryDate',
+  name: 'MExpiryDateField',
   props: {
     name: {
       type: String,
@@ -103,7 +103,7 @@ export default {
     },
     classes() {
       return {
-        'm-form-expiry-date u-form-field': true,
+        'm-expiry-date-field u-form-field': true,
         [`${this.error ? 'u-form-field--error' : ''}`]: true,
         [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true,
       }

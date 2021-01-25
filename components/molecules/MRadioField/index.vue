@@ -1,6 +1,6 @@
 <template>
   <fieldset :class="classes">
-    <div v-if="label" class="m-form-radio__question u-form-field__label">
+    <div v-if="label" class="m-radio-field__question u-form-field__label">
       <a-text tag="legend">
         <template v-if="required"> * </template>{{ label }}
       </a-text>
@@ -10,12 +10,12 @@
       <m-validation-messages :error="error" :error-messages="errorMessages" />
     </div>
 
-    <div class="m-form-radio__options u-form-field__label">
+    <div class="m-radio-field__options u-form-field__label">
       <div
         v-for="option in options"
         :key="option.value"
         :class="[
-          'm-form-radio__option',
+          'm-radio-field__option',
           `${
             option.disabled || disabled ? 'u-form-field__option--disabled' : ''
           }`,
@@ -40,7 +40,7 @@
 import { uid } from '@/plugins/helpers'
 
 export default {
-  name: 'MFormRadio',
+  name: 'MRadioField',
   model: {
     prop: 'value',
     event: 'change',
@@ -90,7 +90,7 @@ export default {
     },
     classes() {
       return {
-        'm-form-radio u-form-field': true,
+        'm-radio-field u-form-field': true,
         [`${this.error ? 'u-form-field--error' : ''}`]: true,
         [`${this.disabled ? 'u-form-field--disabled' : ''}`]: true,
       }
@@ -105,7 +105,7 @@ export default {
 </script>
 
 <style lang="scss">
-.m-form-radio {
+.m-radio-field {
   .m-validation-messages {
     margin-bottom: 1rem;
     margin-top: -1rem;

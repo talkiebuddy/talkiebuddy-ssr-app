@@ -1,4 +1,4 @@
-import { themes } from '@storybook/theming'
+// import { themes } from '@storybook/theming'
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -88,48 +88,48 @@ export default {
   },
 
   // Storybook Configuration (https://storybook.nuxtjs.org/)
-  storybook: {
-    addons: [
-      'storybook-design-token',
-      '@storybook/addon-a11y',
-      'storybook-dark-mode',
-    ],
-    parameters: {
-      actions: { argTypesRegex: '^on[A-Z].*' },
-      backgrounds: {
-        default: 'talkiebuddy',
-        values: [
-          {
-            name: 'talkiebuddy',
-            value: '#FFFCF2',
-          },
-          {
-            name: 'white',
-            value: '#FFFFFF',
-          },
-          {
-            name: 'dark',
-            value: '#1e2225',
-          },
-        ],
-      },
-      darkMode: {
-        // Override the default dark theme
-        dark: {
-          ...themes.dark,
-          brandTitle: 'Talkie Buddy Atomic Design',
-          brandUrl: 'https://talkiebuddy.com',
-        },
-        // Override the default light theme
-        light: {
-          ...themes.light,
-          brandTitle: 'Talkie Buddy Atomic Design',
-          brandUrl: 'https://talkiebuddy.com',
-        },
-      },
-      options: {
-        panelPosition: 'right',
-      },
-    },
-  },
+  // storybook: {
+  //   addons: [
+  //     'storybook-design-token',
+  //     '@storybook/addon-a11y',
+  //     'storybook-dark-mode',
+  //   ],
+  //   parameters: {
+  //     actions: { argTypesRegex: '^on[A-Z].*' },
+  //     backgrounds: {
+  //       default: 'talkiebuddy',
+  //       values: [
+  //         {
+  //           name: 'talkiebuddy',
+  //           value: '#FFFCF2',
+  //         },
+  //         {
+  //           name: 'white',
+  //           value: '#FFFFFF',
+  //         },
+  //         {
+  //           name: 'dark',
+  //           value: '#1e2225',
+  //         },
+  //       ],
+  //     },
+  //     darkMode: {
+  //       // Override the default dark theme
+  //       dark: {
+  //         ...themes.dark,
+  //         brandTitle: 'Talkie Buddy Atomic Design',
+  //         brandUrl: 'https://talkiebuddy.com',
+  //       },
+  //       // Override the default light theme
+  //       light: {
+  //         ...themes.light,
+  //         brandTitle: 'Talkie Buddy Atomic Design',
+  //         brandUrl: 'https://talkiebuddy.com',
+  //       },
+  //     },
+  //     options: {
+  //       panelPosition: 'right',
+  //     },
+  //   },
+  // },
 }

@@ -1,5 +1,5 @@
 import MCarouselSlide from '../MCarouselSlide/index.vue'
-import MCarousel from './index.vue'
+import MCarousel from '.'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
@@ -9,7 +9,7 @@ export default storyFactory({
     MCarouselSlide,
   },
   description:
-    'The completed documentation will sooner release. This docs is about Carousel  Molecule',
+    'The completed documentation will sooner release. This docs is about Carousel Molecule',
   argTypes: {},
 })
 
