@@ -9,6 +9,7 @@ module.exports = nuxifyStorybook({
   },
   stories: [
     // Add your stories here
+    '../components/**/*.stories.mdx'
   ],
   addons: [
     'storybook-design-token',

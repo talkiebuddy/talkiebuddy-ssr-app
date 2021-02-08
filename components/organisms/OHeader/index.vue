@@ -4,9 +4,9 @@
       <nuxt-link to="/" class="o-header__logo">
         <a-logo />
       </nuxt-link>
-      <div class="o-header__nav">
+      <nav class="o-header__nav">
         <m-nav-list :list="navList" />
-      </div>
+      </nav>
 
       <div class="o-header__hamburger">
         <a-hamburger :is-open="menuIsOpen" @click="toggleMenu" />
