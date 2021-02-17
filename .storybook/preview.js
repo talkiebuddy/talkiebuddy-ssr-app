@@ -27,7 +27,7 @@ export const parameters = {
   ...nuxtParameters,
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
-    default: 'talkiebuddy',
+    default: 'white',
     values: [
       {
         name: 'talkiebuddy',
@@ -66,9 +66,14 @@ export const parameters = {
       hideMatchingHardCodedValues: false,
     },
   },
+  dependencies: { withStoriesOnly: true, hideEmpty: true },
   options: {
+    storySort: {
+      order: ['Intro', 'Design System', ['Atom', 'Molecule', 'Organism', 'Template', 'Page'],],
+    },
     panelPosition: 'right',
   },
+
 };
 
 // export const globalTypes = {

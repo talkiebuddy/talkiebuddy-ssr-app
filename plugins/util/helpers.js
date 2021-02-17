@@ -1,3 +1,5 @@
+import { DocsPage } from 'storybook-addon-deps/blocks'
+
 export const storyFactory = (options) => {
   const { title, component, args, argTypes, description } = options
 
@@ -22,6 +24,7 @@ export const storyFactory = (options) => {
     },
     parameters: {
       docs: {
+        page: DocsPage,
         description: {
           component: description,
         },
