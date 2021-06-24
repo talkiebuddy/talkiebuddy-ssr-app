@@ -12,8 +12,14 @@
 export default {
   name: 'Card',
   props: {
-    title: String,
-    width: String,
+    title: {
+      type: String,
+      default: '',
+    },
+    width: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
