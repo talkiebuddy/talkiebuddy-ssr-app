@@ -2,7 +2,7 @@ import ALogo from '../ALogo'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Logo',
+  title: 'Atomic Design/Atom/Logo',
   component: ALogo,
   description:
     'The completed documentation will sooner release. This docs is about Logo Atom',

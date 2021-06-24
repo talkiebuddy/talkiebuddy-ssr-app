@@ -2,7 +2,7 @@ import MAccordionItem from '../MAccordionItem'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Accordion Item',
+  title: 'Atomic Design/Molecule/Accordion Item',
   component: MAccordionItem,
   description:
     'The completed documentation will sooner release. This docs is about Accordion Item Molecule',

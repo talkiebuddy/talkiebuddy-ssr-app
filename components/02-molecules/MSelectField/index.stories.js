@@ -2,7 +2,7 @@ import MSelectField from '../MSelectField'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Select Field',
+  title: 'Atomic Design/Molecule/Select Field',
   component: MSelectField,
   description:
     'The completed documentation will sooner release. This docs is about Select Field Molecule',

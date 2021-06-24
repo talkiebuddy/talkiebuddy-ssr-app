@@ -2,7 +2,7 @@ import ATextarea from '../ATextarea'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Textarea',
+  title: 'Atomic Design/Atom/Textarea',
   component: ATextarea,
   description:
     'The completed documentation will sooner release. This docs is about Input Textarea Atom',

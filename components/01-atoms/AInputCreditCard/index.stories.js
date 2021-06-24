@@ -2,7 +2,7 @@ import AInputCreditCard from '../AInputCreditCard'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Input Credit Card',
+  title: 'Atomic Design/Atom/Input Credit Card',
   component: AInputCreditCard,
   description:
     'The completed documentation will sooner release. This docs is about Input Credit Card Atom',

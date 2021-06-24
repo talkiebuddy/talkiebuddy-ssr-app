@@ -2,7 +2,7 @@ import ASelect from '../ASelect'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Select',
+  title: 'Atomic Design/Atom/Select',
   component: ASelect,
   description:
     'The completed documentation will sooner release. This docs is about Select Atom',

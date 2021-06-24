@@ -2,7 +2,7 @@ import AImage from '../AImage'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Image',
+  title: 'Atomic Design/Atom/Image',
   component: AImage,
   description:
     'The completed documentation will sooner release. This docs is about Images Atom',

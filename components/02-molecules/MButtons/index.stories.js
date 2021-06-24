@@ -1,12 +1,14 @@
 import { action } from '@storybook/addon-actions'
+// import { withDesign } from 'storybook-addon-designs'
 import MButtons from '../MButtons'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Buttons',
+  title: 'Atomic Design/Molecule/Buttons',
   component: MButtons,
   description:
     'The completed documentation will sooner release. This docs is about Button Atom',
+  // decorators: [withDesign],
   argTypes: {
     backgroundColor: {
       control: 'color',
@@ -41,6 +43,13 @@ export default storyFactory({
         type: 'select',
         options: ['default', 'primary', 'success', 'info', 'danger', 'warning'],
       },
+    },
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FqTRpqzQ3yMDIVfbVof7TkZ%2FTalkieBuddy-Documentation%3Fnode-id%3D329%253A8755',
     },
   },
   excludeStories: /.*Data$/,

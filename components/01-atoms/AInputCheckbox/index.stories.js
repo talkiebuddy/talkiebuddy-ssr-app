@@ -2,7 +2,7 @@ import AInputCheckbox from '../AInputCheckbox'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Input Checkbox',
+  title: 'Atomic Design/Atom/Input Checkbox',
   component: AInputCheckbox,
   description:
     'The completed documentation will sooner release. This docs is about Input Checkbox Atom',

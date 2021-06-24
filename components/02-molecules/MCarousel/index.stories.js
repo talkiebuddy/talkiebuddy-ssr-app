@@ -3,7 +3,7 @@ import MCarousel from '../MCarousel'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Carousel ',
+  title: 'Atomic Design/Molecule/Carousel ',
   component: {
     MCarousel,
     MCarouselSlide,

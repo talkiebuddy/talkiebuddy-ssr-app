@@ -2,7 +2,7 @@ import MTextareaField from '../MTextareaField'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Textarea Field',
+  title: 'Atomic Design/Molecule/Textarea Field',
   component: MTextareaField,
   description:
     'The completed documentation will sooner release. This docs is about Textarea Field Molecule',

@@ -2,7 +2,7 @@ import MTextField from '../MTextField'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Text Field',
+  title: 'Atomic Design/Molecule/Text Field',
   component: MTextField,
   description:
     'The completed documentation will sooner release. This docs is about Text Field Molecule',

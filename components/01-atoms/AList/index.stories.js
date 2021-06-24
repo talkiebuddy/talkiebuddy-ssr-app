@@ -2,7 +2,7 @@ import AList from '../AList'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/List',
+  title: 'Atomic Design/Atom/List',
   component: AList,
   description:
     'The completed documentation will sooner release. This docs is about List Atom',

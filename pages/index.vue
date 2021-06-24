@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div>
+    <!-- <div>
       <o-header></o-header>
       <Logo />
       <h1 class="title">talkiebuddy-ssr-app</h1>
@@ -13,14 +13,14 @@
         >
           Documentation
         </a>
-        <a
+        <aa
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           rel="noopener noreferrer"
           class="button--grey"
         >
           GitHub
-        </a>
+        </aa>
       </div>
     </div>
     <m-buttons label="Atomic Button" />
@@ -32,7 +32,11 @@
     <m-buttons disabled label="Click here" />
     <m-buttons href="https://google.com" label="Visit Google" />
     <a-image src="https://source.unsplash.com/random/400x300" />
-    <a-icon name="twitter" size="large" />
+    <a-icon name="twitter" size="large" /> -->
+    <!-- <Logo /> -->
+    <!-- <t-authenticate></t-authenticate> -->
+
+    <!-- <o-generic-form></o-generic-form> -->
   </div>
 </template>
 

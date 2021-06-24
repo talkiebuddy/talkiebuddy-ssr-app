@@ -3,7 +3,7 @@ import ATableCell from './index.vue'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Table Cell',
+  title: 'Atomic Design/Atom/Table Cell',
   component: ATableCell,
   description:
     'The completed documentation will sooner release. This docs is about Table Cell Atom',

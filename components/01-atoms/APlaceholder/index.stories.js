@@ -2,7 +2,7 @@ import APlaceholder from '../APlaceholder'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Placeholder',
+  title: 'Atomic Design/Atom/Placeholder',
   component: APlaceholder,
   description:
     'The completed documentation will sooner release. This docs is about Placeholder Atom',

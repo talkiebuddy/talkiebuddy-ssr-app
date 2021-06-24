@@ -2,7 +2,7 @@ import MCreditCardField from '../MCreditCardField'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Credit Card Field',
+  title: 'Atomic Design/Molecule/Credit Card Field',
   component: MCreditCardField,
   description:
     'The completed documentation will sooner release. This docs is about Credit Card Number Field Molecule',

@@ -2,7 +2,7 @@ import AInputRadio from '../AInputRadio'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Input Radio',
+  title: 'Atomic Design/Atom/Input Radio',
   component: AInputRadio,
   description:
     'The completed documentation will sooner release. This docs is about Input Radio Atom',

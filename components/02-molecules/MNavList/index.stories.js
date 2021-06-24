@@ -2,7 +2,7 @@ import MNavList from '../MNavList'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Navigation List',
+  title: 'Atomic Design/Molecule/Navigation List',
   component: MNavList,
   description:
     'The completed documentation will sooner release. This docs is about Navigation List Atom',

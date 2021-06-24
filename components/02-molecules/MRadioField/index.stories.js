@@ -2,7 +2,7 @@ import MRadioField from '../MRadioField'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Radio Field',
+  title: 'Atomic Design/Molecule/Radio Field',
   component: MRadioField,
   description:
     'The completed documentation will sooner release. This docs is about Radio Field Molecule',

@@ -2,7 +2,7 @@ import MExpiryDateField from '../MExpiryDateField'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Expiry Date Field',
+  title: 'Atomic Design/Molecule/Expiry Date Field',
   component: MExpiryDateField,
   description:
     'The completed documentation will sooner release. This docs is about Expiry Date Field Molecule',

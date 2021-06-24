@@ -25,6 +25,7 @@ module.exports = nuxifyStorybook({
     'storybook-design-token',
     '@storybook/addon-a11y',
     'storybook-dark-mode',
-    'storybook-addon-deps'
+    'storybook-addon-deps',
+    'storybook-addon-designs'
   ],
 })

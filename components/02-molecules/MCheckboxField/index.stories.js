@@ -2,7 +2,7 @@ import MCheckboxField from '../MCheckboxField'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Checkbox Field',
+  title: 'Atomic Design/Molecule/Checkbox Field',
   component: MCheckboxField,
   description:
     'The completed documentation will sooner release. This docs is about Checkbox Field Molecule',

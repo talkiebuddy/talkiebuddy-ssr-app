@@ -3,7 +3,7 @@ import AHamburger from '../AHamburger'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Hamburger',
+  title: 'Atomic Design/Atom/Hamburger',
   component: AHamburger,
   description:
     'The completed documentation will sooner release. This docs is about Hamburger Atom',

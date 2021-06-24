@@ -47,13 +47,13 @@ export const parameters = {
     // Override the default dark theme
     dark: {
       ...themes.dark,
-      brandTitle: 'Talkie Buddy Atomic Design',
+      brandTitle: 'Sandbox Talkiebuddy',
       brandUrl: 'https://talkiebuddy.com',
     },
     // Override the default light theme
     light: {
       ...themes.light,
-      brandTitle: 'Talkie Buddy Atomic Design',
+      brandTitle: 'Sandbox Talkiebuddy',
       brandUrl: 'https://talkiebuddy.com',
     },
   },
@@ -69,7 +69,7 @@ export const parameters = {
   dependencies: { withStoriesOnly: true, hideEmpty: true },
   options: {
     storySort: {
-      order: ['Intro', 'Design System', ['Atom', 'Molecule', 'Organism', 'Template', 'Page'],],
+      order: ['Intro', 'Atomic Design', ['Atom', 'Molecule', 'Organism', 'Template', 'Page'],],
     },
     panelPosition: 'right',
   },

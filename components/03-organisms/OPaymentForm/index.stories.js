@@ -2,7 +2,7 @@ import OPaymentForm from '../OPaymentForm'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Organism/Payment Form',
+  title: 'Atomic Design/Organism/Payment Form',
   component: OPaymentForm,
   description:
     'The completed documentation will sooner release. This docs is about Payment Form Organism',

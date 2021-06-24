@@ -2,7 +2,7 @@ import OHeader from './index.vue'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Organism/Header',
+  title: 'Atomic Design/Organism/Header',
   component: OHeader,
   description:
     'The completed documentation will sooner release. This docs is about Navigation Header Organism',

@@ -2,7 +2,7 @@ import MCarouselSlide from '../MCarouselSlide'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Carousel Slide',
+  title: 'Atomic Design/Molecule/Carousel Slide',
   component: MCarouselSlide,
   description:
     'The completed documentation will sooner release. This docs is about Carousel Slide Molecule',

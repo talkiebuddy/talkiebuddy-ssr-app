@@ -2,7 +2,7 @@ import AInputTel from '../AInputTel'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Input Tel',
+  title: 'Atomic Design/Atom/Input Tel',
   component: AInputTel,
   description:
     'The completed documentation will sooner release. This docs is about Input Tel Atom',

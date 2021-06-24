@@ -2,7 +2,7 @@ import AInputText from '../AInputText'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Input Text',
+  title: 'Atomic Design/Atom/Input Text',
   component: AInputText,
   description:
     'The completed documentation will sooner release. This docs is about Input Text Atom',

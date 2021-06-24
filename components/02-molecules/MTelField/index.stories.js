@@ -2,7 +2,7 @@ import MTelField from '../MTelField'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Molecule/Tel Field',
+  title: 'Atomic Design/Molecule/Tel Field',
   component: MTelField,
   description:
     'The completed documentation will sooner release. This docs is about Tel Field Molecule',

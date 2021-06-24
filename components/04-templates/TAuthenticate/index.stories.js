@@ -1,9 +1,10 @@
 // import { action } from '@storybook/addon-actions'
 import TAuthenticate from './index.vue'
+import data from './data'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Template/Authenticate',
+  title: 'Atomic Design/Template/Authenticate',
   component: TAuthenticate,
   description:
     'The completed documentation will sooner release. This docs is about Table Cell Atom',
@@ -30,8 +31,11 @@ const wrapper = {
 // }
 
 export const Test = () => ({
+  data() {
+    return {
+      data,
+    }
+  },
   ...wrapper,
-  template: `
-    <t-authenticate></t-authenticate>
-  `,
+  template: `<t-authenticate :auth-data="data"></t-authenticate>`,
 })

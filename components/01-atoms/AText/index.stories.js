@@ -1,8 +1,10 @@
 import AText from '../AText'
+import Blockquote from './Text/Blockquote'
+import Paragraph from './Text/Paragraph'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Text',
+  title: 'Atomic Design/Atom/Text/text',
   component: AText,
   description:
     'The completed documentation will sooner release. This docs is about Text Atom',
@@ -11,7 +13,7 @@ export default storyFactory({
 })
 
 const wrapper = {
-  components: { AText },
+  components: { AText, Blockquote, Paragraph },
 }
 
 const Template = (args, { argTypes }) => ({
@@ -52,4 +54,18 @@ export const ByTag = () => ({
   <div>
     <a-text tag="span">Sample text with '&#x3C;span&#x3E;' tag</a-text>
   </div>`,
+})
+
+export const Reference = () => ({
+  ...wrapper,
+  template: `
+    <div :style="{ 'padding': '2rem' }">
+      <p>
+          This story demonstrates the default <strong>base styles</strong> for
+          HTML text elements. These elements are for reference only.
+      </p>
+      <Paragraph />
+      <Blockquote />
+    </div>
+  `,
 })

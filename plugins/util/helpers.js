@@ -1,7 +1,7 @@
 import { DocsPage } from 'storybook-addon-deps/blocks'
 
 export const storyFactory = (options) => {
-  const { title, component, args, argTypes, description } = options
+  const { title, component, args, argTypes, parameters, description } = options
 
   return {
     title,
@@ -23,6 +23,7 @@ export const storyFactory = (options) => {
       ...argTypes,
     },
     parameters: {
+      ...parameters,
       docs: {
         page: DocsPage,
         description: {

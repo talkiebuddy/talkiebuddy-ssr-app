@@ -2,7 +2,7 @@ import AHeading from '../AHeading'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Heading',
+  title: 'Atomic Design/Atom/Heading',
   component: AHeading,
   description:
     'The completed documentation will sooner release. This docs is about Heading Atom',

@@ -13,7 +13,7 @@ import securityQuestions from './security-questions'
 import { storyFactory } from '~/plugins/util/helpers.js'
 
 export default storyFactory({
-  title: 'Design System/Organism/Generic Form',
+  title: 'Atomic Design/Organism/Generic Form',
   component: OGenericForm,
   description:
     'The completed documentation will sooner release. This docs is about Generic Form Organism',

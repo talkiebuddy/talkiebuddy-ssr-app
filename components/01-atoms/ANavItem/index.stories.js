@@ -3,7 +3,7 @@ import ANavItem from '../ANavItem'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Navigation Item',
+  title: 'Atomic Design/Atom/Navigation Item',
   component: ANavItem,
   description:
     'The completed documentation will sooner release. This docs is about Navigation Item Atom',

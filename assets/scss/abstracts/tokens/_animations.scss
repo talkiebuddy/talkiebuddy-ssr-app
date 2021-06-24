@@ -1,5 +1,5 @@
 /**
- * @tokens Animations
+ * @tokens SCSS: Animations
  * @presenter Animation
  */
 
@@ -47,4 +47,5 @@
 
 $animation-slide-up: slide-up 0.3s;
 $animation-slide-up-with-margin: slide-up-with-margin 0.3s;
+$animation-slide-up: slide-up 1.2s infinite cubic-bezier(0.55, 0, 0.1, 1);
 $animation-spinner: rotate 1.2s infinite cubic-bezier(0.55, 0, 0.1, 1);

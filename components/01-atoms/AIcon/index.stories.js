@@ -2,7 +2,7 @@ import AIcon from '../AIcon'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Icon',
+  title: 'Atomic Design/Atom/Icon',
   component: AIcon,
   description:
     'The completed documentation will sooner release. This docs is about Icon Atom',

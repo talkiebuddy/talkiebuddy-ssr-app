@@ -2,7 +2,7 @@ import ALoader from '../ALoader'
 import { storyFactory } from '~/plugins/util/helpers'
 
 export default storyFactory({
-  title: 'Design System/Atom/Loader',
+  title: 'Atomic Design/Atom/Loader',
   component: ALoader,
   description:
     'The completed documentation will sooner release. This docs is about Loader Atom',
