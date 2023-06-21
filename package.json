@@ -34,7 +34,7 @@
     "@nuxtjs/pwa": "^3.0.2",
     "core-js": "^3.6.5",
     "credit-card-type": "^9.1.0",
-    "nuxt": "^2.14.12",
+    "nuxt": "^3.4.3",
     "vue-tel-input": "^4.4.2",
     "vuelidate": "^0.7.6"
   },
