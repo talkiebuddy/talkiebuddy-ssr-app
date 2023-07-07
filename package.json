@@ -76,7 +76,7 @@
     "storybook-dark-mode": "^1.0.4",
     "storybook-dep-webpack-plugin": "^1.0.7",
     "storybook-design-token": "^0.8.1",
-    "stylelint": "^13.9.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.18.0",
